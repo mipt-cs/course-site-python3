@@ -1,0 +1,6 @@
+output
+__pycache__
+*.pyc
+*.sublime-*
+*.pid
+content/images/lab3/*.gif
