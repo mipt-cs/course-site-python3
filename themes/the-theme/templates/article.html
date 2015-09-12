@@ -39,3 +39,31 @@
   </article>
 </section>
 {% endblock %}
+
+{% block script %}
+<script type="text/javascript">//<![CDATA[
+  var code_blocks = Array.prototype.slice.call(document.getElementsByClassName('highlight'));
+  var solutions = code_blocks.filter(function(e, i, z){
+    return e.parentElement.firstElementChild.tagName == 'H3' &&
+           e.parentElement.firstElementChild.firstChild.text.startsWith('Упражнение')
+  })
+  for (var i in solutions)
+  {
+  {% if article.show_solutions == 'yes' %}
+    solutions[i].hidden = true;
+    var a = document.createElement('a');
+    a.innerHTML = 'Показать ответ';
+    a.href = '#';
+    solutions[i].parentElement.insertBefore(a, solutions[i]);
+    a.onclick = function(e){
+      e.target.nextSibling.hidden = false;
+      e.target.hidden = true;
+      e.preventDefault();
+    };
+  {% else %}
+    solutions[i].remove();
+  {% endif %}
+  }
+//]]>
+</script>
+{% endblock %}
