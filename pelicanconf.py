@@ -19,7 +19,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-MENUITEMS = (('Главная', SITEURL),)
+MENUITEMS = (('Главная', '/'),)
 
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),
