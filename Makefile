@@ -12,10 +12,10 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=fufler.crabdance.com
-SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/www_public/mipt_cs_python_3
+SSH_HOST=judge.mipt.ru
+SSH_PORT=2326
+SSH_USER=ejudge
+SSH_TARGET_DIR=/var/www/html/mipt_cs_on_python3
 
 S3_BUCKET=my_s3_bucket
 

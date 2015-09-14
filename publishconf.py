@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://fufler.crabdance.com:81/mipt_cs_python_3'
+SITEURL = 'http://judge.mipt.ru/mipt_cs_on_python3'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = None
