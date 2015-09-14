@@ -32,6 +32,10 @@ MENUITEMS = (('Главная', '/'),)
 #           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = False
+FILENAME_METADATA = '(?P<slug>.*)'
+ARTICLE_URL = 'labs/{slug}.html'
+ARTICLE_SAVE_AS = ARTICLE_URL
+
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
