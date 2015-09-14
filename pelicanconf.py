@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Alexey Ermakov'
-SITENAME = 'MIPT CS Python3'
+SITENAME = 'Курс информатики на Python 3'
 SITEURL = ''
 
 PATH = 'content'
@@ -45,3 +45,12 @@ PLUGIN_PATHS = ['plugins']
 PLUGINS = ['extract_toc']
 
 STATIC_PATHS = ['images']
+
+STATIC_PATHS = [
+    'images',
+    'extra/favicon.png'
+]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.png': {'path': 'favicon.png'}
+}

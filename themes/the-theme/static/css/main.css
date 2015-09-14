@@ -360,11 +360,6 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 
 #about .bio {float: right; width: 500px;}
 
-/*
-	Footer
-*****************/
-#contentinfo {padding-bottom: 2em; text-align: right;}
-
 /***** Sections *****/
 /* Blog */
 .hentry {
@@ -464,4 +459,35 @@ code {
 .toc li {
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+.logo {
+	width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contentinfo {
+	font-size: 75%;
+}
+
+html, body, #wrap {
+	height: 100%;
+}
+
+body > #wrap {
+	height: auto; min-height: 100%;
+}
+
+#main {
+	padding-bottom: 80px;
+}
+
+#contentinfo {
+	position: relative;
+	margin-top: -80px;
+	height: 80px;
+	clear: both;
+	text-align: left;
 }
