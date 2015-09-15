@@ -2,11 +2,11 @@
 #################
 
 :date: 2015-09-11 11:00
+:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540103
+:test_comment: Логин и пароль брать в первой контрольной.
 
 .. :lecture_link: http://youtu.be/WfyrxZ4JMT4
 .. :lecture_comment: Ведётся расшифровка
-:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540103
-:test_comment: Логин и пароль брать в первой контрольной.
 
 .. default-role:: code
 .. contents:: Содержание
