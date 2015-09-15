@@ -4,3 +4,4 @@ __pycache__
 *.sublime-*
 *.pid
 content/images/lab3/*.gif
+*.db
