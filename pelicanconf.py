@@ -48,8 +48,6 @@ DISPLAY_CATEGORIES_ON_MENU = False
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['extract_toc']
 
-STATIC_PATHS = ['images']
-
 STATIC_PATHS = [
     'images',
     'extra/favicon.png'
