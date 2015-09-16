@@ -347,14 +347,14 @@
    turtle.right(90)
    turtle.forward(50)
 
-.. image:: images/lab3/example.gif
+.. image:: {filename}/images/lab3/example.gif
 
 Упражнение №2: квадрат
 ----------------------
 
 Нарисуйте квадрат. Пример:
 
-.. image:: images/lab3/rectangle.gif
+.. image:: {filename}/images/lab3/rectangle.gif
 
 
 .. code-block:: python
@@ -371,7 +371,7 @@
 Нарисуйте окружность. Воспользуйтесь тем фактом, что правильный многоугольник с большим числом сторон  будет выглядеть
 как окружность. Пример:
 
-.. image:: images/lab3/circle.gif
+.. image:: {filename}/images/lab3/circle.gif
 
 .. code-block:: python
 
@@ -397,7 +397,7 @@
 
 Нарисуйте 10 вложенных квадратов.
 
-.. image:: images/lab3/nested_rectangles.gif
+.. image:: {filename}/images/lab3/nested_rectangles.gif
 
 .. code-block:: python
 
@@ -418,7 +418,7 @@
 
 Нарисуйте спираль. Пример:
 
-.. image:: images/lab3/spiral.gif
+.. image:: {filename}/images/lab3/spiral.gif
 
 .. code-block:: python
 
@@ -447,7 +447,7 @@
 
 Нарисуйте «квадратную» спираль. Пример:
 
-.. image:: images/lab3/rect_spiral.gif
+.. image:: {filename}/images/lab3/rect_spiral.gif
 
 .. code-block:: python
 
@@ -515,7 +515,7 @@
 
 Нарисуйте 10 вложенных правильных многоугольников. Используйте функцию, рисующую правильный n-угольник. Пример:
 
-.. image:: images/lab3/regular_polygon.gif
+.. image:: {filename}/images/lab3/regular_polygon.gif
 
 .. code-block:: python
 
@@ -555,7 +555,7 @@
 
 Нарисуйте «цветок» из окружностей. Используйте функцию, рисующую окружность. Пример:
 
-.. image:: images/lab3/flower.gif
+.. image:: {filename}/images/lab3/flower.gif
 
 .. code-block:: python
 
@@ -586,7 +586,7 @@
 
 Нарисуйте «бабочку» из окружностей. Используйте функцию, рисующую окружность. Пример:
 
-.. image:: images/lab3/butterfly.gif
+.. image:: {filename}/images/lab3/butterfly.gif
 
 .. code-block:: python
 
@@ -618,7 +618,7 @@
 
 Нарисуйте пружину. Используйте функцию, рисующую дугу. Пример:
 
-.. image:: images/lab3/spring.gif
+.. image:: {filename}/images/lab3/spring.gif
 
 .. code-block:: python
 
@@ -661,8 +661,8 @@
 
 Нарисуйте две звезды: одну с 5 вершинами, другую — с 11. Используйте функцию, рисующую звезду с n вершинами. Пример:
 
-.. image:: images/lab3/star5.gif
-.. image:: images/lab3/star11.gif
+.. image:: {filename}/images/lab3/star5.gif
+.. image:: {filename}/images/lab3/star11.gif
 
 .. code-block:: python
 
@@ -793,11 +793,11 @@
 
 Результат выполнения программы при разной глубине рекурсии:
 
-.. image:: images/lab3/leaf2.gif
+.. image:: {filename}/images/lab3/leaf2.gif
    :width: 250 px
-.. image:: images/lab3/leaf3.gif
+.. image:: {filename}/images/lab3/leaf3.gif
    :width: 250 px
-.. image:: images/lab3/leaf5.gif
+.. image:: {filename}/images/lab3/leaf5.gif
    :width: 250 px
 
 Упражнение №13: кривая Коха\*
@@ -807,13 +807,13 @@
 
 .. _`кривую Коха`: https://wikipedia.org/ru/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%9A%D0%BE%D1%85%D0%B0
 
-.. image:: images/lab3/koch_curve1.gif
+.. image:: {filename}/images/lab3/koch_curve1.gif
    :width: 350 px
-.. image:: images/lab3/koch_curve2.gif
+.. image:: {filename}/images/lab3/koch_curve2.gif
    :width: 350 px
-.. image:: images/lab3/koch_curve3.gif
+.. image:: {filename}/images/lab3/koch_curve3.gif
    :width: 350 px
-.. image:: images/lab3/koch_curve4.gif
+.. image:: {filename}/images/lab3/koch_curve4.gif
    :width: 350 px
 
 .. code-block:: python
@@ -849,13 +849,13 @@
 
 .. _`снежинку Коха`: https://wikipedia.org/ru/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%9A%D0%BE%D1%85%D0%B0
 
-.. image:: images/lab3/koch_snowflake1.gif
+.. image:: {filename}/images/lab3/koch_snowflake1.gif
    :width: 350 px
-.. image:: images/lab3/koch_snowflake2.gif
+.. image:: {filename}/images/lab3/koch_snowflake2.gif
    :width: 350 px
-.. image:: images/lab3/koch_snowflake3.gif
+.. image:: {filename}/images/lab3/koch_snowflake3.gif
    :width: 350 px
-.. image:: images/lab3/koch_snowflake4.gif
+.. image:: {filename}/images/lab3/koch_snowflake4.gif
    :width: 350 px
 
 .. code-block:: python
@@ -897,11 +897,11 @@
 
 .. _`кривую Минковского`: http://wikipedia.org/ru/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%9C%D0%B8%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE
 
-.. image:: images/lab3/minkowski_curve1.gif
+.. image:: {filename}/images/lab3/minkowski_curve1.gif
    :width: 250 px
-.. image:: images/lab3/minkowski_curve2.gif
+.. image:: {filename}/images/lab3/minkowski_curve2.gif
    :width: 250 px
-.. image:: images/lab3/minkowski_curve3.gif
+.. image:: {filename}/images/lab3/minkowski_curve3.gif
    :width: 250 px
 
 .. code-block:: python
@@ -946,13 +946,13 @@
 
 .. _`кривую Леви`: https://wikipedia.org/ru/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%9B%D0%B5%D0%B2%D0%B8
 
-.. image:: images/lab3/levi_curve1.gif
+.. image:: {filename}/images/lab3/levi_curve1.gif
    :width: 350 px
-.. image:: images/lab3/levi_curve2.gif
+.. image:: {filename}/images/lab3/levi_curve2.gif
    :width: 350 px
-.. image:: images/lab3/levi_curve3.gif
+.. image:: {filename}/images/lab3/levi_curve3.gif
    :width: 350 px
-.. image:: images/lab3/levi_curve9.gif
+.. image:: {filename}/images/lab3/levi_curve9.gif
    :width: 350 px
 
 .. code-block:: python
