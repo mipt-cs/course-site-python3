@@ -51,6 +51,8 @@
   {
   {% if article.show_solutions == 'yes' %}
     solutions[i].hidden = true;
+    if (solutions[i].previousElementSibling.tagName == 'IMG')
+      solutions[i].parentElement.insertBefore(document.createElement('br'), solutions[i]);
     var a = document.createElement('a');
     a.innerHTML = 'Показать ответ';
     a.href = '#';

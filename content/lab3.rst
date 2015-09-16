@@ -3,7 +3,8 @@
 
 :date: 2015-09-11 11:00
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540103
-:test_comment: Логин и пароль брать в первой контрольной.
+:test_comment: Контрольная №3
+:show_solutions: yes
 
 .. :lecture_link: http://youtu.be/WfyrxZ4JMT4
 .. :lecture_comment: Ведётся расшифровка
@@ -255,6 +256,17 @@
 |      | 6 even |
 +------+--------+
 
+.. code-block:: python
+
+   n = int(input())
+
+   for i in range(1, n):
+       if i % 2 == 0:
+           s = 'even'
+       else:
+           s = 'odd'
+       print(i, s, sep=' ')
+
 Использование функций и модулей
 ===============================
 
@@ -344,6 +356,15 @@
 
 .. image:: images/lab3/rectangle.gif
 
+
+.. code-block:: python
+
+   import turtle
+
+   for i in range(4):
+       turtle.forward(100)
+       turtle.left(90)
+
 Упражнение №3: окружность
 -------------------------
 
@@ -352,12 +373,45 @@
 
 .. image:: images/lab3/circle.gif
 
+.. code-block:: python
+
+   import turtle
+   import math
+
+   r = 100
+   n = 50
+   a = 2*r*math.sin(math.pi/n)
+   b = 180*(1-2/n)
+
+   turtle.penup()
+   turtle.forward(r)
+   turtle.left(180-b/2)
+   turtle.pendown()
+
+   for i in range(n):
+       turtle.forward(a)
+       turtle.left(180-b)
+
 Упражнение №4: больше квадратов
 -------------------------------
 
 Нарисуйте 10 вложенных квадратов.
 
 .. image:: images/lab3/nested_rectangles.gif
+
+.. code-block:: python
+
+   import turtle
+
+   l = 20
+   for i in range(10):
+       turtle.penup()
+       turtle.goto(-l/2, -l/2)
+       turtle.pendown()
+       for k in range(4):
+           turtle.forward(l)
+           turtle.left(90)
+       l += 20
 
 Упражнение №5: спираль
 ----------------------
@@ -366,12 +420,44 @@
 
 .. image:: images/lab3/spiral.gif
 
+.. code-block:: python
+
+   import turtle
+   import math
+
+   r = 5
+   n = 50
+
+   turtle.penup()
+   turtle.forward(r)
+   turtle.left(90)
+   turtle.pendown()
+
+   for i in range(10):
+       x = 5/n
+       for j in range(n):
+           a = 2*r*math.sin(math.pi/n)
+           b = 180*(1-2/n)
+           turtle.forward(a)
+           turtle.left(180-b)
+           r += x
+
 Упражнение №6: квадратная «спираль»
 -----------------------------------
 
 Нарисуйте «квадратную» спираль. Пример:
 
 .. image:: images/lab3/rect_spiral.gif
+
+.. code-block:: python
+
+   import turtle
+
+   a = 10
+   for i in range(40):
+       turtle.forward(a)
+       turtle.left(90)
+       a += 5
 
 Написание функций
 =================
@@ -431,12 +517,69 @@
 
 .. image:: images/lab3/regular_polygon.gif
 
+.. code-block:: python
+
+   import turtle
+   import math
+
+   def poly(r, n):
+       a = 2*r*math.sin(math.pi/n)
+       b = 180*(1-2/n)
+       turtle.left(180-b/2)
+
+       for j in range(n):
+           turtle.forward(a)
+           turtle.left(180-b)
+
+   r = 30
+   n = 3
+
+   turtle.penup()
+   turtle.forward(r)
+   turtle.pendown()
+
+   for i in range(10):
+       poly(r, n)
+       b = 180*(1-2/n)
+
+       turtle.right(180-b/2)
+       turtle.penup()
+       turtle.forward(20)
+       turtle.down()
+
+       n += 1
+       r += 20
+
 Упражнение №8: «цветок»
 -----------------------
 
 Нарисуйте «цветок» из окружностей. Используйте функцию, рисующую окружность. Пример:
 
 .. image:: images/lab3/flower.gif
+
+.. code-block:: python
+
+   import turtle
+   import math
+
+   r = 50
+   n = 50
+   m = 3
+   a = 2*r*math.sin(math.pi/n)
+   b = 180*(1-2/n)
+
+   def circle(sgn):
+       for i in range(n):
+           turtle.forward(a)
+           turtle.left(sgn*(180-b))
+
+   turtle.speed('fastest')
+
+   for i in range(m):
+       circle(1)
+       circle(-1)
+       turtle.left(180/m)
+
 
 Упражнение №9: «бабочка»
 ------------------------
@@ -445,12 +588,72 @@
 
 .. image:: images/lab3/butterfly.gif
 
+.. code-block:: python
+
+   import turtle
+   import math
+
+   def circle(r, n, sgn):
+       a = 2*r*math.sin(math.pi/n)
+       b = 180*(1-2/n)
+       for i in range(n):
+           turtle.forward(a)
+           turtle.left(sgn*(180-b))
+
+   r = 50
+   n = 50
+   m = 10
+
+   turtle.speed('fastest')
+
+   turtle.left(90)
+
+   for i in range(m):
+       circle(r, n, 1)
+       circle(r, n, -1)
+       r += 10
+
 Упражнение №10: пружина
 -----------------------
 
 Нарисуйте пружину. Используйте функцию, рисующую дугу. Пример:
 
 .. image:: images/lab3/spring.gif
+
+.. code-block:: python
+
+   import turtle
+   import math
+
+   def arc(r, n):
+       a = 2*r*math.sin(math.pi/n/2)
+
+       turtle.right(90/n)
+       for i in range(n):
+           turtle.forward(a)
+           turtle.right(180/n)
+
+       turtle.left(90/n)
+
+   R = 50
+   r = 10
+   N = 20
+   n = 10
+   m = 5
+
+   l = m*2*R+(m-1)*2*r
+
+   turtle.penup()
+   turtle.goto(-l/2, -(R+r)/2)
+   turtle.pendown()
+
+   turtle.left(90)
+
+   for i in range(m-1):
+       arc(R, N)
+       arc(r, n)
+
+   arc(R, N)
 
 
 Упражнение №11: звезды
@@ -460,6 +663,27 @@
 
 .. image:: images/lab3/star5.gif
 .. image:: images/lab3/star11.gif
+
+.. code-block:: python
+
+   import turtle
+   import math
+
+   def star(r, n):
+       a = 2*r*math.sin(math.pi/n)
+       l = a/(2*(1-math.cos(math.pi/n)))**0.5
+
+       turtle.penup()
+       turtle.left(90-360/n)
+       turtle.forward(r)
+       turtle.left(180-90/n)
+       turtle.pendown()
+
+       for i in range(n):
+           turtle.forward(l)
+           turtle.left(180-180/n)
+
+   star(100, 11)
 
 Рекурсия
 ========
@@ -519,6 +743,15 @@
 | 7    | 13    |
 +------+-------+
 
+.. code-block:: python
+
+   def fib(n):
+       if n < 2:
+           return n
+       else:
+           return fib(n-2)+fib(n-1)
+
+   print(fib(7))
 
 
 Фракталы
@@ -583,9 +816,34 @@
 .. image:: images/lab3/koch_curve4.gif
    :width: 350 px
 
+.. code-block:: python
+
+   import turtle
+
+   def curve(l, n):
+       if n == 0:
+           turtle.forward(l)
+       else:
+           curve(l/3, n-1)
+           turtle.left(60)
+           curve(l/3, n-1)
+           turtle.right(120)
+           curve(l/3, n-1)
+           turtle.left(60)
+           curve(l/3, n-1)
+
+   L = 800
+   H = L/6*3**0.5
+   N = 4
+
+   turtle.penup()
+   turtle.goto(-L/2, -H/2)
+   turtle.pendown()
+
+   curve(L, N)
+
 Упражнение №14: снежинка Коха\*
 -------------------------------
-
 
 Нарисуйте `снежинку Коха`_. Пример работы алгоритма при разной глубине рекурсии:
 
@@ -600,6 +858,38 @@
 .. image:: images/lab3/koch_snowflake4.gif
    :width: 350 px
 
+.. code-block:: python
+
+   import turtle
+
+   def curve(l, n):
+       if n == 0:
+           turtle.forward(l)
+       else:
+           curve(l/3, n-1)
+           turtle.left(60)
+           curve(l/3, n-1)
+           turtle.right(120)
+           curve(l/3, n-1)
+           turtle.left(60)
+           curve(l/3, n-1)
+
+   def snowflake(L, N):
+       for i in range(3):
+           curve(L, N)
+           turtle.right(120)
+
+   L = 300
+   H = L/6*3**0.5
+   N = 4
+
+   turtle.penup()
+   turtle.goto(-L/2, H)
+   turtle.pendown()
+
+   turtle.speed('fastest')
+   snowflake(L, N)
+
 Упражнение №15 кривая Минковского\*
 -----------------------------------
 
@@ -613,6 +903,41 @@
    :width: 250 px
 .. image:: images/lab3/minkowski_curve3.gif
    :width: 250 px
+
+.. code-block:: python
+
+   import turtle
+
+   def curve(l, n):
+       if n == 0:
+           turtle.forward(l)
+           return
+       curve(l/4, n-1)
+       turtle.left(90)
+       curve(l/4, n-1)
+       turtle.right(90)
+       curve(l/4, n-1)
+       turtle.right(90)
+       curve(l/4, n-1)
+       curve(l/4, n-1)
+       turtle.left(90)
+       curve(l/4, n-1)
+       turtle.left(90)
+       curve(l/4, n-1)
+       turtle.right(90)
+       curve(l/4, n-1)
+
+   L = 800
+   N = 3
+
+   turtle.speed('fastest')
+
+   turtle.penup()
+   turtle.goto(-L/2, 0)
+   turtle.pendown()
+
+   curve(L, N)
+
 
 Упражнение №16: кривая Леви\*
 -----------------------------
@@ -629,3 +954,28 @@
    :width: 350 px
 .. image:: images/lab3/levi_curve9.gif
    :width: 350 px
+
+.. code-block:: python
+
+   import turtle
+
+   def curve(l, n):
+       if n == 0:
+           turtle.forward(l)
+           return
+       turtle.left(45)
+       curve(l/2**0.5, n-1)
+       turtle.right(90)
+       curve(l/2**0.5, n-1)
+       turtle.left(45)
+
+   L = 400
+   N = 9
+
+   turtle.speed('fastest')
+
+   turtle.penup()
+   turtle.goto(-L/2, -L/3)
+   turtle.pendown()
+
+   curve(L, N)
