@@ -2,13 +2,13 @@
 #########################################
 
 :date: 2015-09-10 14:23
+:lecture_link:  https://youtu.be/KnFrdzG79ak
 :test_comment: Регистрация на контрольную №2
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-register?contest_id=540102
 :show_solutions: yes
 
 .. default-role:: code
 .. contents:: Содержание
-
 
 
 Введение
