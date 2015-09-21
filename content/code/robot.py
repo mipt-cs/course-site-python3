@@ -98,7 +98,7 @@ r.start(task)
 #-*- coding: utf-8 -*
 import robot
 r = robot.rmap()
-r.lm('task1-1')
+r.lm('task1')
 r.help() # Список команд. Уберите, если не нужно
 #------- пишите код здесь vvvv -----
 
@@ -153,6 +153,9 @@ class rmap():
     m.append('task8')
     m.append('task9')
     m.append('task10')
+    m.append('task11')
+    m.append('task12')
+    m.append('task13')
 
     class _v: # будет содержать изображение текста и квадратиков закраски и меток. Чтобы можно было "поднимать изображение"
         text = '' 
@@ -275,7 +278,6 @@ r.demoAll()
             r.lm(x)
             print(x)
             r.demo()
-            r.test()
             r.pause()
           
     def __init__(self):
@@ -319,20 +321,23 @@ r.demoAll()
 
 ##        self.loadmap()
     def but_load_next(self,event):
-    	print ("load next")
-    	self.lm(self.m[self.m.index(self._cur_map)+1])
+        print ("load next")
+        index = self.m.index(self._cur_map)
+        if index < len(self.m)-1:
+            self.lm(self.m[index+1])
+        else:
+            self.lm(self.m[0])
+
     	
     def but_demo(self,event):
         print ("demo")
         self.demo()
-        self.test()
-		
+
     def but1(self,event):
-    	print ('start')
-    	#self.lm(self._cur_map)
-    	self.solve_task()
-    	self.test()
-    	
+        print ('start')
+        #self.lm(self._cur_map)
+        self.solve_task()
+
     def but_reload(self,event):
         print ("reload")
         self.lm(self._cur_map)
@@ -428,13 +433,14 @@ r.demoAll()
         r = self._endPoint[0]
         c = self._endPoint[1]
         self._canvas.delete(self._park)
-        self._park = self._canvas.create_oval (c*size+6,r*size+6, c*size+size-6,r*size+size-6, width = 3, outline = 'yellow')
+        if r > 0 and c > 0:
+            self._park = self._canvas.create_oval (c*size+6,r*size+6, c*size+size-6,r*size+size-6, width = 3, outline = 'yellow')
         # конечная точка
         
         self.jumpTo((remr,remc))
         self._task = '\n'+self._task
         self.task.config(text = self._task)
-        self.res.config(text = 'Проверка еще не выполнялась')
+        self.res.config()
         self._update()
         self.sleep = sleep
         #self.pause()
@@ -447,66 +453,10 @@ r.demoAll()
             time.sleep(self.sleep)
         
 
-    def test(self):
-        """Проверить, выполнено ли задание. 
-Возвращает истину, если выполнено или ложь, если не выполнено.
-"""
-        t = w = p = l = True # w -стены, p - парковка, l - закраска, t - текст
-        if self._test != '-':
-            if self._test == '':
-                r = c = 1
-                while  l  and (r <= self._nr) and (c <= self._nc):
-                    if self._field[r][c].label != self._field[r][c].color:
-                        l = False
-                    if (c < self._nc):
-                        c +=1
-                    else:
-                        c = 1
-                        r += 1
-                if self._endPoint != self.getCoords():
-                    p = False
-            else:
-                exec(self._test)
-    #        print (l,p) # переделать на вывод значка результата и комментария
-            self._res = '\n'
-            self._res += '-------------------------------------'
-            self._res += '\n'
-            if t and w and l and p: self._res += 'Задача выполнена верно'
-            if not l: self._res += 'Закрашены не все клетки или закрашены не тем цветом\n'
-            if not p: self._res += 'Робот не на Парковке (желтый круг)\n'
-            if not w: self._res += 'Установлены не все стены или установлены в неправильных местах\n'
-            if not t: self._res += 'Текст в ячейках не вписан или вписан неправильно\n'
-            if self._bum: self._res += 'Робот разбился (врезался в стену)\n'
-            self.res.config(text = self._res)
-        else:
-            self._res += '\n'
-            self._res += '-------------------------------------'
-            self._res += '\n'
-            self._res += 'Нет автоматической проверки'
-            self.res.config(text = self._res)
-
-        self._update()
-        return t and w and p and l
-
     def start(self,fun):
-        #self.test()
         self.solve_task = fun
         self._tk.mainloop()
 
-    def full_test(self):
-        "Выполнение полного текста, со всеми вариантами поля."
-        z = self._var
-        for x in z:
-            print(self._cur_map,'['+str(x)+'/'+str(self._var[-1])+']', end=' ')
-            self.pause()
-            if not self.test():
-                print("fail")
-                break
-            else:
-                print("ok")
-            if x != z[-1]:
-                self.lm(self._cur_map,x)
-        print("end of test")
 
 ##Робот    
 
@@ -938,8 +888,6 @@ r.settext(3)
             x*self._size+self._size-2*self._d,y*self._size+self._size-2*self._d,
             fill = '#FF0000')
 
-        self.end()
-        
     def null (self, *args):
         print('Эта команда запрещена к использованию в данной задаче. Ищите другой способ')
         return ''
@@ -961,34 +909,11 @@ for x in r.m:
 """
         self._tk.title(mn)
         self._cur_map = mn
-        if mn == 'blank1':
-            self._nc = 10
-            self._nr = 10
-            self._r = 1
-            self._c = 1
-            self._size = 40
-            self.clear()
-                
-        elif mn == 'blank2':
-            self._nc = 20
-            self._nr = 20
-            self._r = 1
-            self._c = 1
-            self._size = 25
+        self._NoneUpdate = False
+        self._endPoint = (0, 0)
+        self._NoneUpdate = True
 
-            self.clear()
-            
-        elif mn == 'blank3':
-            self._nc = 60
-            self._nr = 40
-            self._r = 1
-            self._c = 1
-            self._size = 15
-
-            self.clear()
-            
-        ##--------------------------------------------------------------------------------------------
-        elif mn == 'task1':
+        if mn == 'task1':
             self._nc = 7
             self._nr = 5
             self._size = 30
@@ -999,7 +924,8 @@ for x in r.m:
 
             self._solve = ''
             self._endPoint = (3,5)
-            self._task = 'Необходимо перевести Робота по лабиринту из начального положения (◊) в точку A.\n'
+            self._task = 'Необходимо перевести Робота по лабиринту\n' \
+                         ' из начального положения в конечное.\n'
 
             self._field[2][2].wUp = True
             self._field[2][3].wUp = True
@@ -1025,11 +951,9 @@ for x in r.m:
             self._r = 3
             self._c = 1
 
-            self._endPoint = (1,15)
             self._solve = ''
             
-            self._task = 'Составьте программу рисования узора. Начальное положение Робота отмечено символом ◊.\n'
-            self._task += self._solve
+            self._task = 'Составьте программу рисования узора.\n'
 
         ##--------------------------------------------------------------------------------------------
         elif mn == 'task3':
@@ -1042,7 +966,8 @@ for x in r.m:
 
             self._endPoint = (2,9)
             self._solve = ''
-            self._task = 'Необходимо провести Робота вдоль коридора из начального положения (◊) до точки A,\n' \
+            self._task = 'Необходимо провести Робота вдоль коридора\n' \
+                         ' из начального положения в конечное,\n' \
                          ' заглядывая в каждый боковой коридор.'
 
             for i in range(2, 9):
@@ -1059,17 +984,18 @@ for x in r.m:
         elif mn == 'task4':
             self._nc = 8
             self._nr = 12
-            self._r = 1
-            self._c = 1
             self._size = 30
             self.clear()
+            self._r = rnd(1, self._nr)
+            self._c = rnd(1, self._nc)
+
             for i in range(0, 5):
                 for j in range(0, 3):
                     self._field[6+2*j-i][2+i].label = 'red'
 
-            self._endPoint = (7,11)
             self._solve = ''
-            self._task = 'Составьте программу закрашивания клеток поля, отмеченных звездочкой.\n'
+            self._task = 'Составьте программу закрашивания\n' \
+                         ' клеток поля, отмеченных звездочкой.\n'
 
         ##--------------------------------------------------------------------------------------------
         elif mn == 'task5':
@@ -1078,12 +1004,10 @@ for x in r.m:
             self._r = 1
             self._c = 1
             self._size = 30
-            self._endPoint = (9,10)
 
             self.clear()
             self._solve = ''
-            self._task = 'Составьте программу рисования узора с использованием вспомогательного алгоритма.\n' \
-                         ' Начальное положение Робота отмечено символом ◊.\n'
+            self._task = 'Составьте программу рисования узора.'
 
         ##--------------------------------------------------------------------------------------------
         ##--------------------------------------------------------------------------------------------
@@ -1095,18 +1019,20 @@ for x in r.m:
             self._size = 20
             self.clear()
             self._solve = ''
-            self._endPoint = (15,10)
-            self._task = 'Составьте программу рисования фигуры в виде буквы "Т". Вертикальные и горизонтальные размеры пользователь вводит с клавиатуры. Ввод данных можно осуществлять любым способом.\n'
+            self._task = 'Составьте программу рисования фигуры в виде буквы "Т".\n' \
+                         ' Вертикальные и горизонтальные размеры пользователь вводит\n' \
+                         ' с клавиатуры. Ввод данных можно осуществлять любым способом.\n'
 
         ##-------------------------------------------------------------------------------------------------------
         elif mn == 'task7':
             self._nc = 16
             self._nr = 11
-            self._r = 1
-            self._c = 1
             self._size = 25
                 
             self.clear()
+
+            self._r = rnd(1, self._nr)
+            self._c = rnd(1, self._nc)
 
             self._field[3][2].wUp = True
             self._field[2][9].wUp = True
@@ -1123,22 +1049,23 @@ for x in r.m:
                 self._field[5][5+i].wUp = True
 
 
-            self._endPoint = (10,15)
             self._solve = ''
         
-            self._task = 'Где-то в поле Робота находится горизонтальный коридор шириной в одну клетку неизвестной длины.\n' \
-                         ' Робот из верхнего левого угла поля должен дойти до коридора и закрасить клетки внутри него, как \n' \
-                         'указано в задании. По полю Робота в произвольном порядке располагаются стены, но расстояние \n' \
+            self._task = 'Где-то в поле Робота находится горизонтальный коридор шириной в одну клетку\n' \
+                         ' неизвестной длины. Робот из верхнего левого угла поля должен дойти до\n' \
+                         ' коридора и закрасить клетки внутри него, как указано в задании. По полю\n' \
+                         ' Робота в произвольном порядке располагаются стены, но расстояние \n' \
                          'между ними больше одной клетки.\n'
         ##--------------------------------------------------------------------------------------------
         elif mn == 'task8':
             self._nc = 16
             self._nr = 11
-            self._r = 1
-            self._c = 1
-            self._size = 20
+            self._size = 25
 
             self.clear()
+
+            self._r = rnd(1, self._nr)
+            self._c = rnd(1, self._nc)
 
             self._field[2][6].wLeft = True
             self._field[3][6].wLeft = True
@@ -1147,32 +1074,36 @@ for x in r.m:
             self._field[7][6].wLeft = True
             self._field[8][6].wLeft = True
 
-            self._endPoint = (10,15)
             self._solve = ''
-            self._task = 'Где-то в поле Робота находится вертикальная стена с отверстием в одну клетку, размеры которой \n' \
-                         'неизвестны. Робот из произвольной клетки справа от стены, но обязательно напротив нее, должен \n' \
-                         'дойти до стены и закрасить клетки за стеной, как показано в задании.\n'
+            self._task = 'Где-то в поле Робота находится вертикальная стена с отверстием в одну клетку,\n' \
+                         ' размеры которой неизвестны. Робот из произвольной клетки должен дойти до\n' \
+                         ' стены и закрасить клетки как показано в задании.\n'
 
         ##--------------------------------------------------------------------------------------------
         elif mn == 'task9':
             self._nc = 20
             self._nr = 20
-            self._r = 1
-            self._c = 1
-            self._size = 30
- 
-                
+            self._size = 25
+
             self.clear()
 
-            c = r = 3
-            for rcount in range(0,4):
-                for ccount in range(0,4):
+            self._r = rnd(1, self._nr)
+            self._c = rnd(1, self._nc)
+
+            c = rnd(2,16)
+            r = rnd(2,16)
+            w = rnd(3,8)
+            h = rnd(3,8)
+            if c + w >= self._nc: w = self._nc-c
+            if r + h >= self._nc: h = self._nr-r
+
+            for rcount in range(0,h):
+                for ccount in range(0,w):
                     self._field[r + rcount][c+ccount].label = 'green'
 
-            self._endPoint = (17,1)
             self._solve = ''
 
-            self._task = 'Над Роботом находится квадрат из закрашенных клеток поля. Вычислить и вывести на экран площадь квадрата.\n'
+            self._task = 'На поле находится квадрат из закрашенных клеток. Вычислить и вывести на экран площадь квадрата.\n'
 
         ##--------------------------------------------------------------------------------------------
         elif mn == 'task10':
@@ -1255,10 +1186,90 @@ for x in r.m:
             self._solve = """
 """
 
-            self._task = 'Необходимо провести Робота по коридору шириной в одну клетку из начального положения (◊) до конца коридора, \n' \
+            self._task = 'Необходимо провести Робота по коридору шириной в одну клетку из начального положения до конца коридора, \n' \
                          'закрашивая при этом все клетки коридора, которые имеют выход. Выходы размером в одну клетку располагаются \n' \
                          'произвольно по всей длине коридора. Коридор заканчивается тупиком. Коридор имеет два горизонтальных и \n' \
                          'диагональный участки. Пример коридора показан на рисунке.\n'
+
+        elif mn == 'task11':
+            self._nc = 15
+            self._nr = 11
+            self._size = 30
+            self.clear()
+
+            self._r = rnd(1, self._nr)
+            self._c = rnd(1, self._nc)
+
+            for i in range(1,self._nr):
+                for j in range(1,self._nc):
+                    self._field[i][j].text = str(rnd(0, 10))
+
+            self._task = 'На поле 10х15 каждой в каждой клетке записана цифра (от 0 до 9).\n Закрасить квадрат 2х2 с наименьшей суммой значений клеток.'
+
+        elif mn == 'task12':
+            self._nc = 15
+            self._nr = 6
+            self._size = 30
+            self.clear()
+
+            self._r = 2
+            self._c = 13
+
+            self._field[2][2].wUp = True
+            self._field[2][3].wLeft = True
+            self._field[3][3].wLeft = True
+            self._field[4][3].wLeft = True
+            self._field[5][3].wUp = True
+            self._field[5][4].wUp = True
+            self._field[4][5].wLeft = True
+            self._field[3][5].wLeft = True
+            self._field[2][5].wLeft = True
+            self._field[2][5].wUp = True
+            self._field[2][6].wLeft = True
+            self._field[3][6].wLeft = True
+            self._field[4][6].wLeft = True
+            self._field[5][6].wUp = True
+            self._field[5][7].wUp = True
+            self._field[5][8].wUp = True
+            self._field[4][9].wLeft = True
+            self._field[3][9].wLeft = True
+            self._field[2][9].wLeft = True
+            self._field[2][9].wUp = True
+            self._field[2][10].wUp = True
+            self._field[2][11].wLeft = True
+            self._field[3][11].wLeft = True
+            self._field[4][11].wLeft = True
+            self._field[5][11].wUp = True
+            self._field[4][12].wLeft = True
+            self._field[3][12].wLeft = True
+            self._field[2][12].wLeft = True
+            self._field[2][12].wUp = True
+            self._field[2][13].wUp = True
+
+
+            self._task = 'Робот движется вдоль стены, профиль которой показан на рисунке,\n' \
+                         ' от начального положения до конца стены. Необходимо закрасить\n' \
+                         ' все внутренние углы стены, как показано на примере. Размеры стены\n могут быть произвольны.'
+
+        elif mn == 'task13':
+            self._nc = 20
+            self._nr = 20
+            self._size = 25
+
+            self.clear()
+
+            self._r = rnd(self._nr/2, self._nr)
+            self._c = rnd(self._nc/2, self._nc)
+
+            col = rnd(2, self._nc/2)
+            row = rnd(4, self._nr/2)
+            height = rnd(4, self._nr-4)
+
+            if row + height >= self._nr:
+                height = self._nr - row-1
+
+            for i in range(row, row+height):
+                self._field[i][col].wLeft = True
 
         ##--------------------------------------------------------------------------------------------
 
@@ -1285,7 +1296,6 @@ for x in r.m:
             outline = '#4400FF', width = 3)
 
         self._paintMap()
- 
 
     lm = loadmap
     lt = left

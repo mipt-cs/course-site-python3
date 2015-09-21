@@ -1,11 +1,10 @@
-
-
 import robot
 r = robot.rmap()
-r.lm('task10')
+r.lm('task1')
 
 def task():
-	r.label()
+	r.rt()
+	r.res.config(text='Done')
 
 r.start(task)
 
