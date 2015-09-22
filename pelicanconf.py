@@ -50,6 +50,7 @@ PLUGINS = ['extract_toc']
 
 STATIC_PATHS = [
     'images',
+    'code',
     'extra/favicon.png'
 ]
 

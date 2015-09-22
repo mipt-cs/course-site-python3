@@ -134,7 +134,7 @@ class rmap():
     _park = ''
 
     _canvas = ''
-    sleep = 0
+    sleep = 0.5
     _task = ''
     _solve = ''
     _test = ''
@@ -283,7 +283,7 @@ r.demoAll()
     def __init__(self):
         self._w = 4 # толщина стен
         self._d = 4 # на столько меньше клетки закраска (с каждой стороны)
-        self.sleep = 0.1 # замедление
+        self.sleep = 0.5 # замедление
         self._font_size = self._size // 2
         self._tk = Tk()
         self._tk.geometry('+0+0')
@@ -911,7 +911,7 @@ for x in r.m:
         self._cur_map = mn
         self._NoneUpdate = False
         self._endPoint = (0, 0)
-        self._NoneUpdate = True
+#        self._NoneUpdate = True
 
         if mn == 'task1':
             self._nc = 7
