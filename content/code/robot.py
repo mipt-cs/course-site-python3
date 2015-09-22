@@ -1099,7 +1099,7 @@ for x in r.m:
 
             for rcount in range(0,h):
                 for ccount in range(0,w):
-                    self._field[r + rcount][c+ccount].label = 'green'
+                    self._field[r + rcount][c+ccount].color = 'green'
 
             self._solve = ''
 
