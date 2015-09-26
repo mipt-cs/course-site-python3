@@ -1,8 +1,11 @@
 Задачи робота
 #################
 
-:date: 2015-09-21 11:00
+:date: 2015-09-22 11:00
+:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540104
+:test_comment: Контрольная №4
 
+.. default-role:: code
 .. contents:: Содержание
 
 
