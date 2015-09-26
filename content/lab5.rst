@@ -3,12 +3,6 @@
 
 :date: 2015-09-29 09:00
 
-.. :lecture_link: 
-.. :lecture_comment: 
-:test_link:
-:test_comment:
-:show_solutions: no
-
 .. default-role:: code
 .. contents:: Содержание
 
