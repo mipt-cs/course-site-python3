@@ -508,3 +508,13 @@ body > #wrap {
 	clear: both;
 	text-align: left;
 }
+
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+
+sup {
+	vertical-align: sup;
+	font-size: smaller;
+}
