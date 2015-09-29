@@ -46,7 +46,7 @@ ARTICLE_ORDER_BY = 'date'
 DISPLAY_CATEGORIES_ON_MENU = False
 
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['extract_toc']
+PLUGINS = ['extract_toc', 'code_include']
 
 STATIC_PATHS = [
     'images',

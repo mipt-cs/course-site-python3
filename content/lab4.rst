@@ -4,6 +4,7 @@
 :date: 2015-09-22 11:00
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540104
 :test_comment: Контрольная №4
+:show_solutions: yes
 
 .. default-role:: code
 .. contents:: Содержание
@@ -108,6 +109,10 @@
 
 .. image:: {filename}/images/lab4/task1.png
 
+.. code-include:: solutions/lab4/task_1.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №2
 -------------
@@ -115,12 +120,20 @@
 
 .. image:: {filename}/images/lab4/task2.png
 
+.. code-include:: solutions/lab4/task_2.py
+    :lexer: python
+    :encoding: utf-8
+
 Упражнение №3
 -------------
 
 Необходимо провести Робота вдоль коридора из начального положения (◊) до точки A, заглядывая в каждый боковой коридор.
 
 .. image:: {filename}/images/lab4/task3.png
+
+.. code-include:: solutions/lab4/task_3.py
+    :lexer: python
+    :encoding: utf-8
 
 
 Упражнение №4
@@ -130,6 +143,10 @@
 
 .. image:: {filename}/images/lab4/task4.png
 
+.. code-include:: solutions/lab4/task_4.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №5
 -------------
@@ -138,11 +155,19 @@
 
 .. image:: {filename}/images/lab4/task5.png
 
+.. code-include:: solutions/lab4/task_5.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №6
 -------------
 
 Составьте программу рисования фигуры в виде буквы "Т". Вертикальные и горизонтальные размеры пользователь вводит с клавиатуры. Ввод данных можно осуществлять любым способом.
+
+.. code-include:: solutions/lab4/task_6.py
+    :lexer: python
+    :encoding: utf-8
 
 
 Упражнение №7	
@@ -152,6 +177,10 @@
 
 .. image:: {filename}/images/lab4/task7.png
 
+.. code-include:: solutions/lab4/task_7.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №8
 -------------
@@ -160,11 +189,19 @@
 
 .. image:: {filename}/images/lab4/task8.png
 
+.. code-include:: solutions/lab4/task_8.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №9
 -------------
 
 На поле находится квадрат из закрашенных клеток. Вычислить и вывести на экран площадь квадрата.
+
+.. code-include:: solutions/lab4/task_9.py
+    :lexer: python
+    :encoding: utf-8
 
 
 Упражнение №10
@@ -174,11 +211,19 @@
 
 .. image:: {filename}/images/lab4/task10.png
 
+.. code-include:: solutions/lab4/task_10.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №11
 --------------
 
 На поле 10х15 каждой в каждой клетке записана цифра (от 0 до 9). Закрасить квадрат 2х2 с наименьшей суммой значений клеток.
+
+.. code-include:: solutions/lab4/task_11.py
+    :lexer: python
+    :encoding: utf-8
 
 
 Упражнение №12
@@ -188,8 +233,16 @@
 
 .. image:: {filename}/images/lab4/task12.png
 
+.. code-include:: solutions/lab4/task_12.py
+    :lexer: python
+    :encoding: utf-8
+
 
 Упражнение №13
 --------------
+
+.. code-include:: solutions/lab4/task_13.py
+    :lexer: python
+    :encoding: utf-8
 
 Слева от Робота находится вертикальная стена. Вычислить и вывести на экран размеры стены и расстояние от стены до правого края поля.
