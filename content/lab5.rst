@@ -3,6 +3,8 @@
 
 :date: 2015-09-29 09:00
 
+:lecture_link: https://youtu.be/8CGK4JNqb4U
+
 .. default-role:: code
 .. contents:: Содержание
 
