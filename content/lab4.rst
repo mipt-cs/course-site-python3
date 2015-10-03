@@ -15,8 +15,8 @@
 
 Файл robot.py (robot_) содержит код для эмуляции поведения робота. Он содержит набор функций, позволяющих управлять роботом и считывать его состояние. Управление роботом осуществляется посредством команд в файле task.py (task_), имеющем структуру:
 
-.. _robot: {filename}/code/robot.py
-.. _task: {filename}/code/task.py
+.. _robot: {filename}/code/lab4/robot.py
+.. _task: {filename}/code/lab4/task.py
 
 .. code-block:: python
    
