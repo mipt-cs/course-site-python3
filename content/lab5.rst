@@ -1,7 +1,11 @@
-Работа "Статистика"
+Арифметика и списки
 ###################
 
 :date: 2015-09-29 09:00
+
+:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540105
+:test_comment: Контрольная №5
+:lecture_link: https://youtu.be/8CGK4JNqb4U
 
 .. default-role:: code
 .. contents:: Содержание
