@@ -45,7 +45,8 @@
   var code_blocks = Array.prototype.slice.call(document.getElementsByClassName('highlight'));
   var solutions = code_blocks.filter(function(e, i, z){
     return (e.parentElement.firstElementChild.tagName == 'H3' || e.parentElement.firstElementChild.tagName == 'H2') &&
-           e.parentElement.firstElementChild.firstChild.text.startsWith('Упражнение')
+           e.parentElement.firstElementChild.firstChild.text.startsWith('Упражнение') &&
+           e.parentElement.lastElementChild == e
   })
   for (var i in solutions)
   {
