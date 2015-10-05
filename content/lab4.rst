@@ -1,10 +1,11 @@
-Задачи робота
-#################
+Робот
+#####
 
 :date: 2015-09-22 11:00
 :lecture_link: https://youtu.be/31o8Dqg1byI
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540104
 :test_comment: Контрольная №4
+:lecture_link: https://youtu.be/31o8Dqg1byI
 :show_solutions: yes
 
 .. default-role:: code
@@ -12,7 +13,7 @@
 
 
 Робот
---------
+-----
 
 Файл robot.py (robot_) содержит код для эмуляции поведения робота. Он содержит набор функций, позволяющих управлять роботом и считывать его состояние. Управление роботом осуществляется посредством команд в файле task.py (task_), имеющем структуру:
 
