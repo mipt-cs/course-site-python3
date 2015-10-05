@@ -3,6 +3,7 @@ import os
 import subprocess
 import sys
 import shutil
+import tabulate
 
 checker_path = os.path.dirname(os.path.abspath(__file__))
 tests_path = os.path.join(checker_path, 'tests')
@@ -35,24 +36,27 @@ for problem in os.listdir(tests_path):
             try:
                 retcode = call(['python3', program])
             except subprocess.TimeoutExpired:
+                status[problem][test_name] = 'T'
                 retcode = -1
-            if retcode != 0:
-                status[problem][test_name] = False
                 continue
-            retcode = call(['diff', '-wq', program_output, full_test_path_out])
-            status[problem][test_name] = retcode == 0
-        if len(list(filter(lambda x: not x, status[problem].values()))) == 0:
+            if retcode != 0:
+                status[problem][test_name] = 'E'
+                continue
+            retcode = call(['diff', '-wBq', program_output, full_test_path_out])
+            status[problem][test_name] = '+' if retcode == 0 else '-'
+        if len(list(filter(lambda x: x in ['T', 'E', '-'], status[problem].values()))) == 0:
             problems_solved += 1
 
-print('Total number of problems: %d' % total_problems)
-print('Submitted programs: %d' % total_programs)
-print('Problems solved: %d' % problems_solved)
+print('Всего задач: %d' % total_problems)
+print('Отправлено решений: %d' % total_programs)
+print('Правильно решено: %d' % problems_solved)
 print()
-for (problem, stat) in status.items():
+for (problem, stat) in sorted(status.items()):
     if not bool(stat):
-        print('%s: program not submitted' % problem)
+        print('%s: решение не отправлено' % problem)
     else:
-        print('%s: passed %d/%d tests' % (problem, len(list(filter(lambda x: x, stat.values()))), len(stat.keys())))
+        print('%s: пройдено тестов — %d/%d' % (problem, len(list(filter(lambda x: x == '+', stat.values()))), len(stat.keys())))
+        print(tabulate.tabulate(list(zip(*sorted(stat.items())))))
 
 if os.path.isfile(program_output):
     os.remove(program_output)
