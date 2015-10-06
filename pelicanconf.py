@@ -53,13 +53,17 @@ STATIC_PATHS = [
     'code',
     'extra/favicon.png',
     'extra/lab6/lib.m.html',
-    'extra/lab6/lib.py'
+    'extra/lab6/lib.py',
+    'extra/lab6/tests.tgz',
+    'extra/checker.py'
 ]
 
 EXTRA_PATH_METADATA = {
     'extra/favicon.png': {'path': 'favicon.png'},
     'extra/lab6/lib.m.html': {'path': 'extra/lab6/lib.m.html'},
-    'extra/lab6/lib.py': {'path': 'extra/lab6/lib.py'}
+    'extra/lab6/lib.py': {'path': 'extra/lab6/lib.py'},
+    'extra/checker.py': {'path': 'extra/checker.py'},
+    'extra/lab6/tests.tgz': {'path': 'extra/lab6/tests.tgz'}
 }
 
 READERS = {'html': None}

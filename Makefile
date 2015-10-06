@@ -1,3 +1,4 @@
+PORT=8000
 PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
