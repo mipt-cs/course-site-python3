@@ -2,7 +2,8 @@
 #####################
 
 :date: 2015-10-03 21:30
-:Status: draft
+:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540106
+:test_comment: Контрольная №6
 
 .. default-role:: code
 .. contents:: Содержание
