@@ -265,7 +265,6 @@ plot() универсальная команда и в неё можно пер�
 
 .. code-block:: python
 
-	import matplotlib.pyplot as plt; 
 	import numpy as np
 	import matplotlib.pyplot as plt
  
