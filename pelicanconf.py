@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import os
+
 AUTHOR = 'Alexey Ermakov'
 SITENAME = 'Курс информатики на Python 3'
 SITEURL = ''
@@ -50,20 +52,16 @@ PLUGINS = ['extract_toc', 'code_include']
 
 STATIC_PATHS = [
     'images',
-    'code',
-    'extra/favicon.png',
-    'extra/lab6/lib.m.html',
-    'extra/lab6/lib.py',
-    'extra/lab6/tests.tgz',
-    'extra/checker.py'
+    'code'
 ]
 
 EXTRA_PATH_METADATA = {
-    'extra/favicon.png': {'path': 'favicon.png'},
-    'extra/lab6/lib.m.html': {'path': 'extra/lab6/lib.m.html'},
-    'extra/lab6/lib.py': {'path': 'extra/lab6/lib.py'},
-    'extra/checker.py': {'path': 'extra/checker.py'},
-    'extra/lab6/tests.tgz': {'path': 'extra/lab6/tests.tgz'}
+    'extra/favicon.png': {'path': 'favicon.png'}
 }
+
+extra = os.path.join(os.path.dirname(__file__), 'content', 'extra')
+for root, directories, filenames in os.walk(extra):
+    for filename in filenames:
+        STATIC_PATHS.append(os.path.join(root,filename)[len(extra)-5:])
 
 READERS = {'html': None}

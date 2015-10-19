@@ -1,12 +1,20 @@
 # coding: utf-8
 
-from solar_objects import *
-from solar_vis import *
+from solar_objects import Star, Planet
+# Чисто логически модуль input НЕ должен импортировать vis
+from solar_vis import create_star_image, create_planet_image
 
 
 def read_space_objects_data_from_file(input_filename, space):
-    """считывает данные о космических объектах из файла, создаёт сами объекты
-    и вызывает создание их графических образов"""
+    """Cчитывает данные о космических объектах из файла, создаёт сами объекты
+    и вызывает создание их графических образов
+
+    Параметры:
+
+    **input_filename** — имя входного файла
+    **space** — холст для рисования
+    """
+
     objects = []
     with open(input_filename) as input_file:
         for line in input_file:
@@ -32,11 +40,20 @@ def read_space_objects_data_from_file(input_filename, space):
 
 
 def parse_star_parameters(line, star):
-    """считывает данные о звезде из строки.
-    Предполагается такая строка:
+    """Считывает данные о звезде из строки.
+    Входная строка должна иметь слеюущий формат:
+    Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+
+    Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
+    Пример строки:
     Star 10 red 1000 1 2 3 4
-    где Star -- признак звезды, 10 - визуальный радиус в пикселах, red -- цвет
-    1000 -- масса, 1 и 2 -- x и y координаты, 3 и 4 -- скорости Vx и Vy"""
+
+    Параметры:
+
+    **line** — строка с описание звезды.
+    **star** — объект звезды.
+    """
+
     tokens = line.split()
     assert(tokens[0].lower() == 'star')
     assert(len(tokens) == 8)
@@ -50,11 +67,20 @@ def parse_star_parameters(line, star):
 
 
 def parse_planet_parameters(line, planet):
-    """считывает данные о планете из строки.
+    """Считывает данные о планете из строки.
     Предполагается такая строка:
-    Planet 5 green 10 1 2 3 4
-    где Planet -- признак объекта-планеты, 5 - визуальный радиус в пикселах, green -- цвет
-    10 -- масса, 1 и 2 -- x и y координаты, 3 и 4 -- скорости Vx и Vy"""
+    Входная строка должна иметь слеюущий формат:
+    Planet <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
+
+    Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
+    Пример строки:
+    Planet 10 red 1000 1 2 3 4
+
+    Параметры:
+
+    **line** — строка с описание планеты.
+    **planet** — объект планеты.
+    """
     tokens = line.split()
     assert(tokens[0].lower() == 'planet')
     assert(len(tokens) == 8)
@@ -68,6 +94,7 @@ def parse_planet_parameters(line, planet):
 
 
 def write_space_objects_data_to_file(output_filename, sun_parameters):
+    """FIXME Дописать. sun_parameters -> ? """
     pass
 
 
