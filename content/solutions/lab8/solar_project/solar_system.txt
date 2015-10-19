@@ -1,1 +1,6 @@
-1000 0 0 0 0 10 red
+Star 30 red 1000 0 0 0 0
+Planet 3 orange 5 50 0 0 10
+Planet 6 blue 10 70 0 0 10
+Planet 5 green 10 100 0 0 10
+Planet 5 red 10 120 0 0 10
+Planet 12 yellow 100 200 0 0 10

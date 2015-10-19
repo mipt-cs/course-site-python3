@@ -45,7 +45,7 @@ def create_planet_image(space, planet):
     x = scale_x(planet.x)
     y = scale_y(planet.y)
     r = planet.R
-    return space.create_oval([x - r, y - r], [x + r, y + r], fill=planet.color)
+    planet.image = space.create_oval([x - r, y - r], [x + r, y + r], fill=planet.color)
 
 
 def update_object_position(space, body):
@@ -54,11 +54,10 @@ def update_object_position(space, body):
     x = scale_x(body.x)
     y = scale_y(body.y)
     r = body.R
-    print(r, x - r, y - r, x + r, y + r)
-    if x + r < 0 or x - r > window_width \
-        or y + r < 0 or y - r > window_height:
+    if x + r < 0 or x - r > window_width or y + r < 0 or y - r > window_height:
         space.coords(body.image, window_width + r, window_height + r)  # положить за пределы окна
     space.coords(body.image, x - r, y - r, x + r, y + r)
+
 
 if __name__ == "__main__":
     print("This module is not for direct call!")
