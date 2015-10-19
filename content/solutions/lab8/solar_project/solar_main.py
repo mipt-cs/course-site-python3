@@ -9,17 +9,24 @@ from solar_input import *
 in_filename = 'solar_system.txt'
 out_filename = 'result_positions.txt'
 
+perform_execution = False
 
 def execution():
     global physical_time
+    global displayed_time
     recalculate_space_objects_positions(space_objects)
-    for body in space_objects:
-        update_object_position(space, body)
+    #for body in space_objects:
+    #    update_object_position(space, body)
     physical_time += dt
-    space.after(110 - int(time_speed.get()), execution)
+    displayed_time.set("%.1f"%physical_time + " seconds gone")
+
+    if perform_execution:
+        space.after(110 - int(time_speed.get()), execution)
 
 
 def start_execution():
+    global perform_execution
+    perform_execution = True
     start_button['text'] = "Pause"
     start_button['command'] = stop_execution
     execution()
@@ -27,6 +34,8 @@ def start_execution():
 
 
 def stop_execution():
+    global perform_execution
+    perform_execution = False
     start_button['text'] = "Start"
     start_button['command'] = start_execution
     print('Paused execution.')
@@ -34,6 +43,7 @@ def stop_execution():
 
 def main():
     global physical_time
+    global displayed_time
     global time_speed
     global space
     global space_objects
