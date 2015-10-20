@@ -1,10 +1,8 @@
 # coding: utf-8
+# license: GPLv3
 
 gravitational_constant = 6.67408E-11
 """Гравитационная постоянная Ньютона G"""
-
-dt = 0.1
-"""Шаг по времени при моделировании"""
 
 
 def calculate_force(body, space_objects):
@@ -25,7 +23,7 @@ def calculate_force(body, space_objects):
         body.Fy += -gravitational_constant*obj.m*body.m*(body.y - obj.y)/r**3
 
 
-def move_space_object(body):
+def move_space_object(body, dt):
     """Перемещает тело в соответствии с действующей на него силой.
 
     Параметры:
@@ -41,18 +39,19 @@ def move_space_object(body):
     body.Vy += ay*dt
 
 
-def recalculate_space_objects_positions(space_objects):
+def recalculate_space_objects_positions(space_objects, dt):
     """Пересчитывает координаты объектов.
 
     Параметры:
 
     **space_objects** — список оьъектов, для которых нужно пересчитать координаты.
+    **dt** — шаг по времени
     """
 
     for body in space_objects:
         calculate_force(body, space_objects)
     for body in space_objects:
-        move_space_object(body)
+        move_space_object(body, dt)
 
 
 if __name__ == "__main__":

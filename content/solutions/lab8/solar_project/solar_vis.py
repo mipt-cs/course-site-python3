@@ -1,8 +1,9 @@
 # coding: utf-8
+# license: GPLv3
 
 """Модуль визуализации.
 Нигде, кроме этого модуля, не используются экранные координаты объектов.
-Функции, создающие графические объекты и перемещающие их на экране, принимают физические координаты
+Функции, создающие гaрафические объекты и перемещающие их на экране, принимают физические координаты
 """
 
 header_font = "Arial-16"
@@ -11,14 +12,20 @@ header_font = "Arial-16"
 window_width = 800
 """Ширина окна"""
 
-window_height = 600
+window_height = 800
 """Высота окна"""
 
-scale_x_factor = 1
-"""Масштабирование по оси **x**"""
+scale_factor = None
+"""Масштабирование экранных координат по отношению к физическим.
+Тип: float
+Мера: количество пикселей на один метр."""
 
-scale_y_factor = 1
-"""Масштабирование по оси **y**"""
+
+def calculate_scale_factor(max_distance):
+    """Вычисляет значение глобальной переменной **scale_factor** по данной характерной длине"""
+    global scale_factor
+    scale_factor = 0.4*min(window_height, window_width)/max_distance
+    print('Scale factor:', scale_factor)
 
 
 def scale_x(x):
@@ -32,7 +39,7 @@ def scale_x(x):
     **x** — x-координата модели.
     """
 
-    return int(x*scale_x_factor) + window_width//2
+    return int(x*scale_factor) + window_width//2
 
 
 def scale_y(y):
@@ -47,7 +54,7 @@ def scale_y(y):
     **y** — y-координата модели.
     """
 
-    return int(-y*scale_y_factor) + window_height//2
+    return int(-y*scale_factor) + window_height//2
 
 
 def create_star_image(space, star):
@@ -80,6 +87,18 @@ def create_planet_image(space, planet):
     planet.image = space.create_oval([x - r, y - r], [x + r, y + r], fill=planet.color)
 
 
+def update_system_name(space, system_name):
+    """Создаёт на холсте текст с названием системы небесных тел.
+    Если текст уже был, обновляет его содержание.
+
+    Параметры:
+
+    **space** — холст для рисования.
+    **system_name** — название системы тел.
+    """
+    space.create_text(30, 80, tag="header", text=system_name, font=header_font)
+
+
 def update_object_position(space, body):
     """Перемещает отображаемый объект на холсте.
 
@@ -92,7 +111,8 @@ def update_object_position(space, body):
     y = scale_y(body.y)
     r = body.R
     if x + r < 0 or x - r > window_width or y + r < 0 or y - r > window_height:
-        space.coords(body.image, window_width + r, window_height + r)  # положить за пределы окна
+        space.coords(body.image, window_width + r, window_height + r,
+                     window_width + 2*r, window_height + 2*r)  # положить за пределы окна
     space.coords(body.image, x - r, y - r, x + r, y + r)
 
 
