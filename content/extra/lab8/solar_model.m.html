@@ -1037,7 +1037,6 @@ table {
     <li class="set"><h3><a href="#header-variables">Module variables</a></h3>
       
   <ul>
-    <li class="mono"><a href="#solar_model.dt">dt</a></li>
     <li class="mono"><a href="#solar_model.gravitational_constant">gravitational_constant</a></li>
   </ul>
 
@@ -1074,15 +1073,6 @@ table {
   <section id="section-items">
     <h2 class="section-title" id="header-variables">Module variables</h2>
       <div class="item">
-      <p id="solar_model.dt" class="name">var <span class="ident">dt</span></p>
-      
-  
-    <div class="desc"><p>Шаг по времени при моделировании</p></div>
-  <div class="source_cont">
-</div>
-
-      </div>
-      <div class="item">
       <p id="solar_model.gravitational_constant" class="name">var <span class="ident">gravitational_constant</span></p>
       
   
@@ -1114,7 +1104,7 @@ table {
       
   <div class="item">
     <div class="name def" id="solar_model.move_space_object">
-    <p>def <span class="ident">move_space_object</span>(</p><p>body)</p>
+    <p>def <span class="ident">move_space_object</span>(</p><p>body, dt)</p>
     </div>
     
 
@@ -1131,7 +1121,7 @@ table {
       
   <div class="item">
     <div class="name def" id="solar_model.recalculate_space_objects_positions">
-    <p>def <span class="ident">recalculate_space_objects_positions</span>(</p><p>space_objects)</p>
+    <p>def <span class="ident">recalculate_space_objects_positions</span>(</p><p>space_objects, dt)</p>
     </div>
     
 
@@ -1139,7 +1129,8 @@ table {
   
     <div class="desc"><p>Пересчитывает координаты объектов.</p>
 <p>Параметры:</p>
-<p><strong>space_objects</strong> — список оьъектов, для которых нужно пересчитать координаты.</p></div>
+<p><strong>space_objects</strong> — список оьъектов, для которых нужно пересчитать координаты.
+<strong>dt</strong> — шаг по времени</p></div>
   <div class="source_cont">
 </div>
 

@@ -1080,7 +1080,7 @@ table {
 Предполагается такая строка:
 Входная строка должна иметь слеюущий формат:
 Planet &lt;радиус в пикселах&gt; &lt;цвет&gt; &lt;масса&gt; <x> <y> <Vx> <Vy></p>
-<p>Здесь (x, y) — координаты зведы, (Vx, Vy) — скорость.
+<p>Здесь (x, y) — координаты планеты, (Vx, Vy) — скорость.
 Пример строки:
 Planet 10 red 1000 1 2 3 4</p>
 <p>Параметры:</p>
@@ -1117,7 +1117,7 @@ Star 10 red 1000 1 2 3 4</p>
       
   <div class="item">
     <div class="name def" id="solar_input.read_space_objects_data_from_file">
-    <p>def <span class="ident">read_space_objects_data_from_file</span>(</p><p>input_filename, space)</p>
+    <p>def <span class="ident">read_space_objects_data_from_file</span>(</p><p>input_filename)</p>
     </div>
     
 
@@ -1126,8 +1126,7 @@ Star 10 red 1000 1 2 3 4</p>
     <div class="desc"><p>Cчитывает данные о космических объектах из файла, создаёт сами объекты
 и вызывает создание их графических образов</p>
 <p>Параметры:</p>
-<p><strong>input_filename</strong> — имя входного файла
-<strong>space</strong> — холст для рисования</p></div>
+<p><strong>input_filename</strong> — имя входного файла</p></div>
   <div class="source_cont">
 </div>
 
@@ -1136,13 +1135,19 @@ Star 10 red 1000 1 2 3 4</p>
       
   <div class="item">
     <div class="name def" id="solar_input.write_space_objects_data_to_file">
-    <p>def <span class="ident">write_space_objects_data_to_file</span>(</p><p>output_filename, sun_parameters)</p>
+    <p>def <span class="ident">write_space_objects_data_to_file</span>(</p><p>output_filename, space_objects)</p>
     </div>
     
 
     
   
-    <div class="desc"><p>FIXME Дописать. sun_parameters -&gt; ?</p></div>
+    <div class="desc"><p>Сохраняет данные о космических объектах в файл.
+Строки должны иметь следующий формат:
+Star &lt;радиус в пикселах&gt; &lt;цвет&gt; &lt;масса&gt; <x> <y> <Vx> <Vy>
+Planet &lt;радиус в пикселах&gt; &lt;цвет&gt; &lt;масса&gt; <x> <y> <Vx> <Vy></p>
+<p>Параметры:</p>
+<p><strong>output_filename</strong> — имя входного файла
+<strong>space_objects</strong> — список объектов планет и звёзд</p></div>
   <div class="source_cont">
 </div>
 

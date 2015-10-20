@@ -1040,8 +1040,7 @@ table {
       
   <ul>
     <li class="mono"><a href="#solar_vis.header_font">header_font</a></li>
-    <li class="mono"><a href="#solar_vis.scale_x_factor">scale_x_factor</a></li>
-    <li class="mono"><a href="#solar_vis.scale_y_factor">scale_y_factor</a></li>
+    <li class="mono"><a href="#solar_vis.scale_factor">scale_factor</a></li>
     <li class="mono"><a href="#solar_vis.window_height">window_height</a></li>
     <li class="mono"><a href="#solar_vis.window_width">window_width</a></li>
   </ul>
@@ -1051,11 +1050,13 @@ table {
     <li class="set"><h3><a href="#header-functions">Functions</a></h3>
       
   <ul>
+    <li class="mono"><a href="#solar_vis.calculate_scale_factor">calculate_scale_factor</a></li>
     <li class="mono"><a href="#solar_vis.create_planet_image">create_planet_image</a></li>
     <li class="mono"><a href="#solar_vis.create_star_image">create_star_image</a></li>
     <li class="mono"><a href="#solar_vis.scale_x">scale_x</a></li>
     <li class="mono"><a href="#solar_vis.scale_y">scale_y</a></li>
     <li class="mono"><a href="#solar_vis.update_object_position">update_object_position</a></li>
+    <li class="mono"><a href="#solar_vis.update_system_name">update_system_name</a></li>
   </ul>
 
     </li>
@@ -1075,7 +1076,7 @@ table {
   <h1 class="title"><span class="name">solar_vis</span> module</h1>
   <p>Модуль визуализации.
 Нигде, кроме этого модуля, не используются экранные координаты объектов.
-Функции, создающие графические объекты и перемещающие их на экране, принимают физические координаты</p>
+Функции, создающие гaрафические объекты и перемещающие их на экране, принимают физические координаты</p>
   
 
   </header>
@@ -1092,19 +1093,12 @@ table {
 
       </div>
       <div class="item">
-      <p id="solar_vis.scale_x_factor" class="name">var <span class="ident">scale_x_factor</span></p>
+      <p id="solar_vis.scale_factor" class="name">var <span class="ident">scale_factor</span></p>
       
   
-    <div class="desc"><p>Масштабирование по оси <strong>x</strong></p></div>
-  <div class="source_cont">
-</div>
-
-      </div>
-      <div class="item">
-      <p id="solar_vis.scale_y_factor" class="name">var <span class="ident">scale_y_factor</span></p>
-      
-  
-    <div class="desc"><p>Масштабирование по оси <strong>y</strong></p></div>
+    <div class="desc"><p>Масштабирование экранных координат по отношению к физическим.
+Тип: float
+Мера: количество пикселей на один метр.</p></div>
   <div class="source_cont">
 </div>
 
@@ -1129,6 +1123,21 @@ table {
       </div>
 
     <h2 class="section-title" id="header-functions">Functions</h2>
+      
+  <div class="item">
+    <div class="name def" id="solar_vis.calculate_scale_factor">
+    <p>def <span class="ident">calculate_scale_factor</span>(</p><p>max_distance)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Вычисляет значение глобальной переменной <strong>scale_factor</strong> по данной характерной длине</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
       
   <div class="item">
     <div class="name def" id="solar_vis.create_planet_image">
@@ -1219,6 +1228,25 @@ table {
 <p>Параметры:</p>
 <p><strong>space</strong> — холст для рисования.
 <strong>body</strong> — тело, которое нужно переместить.</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+      
+  <div class="item">
+    <div class="name def" id="solar_vis.update_system_name">
+    <p>def <span class="ident">update_system_name</span>(</p><p>space, system_name)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Создаёт на холсте текст с названием системы небесных тел.
+Если текст уже был, обновляет его содержание.</p>
+<p>Параметры:</p>
+<p><strong>space</strong> — холст для рисования.
+<strong>system_name</strong> — название системы тел.</p></div>
   <div class="source_cont">
 </div>
 
