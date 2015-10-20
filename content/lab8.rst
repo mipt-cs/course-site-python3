@@ -2,7 +2,6 @@
 ##########################
 
 :date: 2015-10-17 14:31
-:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
@@ -56,7 +55,7 @@
 Распределение ролей
 -------------------
 
-Программист А: solar_main.py, solar_vis.py
+Программист А: solar_objects.py, solar_vis.py
 
 Программист В: solar_model.py, solar_input.py
 
@@ -86,6 +85,15 @@
 
 Визуализация летающего шарика
 
+Результат работы
+================
 
+Пример солечной системы:
 
+.. image:: {filename}/images/lab8/solar_main.gif
+   :width: 350 px
 
+Пример двойной солнечной системы
+
+.. image:: {filename}/images/lab8/double_star.gif
+   :width: 350 px
