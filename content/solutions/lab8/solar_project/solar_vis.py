@@ -17,7 +17,9 @@ window_height = 800
 
 scale_factor = None
 """Масштабирование экранных координат по отношению к физическим.
+
 Тип: float
+
 Мера: количество пикселей на один метр."""
 
 
@@ -63,6 +65,7 @@ def create_star_image(space, star):
     Параметры:
 
     **space** — холст для рисования.
+
     **star** — объект звезды.
     """
 
@@ -78,6 +81,7 @@ def create_planet_image(space, planet):
     Параметры:
 
     **space** — холст для рисования.
+
     **planet** — объект планеты.
     """
 
@@ -94,6 +98,7 @@ def update_system_name(space, system_name):
     Параметры:
 
     **space** — холст для рисования.
+
     **system_name** — название системы тел.
     """
     space.create_text(30, 80, tag="header", text=system_name, font=header_font)
@@ -105,6 +110,7 @@ def update_object_position(space, body):
     Параметры:
 
     **space** — холст для рисования.
+
     **body** — тело, которое нужно переместить.
     """
     x = scale_x(body.x)
