@@ -11,6 +11,7 @@ def calculate_force(body, space_objects):
     Параметры:
 
     **body** — тело, для которого нужно вычислить дейстующую силу.
+
     **space_objects** — список объектов, которые воздействуют на тело.
     """
 
@@ -45,6 +46,7 @@ def recalculate_space_objects_positions(space_objects, dt):
     Параметры:
 
     **space_objects** — список оьъектов, для которых нужно пересчитать координаты.
+
     **dt** — шаг по времени
     """
 
