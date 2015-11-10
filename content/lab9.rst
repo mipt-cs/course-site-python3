@@ -4,6 +4,7 @@
 :date: 2015-10-27 15:46
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540109
 :test_comment: Контрольная №9
+:lecture_link: https://youtu.be/0Rck4TJnH9Q
 
 .. default-role:: code
 .. contents:: Содержание
