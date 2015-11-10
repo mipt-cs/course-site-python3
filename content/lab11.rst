@@ -75,7 +75,7 @@
 	>>> b.doSmth()
 	'Hello'
 	>>> MySecondClass.doSmth(b)
-	'Python'
+	'Hello'
 	>>> b.msg = 'Good by!'
 	>>> b.doSmth()
 	'Good by'
