@@ -76,7 +76,7 @@
 	'Hello'
 	>>> MySecondClass.doSmth(b)
 	'Hello'
-	>>> b.msg = 'Good by!'
+	>>> b.msg = 'Good by'
 	>>> b.doSmth()
 	'Good by'
 
