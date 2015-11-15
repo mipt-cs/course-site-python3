@@ -3,6 +3,7 @@
 
 :date: 2015-10-20 14:31
 :lecture_link: https://youtu.be/L-8Nxs4bWhI
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание
@@ -139,7 +140,7 @@
 
 Пример солечной системы
 -----------------------
- 
+
 .. image:: {filename}/images/lab8/solar_main.gif
    :width: 350 px
 

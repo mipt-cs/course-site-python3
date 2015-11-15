@@ -3,6 +3,7 @@
 
 :date: 2015-09-22 11:00
 :lecture_link: https://youtu.be/31o8Dqg1byI
+:lecture_pdf: true
 :test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540104
 :test_comment: Контрольная №4
 :lecture_link: https://youtu.be/31o8Dqg1byI
@@ -21,7 +22,7 @@
 .. _task: {filename}/code/lab4/task.py
 
 .. code-block:: python
-   
+
    import robot
    # создаем робота
    r = robot.rmap()
@@ -96,10 +97,10 @@
    r.lm('task1')
 
    def task():
-      if r.fu(): 
+      if r.fu():
          r.up()
          r.dn()
-        if r.wu(): 
+        if r.wu():
            r.pt()
 
     r.start(task)
@@ -172,7 +173,7 @@
     :encoding: utf-8
 
 
-Упражнение №7	
+Упражнение №7
 -------------
 
 Где-то в поле Робота находится горизонтальный коридор шириной в одну клетку неизвестной длины. Робот из верхнего левого угла поля должен дойти до коридора и закрасить клетки внутри него, как показано на рисунке. По полю Робота в произвольном порядке располагаются стены, но расстояние между ними больше одной клетки.

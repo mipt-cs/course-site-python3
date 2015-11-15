@@ -15,7 +15,10 @@
             <tr>
                 <td>{{ loop.index }}</td>
                 <td><a href="{{ SITEURL }}/{{ lab.url }}">{{ lab.title }}</a></td>
-                <td>{% if lab.lecture_link %}<a href="{{ lab.lecture_link }}">YouTube</a>{% endif %}{% if lab.lecture_comment %}. {{ lab.lecture_comment }}{% endif %}</td>
+                <td>
+                    {% if lab.lecture_link %}<a href="{{ lab.lecture_link }}">YouTube</a>{% endif %}{% if lab.lecture_comment %}. {{ lab.lecture_comment }}{% endif %}
+                    {% if lab.lecture_pdf %}{% if lab.lecture_link %}&nbsp;/&nbsp;{% endif %}<a href="{{ SITEURL }}/lections/lection_{{ loop.index}}.pdf ">PDF</a>{% endif %}
+                </td>
                 <td>{% if lab.test_link %}<a href="{{ lab.test_link }}">{% endif %}{{ lab.test_comment }}{% if lab.test_link %}</a>{% endif %}</td>
             </tr>
             {% endfor %}

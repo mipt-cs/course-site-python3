@@ -1,3 +1,9 @@
 [submodule "plugins"]
 	path = plugins
 	url = https://github.com/getpelican/pelican-plugins
+[submodule "lections"]
+	path = content/lections
+	url = https://github.com/mipt-cs-on-python3/lections.git
+[submodule "content/lections"]
+	path = content/lections
+	url = https://github.com/mipt-cs-on-python3/lections.git

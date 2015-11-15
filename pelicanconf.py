@@ -52,7 +52,7 @@ PLUGINS = ['extract_toc', 'code_include']
 
 STATIC_PATHS = [
     'images',
-    'code'
+    'code',
 ]
 
 EXTRA_PATH_METADATA = {
@@ -64,4 +64,8 @@ for root, directories, filenames in os.walk(extra):
     for filename in filenames:
         STATIC_PATHS.append(os.path.join(root,filename)[len(extra)-5:])
 
-READERS = {'html': None}
+for f in os.listdir(os.path.join(os.path.dirname(__file__), 'content', 'lections')):
+    if f.endswith('.pdf'):
+        STATIC_PATHS.append(os.path.join('lections', f))
+
+READERS = {'html': None, 'md': None}
