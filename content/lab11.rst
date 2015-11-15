@@ -2,6 +2,7 @@
 #########################################
 
 :date: 2015-11-04 15:46
+:lecture_link: https://youtu.be/EdUoSo9Dhzk
 
 .. default-role:: code
 .. contents:: Содержание
@@ -76,7 +77,7 @@
 	'Hello'
 	>>> MySecondClass.doSmth(b)
 	'Hello'
-	>>> b.msg = 'Good by!'
+	>>> b.msg = 'Good by'
 	>>> b.doSmth()
 	'Good by'
 
