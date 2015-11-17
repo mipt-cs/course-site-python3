@@ -224,8 +224,8 @@
 1. Разбейтесь по командам по два программиста и сядьте за один компьютер.
 
 2. Сделайте fork репозитория `arithmetic_dragons`_
-3. 
-4. .. _`arithmetic_dragons`: https://github.com/mipt-cs-on-python3/arithmetic_dragons
+
+.. _`arithmetic_dragons`: https://github.com/mipt-cs-on-python3/arithmetic_dragons
 
 3. Реализуйте следующие классы:
 
