@@ -28,10 +28,9 @@ class Dragon(Enemy):
 
 
 class GreenDragon(Dragon):
-    def __init__(self):
-        self._health = 200
-        self._attack = 10
-        self._color = 'зелёный'
+    _health = 200
+    _attack = 10
+    _color = 'зелёный'
 
     def question(self):
         x = randint(1,100)
@@ -42,10 +41,9 @@ class GreenDragon(Dragon):
 
 
 class RedDragon(Dragon):
-    def __init__(self):
-        self._health = 100
-        self._attack = 5
-        self._color = 'красный'
+    _health = 100
+    _attack = 5
+    _color = 'красный'
 
     def question(self):
         x = randint(1, 100)
@@ -56,10 +54,9 @@ class RedDragon(Dragon):
 
 
 class BlackDragon(Dragon):
-    def __init__(self):
-        self._health = 400
-        self._attack = 15
-        self._color = 'чёрный'
+    _health = 400
+    _attack = 15
+    _color = 'чёрный'
 
     def question(self):
         x = randint(1, 100)
