@@ -1,4 +1,5 @@
-__author__ = 'tkhirianov'
+# coding: utf-8
+# license: GPLv3
 
 from gameunit import *
 from random import randint, choice

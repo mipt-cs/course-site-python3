@@ -1,5 +1,5 @@
-__author__ = 'tkhirianov'
-
+# coding: utf-8
+# license: GPLv3
 
 class Attacker:
     _health = None

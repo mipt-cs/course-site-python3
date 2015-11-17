@@ -1,3 +1,6 @@
+# coding: utf-8
+# license: GPLv3
+
 from enemies import *
 from hero import *
 

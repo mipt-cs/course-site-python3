@@ -1,6 +1,5 @@
 # coding: utf-8
 # license: GPLv3
-__author__ = 'tkhirianov'
 
 from tournament import *
 
