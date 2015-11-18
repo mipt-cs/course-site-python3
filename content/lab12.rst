@@ -2,6 +2,7 @@
 ####################################
 
 :date: 2015-11-13 17:00
+:lecture_link: https://youtu.be/BmKd1aqrnRg
 
 .. default-role:: code
 .. contents:: Содержание
