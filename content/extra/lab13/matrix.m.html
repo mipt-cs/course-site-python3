@@ -1044,14 +1044,19 @@ table {
           
   <ul>
     <li class="mono"><a href="#matrix.Matrix.__init__">__init__</a></li>
+    <li class="mono"><a href="#matrix.Matrix.__add__">__add__</a></li>
     <li class="mono"><a href="#matrix.Matrix.determinant">determinant</a></li>
+    <li class="mono"><a href="#matrix.Matrix.__eq__">__eq__</a></li>
     <li class="mono"><a href="#matrix.Matrix.get">get</a></li>
     <li class="mono"><a href="#matrix.Matrix.get_m">get_m</a></li>
     <li class="mono"><a href="#matrix.Matrix.get_n">get_n</a></li>
     <li class="mono"><a href="#matrix.Matrix.get_size">get_size</a></li>
     <li class="mono"><a href="#matrix.Matrix.invert">invert</a></li>
+    <li class="mono"><a href="#matrix.Matrix.__mul__">__mul__</a></li>
     <li class="mono"><a href="#matrix.Matrix.set">set</a></li>
+    <li class="mono"><a href="#matrix.Matrix.__sub__">__sub__</a></li>
     <li class="mono"><a href="#matrix.Matrix.transpose">transpose</a></li>
+    <li class="mono"><a href="#matrix.Matrix.__truediv__">__truediv__</a></li>
   </ul>
 
         </li>
@@ -1109,7 +1114,25 @@ table {
 <p>Параметры:</p>
 <p><strong>m</strong>, <strong>n</strong> — размеры матрицы</p>
 <p>или</p>
-<p><strong>m</strong> — список списков со значениями элементом матрицы</p></div>
+<p><strong>m</strong> — список списков со значениями элементов матрицы</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="matrix.Matrix.__add__">
+    <p>def <span class="ident">__add__</span>(</p><p>self, other)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Выполняет сложение двух матриц</p>
+<p>Параметры:</p>
+<p><strong>other</strong> — матрица для сложения</p>
+<p>Возвращает новую матрицу, равную сумме исходных</p></div>
   <div class="source_cont">
 </div>
 
@@ -1125,6 +1148,24 @@ table {
     
   
     <div class="desc"><p>Вычисляет определитель матрицы</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="matrix.Matrix.__eq__">
+    <p>def <span class="ident">__eq__</span>(</p><p>self, other)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Выполняет сравнение двух матриц.</p>
+<p>Параметры:</p>
+<p><strong>other</strong> — матрица для сравнения</p>
+<p>Возвращает True или False в зависимости от равенства матриц</p></div>
   <div class="source_cont">
 </div>
 
@@ -1209,6 +1250,23 @@ table {
   
             
   <div class="item">
+    <div class="name def" id="matrix.Matrix.__mul__">
+    <p>def <span class="ident">__mul__</span>(</p><p>self, other)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Выполняет умножение матрицы на другую матрицу или скаляр</p>
+<p>Параметры:</p>
+<p><strong>other</strong> — другая матрица или скаляр для умножения</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
     <div class="name def" id="matrix.Matrix.set">
     <p>def <span class="ident">set</span>(</p><p>self, i, j, value)</p>
     </div>
@@ -1227,6 +1285,24 @@ table {
   
             
   <div class="item">
+    <div class="name def" id="matrix.Matrix.__sub__">
+    <p>def <span class="ident">__sub__</span>(</p><p>self, other)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Выполняет вычитание двух матриц</p>
+<p>Параметры:</p>
+<p><strong>other</strong> — матрица для вычитания</p>
+<p>Возвращает новую матрицу, равную разности исходных</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
     <div class="name def" id="matrix.Matrix.transpose">
     <p>def <span class="ident">transpose</span>(</p><p>self)</p>
     </div>
@@ -1235,6 +1311,23 @@ table {
     
   
     <div class="desc"><p>Выполнеят транспонирование матрицы</p></div>
+  <div class="source_cont">
+</div>
+
+  </div>
+  
+            
+  <div class="item">
+    <div class="name def" id="matrix.Matrix.__truediv__">
+    <p>def <span class="ident">__truediv__</span>(</p><p>self, other)</p>
+    </div>
+    
+
+    
+  
+    <div class="desc"><p>Выполняет деление матрицы на число</p>
+<p>Параметры:</p>
+<p><strong>other</strong> — число, на которое требуется разделить матрицу</p></div>
   <div class="source_cont">
 </div>
 

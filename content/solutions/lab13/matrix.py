@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Matrix:
     """Класс матрицы"""
 
@@ -13,7 +12,7 @@ class Matrix:
 
         или
 
-        **m** — список списков со значениями элементом матрицы
+        **m** — список списков со значениями элементов матрицы
         """
 
         if isinstance(m, int) and isinstance(n, int):
