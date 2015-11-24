@@ -96,7 +96,7 @@ class SimpleTests(TestCase):
 
         c = a + b
 
-        self.assertTrue(c, _c)
+        self.assertEqual(c, _c)
 
     def testMatrixSub(self):
         """Вычитание матриц"""
