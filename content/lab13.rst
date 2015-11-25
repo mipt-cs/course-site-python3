@@ -2,9 +2,8 @@
 #########################
 
 :date: 2015-11-23 10:30
-:status: draft
 
-.. :lecture_link: https://youtu.be/BmKd1aqrnRg
+.. :lecture_link: https://youtu.be/eGcXFctrY54
 
 .. default-role:: code
 .. contents:: Содержание
