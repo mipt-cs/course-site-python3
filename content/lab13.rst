@@ -3,7 +3,7 @@
 
 :date: 2015-11-23 10:30
 
-.. :lecture_link: https://youtu.be/eGcXFctrY54
+:lecture_link: https://youtu.be/eGcXFctrY54
 
 .. default-role:: code
 .. contents:: Содержание
