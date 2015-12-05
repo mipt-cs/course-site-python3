@@ -4,7 +4,7 @@
 :date: 2015-09-22 11:00
 :lecture_link: https://youtu.be/31o8Dqg1byI
 :lecture_pdf: true
-:test_link: http://kpm8.mipt.ru:8202/cgi-bin/new-client?contest_id=540104
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540104
 :test_comment: Контрольная №4
 :lecture_link: https://youtu.be/31o8Dqg1byI
 :show_solutions: yes
