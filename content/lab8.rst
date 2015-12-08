@@ -3,8 +3,7 @@
 
 :date: 2015-10-20 14:31
 :lecture_link: https://youtu.be/L-8Nxs4bWhI
-
-.. :lecture_pdf: true
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание
