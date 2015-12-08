@@ -79,9 +79,9 @@
 #. Поиск корня функции методом бисекции.
 #. Поиск значения в упорядоченном массиве `методом бисекции`_.
 
-.. _`Быстрая сортировка` :http://hecs.info/pages/19-20.html
+.. _`Быстрая сортировка`: http://hecs.info/pages/19-20.html
 .. _`Задачи о Кузнечике на прямой`: http://hecs.info/pages/16-16.html
 .. _`Динамическое программирование`: http://hecs.info/pages/17-17.html
-.. _`методом бисекции` :http://hecs.info/pages/19-19.html
+.. _`методом бисекции`: http://hecs.info/pages/19-19.html
 .. _`Генерация всех перестановок`: http://hecs.info/pages/16-22.html
-.. _`Очередь` :http://foxford.ru/wiki/informatika/ochered-na-python
+.. _`Очередь`: http://foxford.ru/wiki/informatika/ochered-na-python
