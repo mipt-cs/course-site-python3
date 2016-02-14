@@ -9,7 +9,7 @@
 Введение
 ========
 
-Целью текущего и следующего занятий будет знакомство с библиотекой pygame и разработка игры PacMan 
+Целью текущего и следующего занятий будет знакомство с библиотекой pygame и разработка игры Pacman 
 
 Игровой процесс
 ---------------
@@ -17,7 +17,7 @@
 Пакман – игровое существо, похожее на колобка, способное перемещаться по лабиринту, разрушать некоторые стенки и поедать артифакты.
 Цель игры – сьесть все белые точки на уровне и избежать столкновения с привиденями. Помимо точек на уровне могут находится другие сьедобные артифакты, за поедание которых начисляются дополнительные очки.  Некоторые из них могут быть замурованы в стены. 
 Стены уровня бывают двух типов – разрушаемые и неразрушаемые. Разрушать стены может только Пакман.
-Приведения перемещаются вдоль стен со скоростью близкой к скорости Пакмана, и на перекрестках случайным образом принимают решение куда продолжать движение. Количество привидений зависит от сложности уровня. 
+Привидения перемещаются вдоль стен со скоростью близкой к скорости Пакмана, и на перекрестках случайным образом принимают решение куда продолжать движение. Количество привидений зависит от сложности уровня. 
 
 Улучшения игры:
 
@@ -25,15 +25,15 @@
 
 1. Ускорение. В  течение некоторого времени Пакман двигается быстрее.
 2. Возможность проламывать неразрушаемые стены. При этом стены по периметру лабиринта разрушить нельзя.
-3. Выживание в случае со встречей с приведением. (Тут может быть как и действие по времени, так и до первой встречи)
+3. Выживание в случае со встречей с привидением. (Тут может быть как и действие по времени, так и до первой встречи)
 4. Режим невидимки – в случае если в модели перемещения привидений реализовано движение в сторону пакмана, то на некоторое время они становятся “слепыми”
 
-Приведения могут быть нескольких типов:
+Привидения могут быть нескольких типов:
 
 1. Бестолковые – перемещающиеся вдоль стен и случайно поворачивающие на перекрестках
 2. С зрением – если находятся с Пакманом на одной линии то начинают двигаться за ним и при этом “помнят” куда он повернул на перекрестке. Если не Пакмана нет в поле зрения то двигаются как в п.1
 
-Первоначальное расположение пакмана и приведений может быть как задано на карте так и при каждом старте уровня определяться случайным образом.
+Первоначальное расположение пакмана и привидений может быть как задано на карте так и при каждом старте уровня определяться случайным образом.
 
 Карта
 -----
@@ -47,11 +47,14 @@ O – разрушаемая стена
 Библиотека PyGame
 =================
 
-PyGame – библиотека, для написания игр на языке Python. Поддерживается работа с 2D/3D и существует возможность подключать сторонние графические и физические движки.
+PyGame (PYGAME_)– библиотека, для написания игр на языке Python. Поддерживается работа с 2D/3D и существует возможность подключать сторонние графические и физические движки.
 Программа HelloWorld с использованием PyGame выглядит следующим образом:
 import pygame
  
+.. _PYGAME: http://www.pygame.org/
+
 .. code-block:: python
+
 	import pygame
 	from pygame.locals import *
 
@@ -59,10 +62,10 @@ import pygame
 	window = pygame.display.set_mode((640, 480)) # Задаем размеры окошка
 	pygame.display.set_caption('Hello world') # Задаем загаловок окошка
 
-
 В данном примере окошко исчезает сразу после появления. Следующий шаг – добавим цикл, принимающий и обрабатывающий собщения:
 
 .. code-block:: python
+
 	import sys
 	import pygame
 	from pygame.locals import *
@@ -90,6 +93,7 @@ import pygame
  
 	if __name__ == '__main__': main()
 
+
 После инициализации приложения добавляется бесконечный цикл, принимающий и обрабатывающий сообщения от клавиатуры и мыши. В данном случае приложение завершает свою работу при нажатии на кнопку закрытия окна или клавишу Esc.
 
 Далее загрузим из файла и выведем на экран фоновое изображение и персонажа. 
@@ -97,81 +101,154 @@ import pygame
 Отрисовку фона зададим функцией:
 
 .. code-block:: python
-	back = pygame.image.load("background.png") # загружаем фоновую картинку
+	
+	def draw_background(scr, img=None):  # scr - обьект класса Surface для рисования в окне приложения, img - фоновая картинка, в случае отсутствия, осуществляется заливка черным фоном.    
+		if img:
+	        	scr.blit(img, (0, 0)) # Рисуем фоновую картинку 
+		else:
+        		bg = pygame.Surface(scr.get_size()) # Если картинка не передана, создаем изображение  
+        		bg.fill((0, 0, 0))                  # Заполняем изображение черным цветом
+        		scr.blit(bg, (0, 0))                # Рисуем изображение
+	.....	
+	# далее в коде        
+	background = pygame.image.load("./resources/background.png") # загружаем изображение 
+	screen = pygame.display.get_surface() # получаем обьект Surface для рисования в окне
+        draw_background(screen, background)
 
-	def draw_background():
-		screen = pygame.display.get_surface() # Получаем поверхность, на которой будем рисовать
-		background = pygame.Surface(screen.get_size()) # и ее размер
-		background = background.convert()
-		background.fill((0, 0, 0)) # заполняем цветом
-		screen.blit(background, (0, 0)) # рисуем заполненный одним цветом бэкграунд
-    		screen.blit(back, (0, 0)) # и рисуем ее
-		return back
 
-Для более удобных манипуляций с изображениями игровых персонажей существует класс pygame.sprite.Sprite. Создадим базовый класс для персонажей игры:
+Класс Surface (SCREEN_) создан для рисования графических примитивов в памяти с возможностью последующего вывода на экран. 
+
+.. _SCREEN: http://www.pygame.org/docs/ref/surface.html
+
+Для манипуляций с изображениями игровых персонажей существует класс pygame.sprite.Sprite (SPRITE_). Создадим базовый класс для персонажей игры:
+
+.. _SPRITE: http://www.pygame.org/docs/ref/sprite.html
 
 .. code-block:: python	
 
 	class GameObject(pygame.sprite.Sprite):
-		def __init__(self, img, x, y):
+		# img - путь к файлу с изображением персонажа
+		# x, y - координаты персонажа на карте
+	        # tile_size - размер клетки игрового поля в пикселях (предполагается, что клетки игрового поля квадратные)
+		# map_size - размер карты игрового поля в клетка (предполагается, что карта квадратная)
+		def __init__(self, img, x, y, tile_size, map_size):
 			pygame.sprite.Sprite.__init__(self)
-			self.image =  pygame.image.load(img)
-			self.rect = self.image.get_rect()
-			screen = pygame.display.get_surface()
-			self.area = screen.get_rect()
+			self.image = pygame.image.load(img) # загружаем изображение персонажа  
+			self.screen_rect = None             # переменная хранящая размеры и координаты отрисовки персонажа на экране
+			self.x = 0			    # x, y - координаты положения персонажа на карте
+			self.y = 0
+			self.tick = 0			    # время, прошедшее с момента создания персонажа, в условных единицах (см. ниже)
+			self.tile_size = tile_size
+			self.map_size = map_size
+			self.set_coord(x, y)                # инициализация экранных координат
+
+		def set_coord(self, x, y):
 			self.x = x
 			self.y = y
-			self.coord = (x, y)
+			self.screen_rect = Rect(floor(x) * self.tile_size, floor(y) * self.tile_size, self.tile_size, self.tile_size )
+
+		def game_tick(self):                       # функция должна вызываться с каждым тиком игровых часов 
+			self.tick += 1
+
+		def draw(self, scr):                       # отображение персонажа на экране
+			scr.blit(self.image, (self.screen_rect.x, self.screen_rect.y))
 
 и класс конкретного героя:
 
 .. code-block:: python	
 
-	class Monster(GameObject):
-		def __init__(self, cX, xY):
-			GameObject.__init__(self, cX, cY, “./resourses/monster.png”)
+	class Ghost(GameObject):
+		def __init__(self, x, y, tile_size, map_size):
+			GameObject.__init__(self, x, y, “./resourses/monster.png”, tile_size, map_size)
 
 
 В данном примере примере координаты игрового обьекта задаются в пикселях относительно левого верхнего угла экрана. Поскольку игровое поле разбито на квадраты одинакового размера (тайлы) то в “игровом мире” удобее использовать тайловую систему координат.
 Перевод координат их игровой в экранную осуществляется по формуле:
 
-	Хэкр = размер тайла * Xигр
-	Yэкр = размер тайла * Yигр
+Х\ :sub:`экр`\ = размер тайла * X\ :sub:`игр`\
+Y\ :sub:`экр`\ = размер тайла * Y\ :sub:`игр`\
 
-Поскольку игровому процессу актуальны координаты на игровом поле а не на экране, перепишем класс GameObject:
-
-.. code-block:: python	
-	class GameObject(pygame.sprite.Sprite):
-		def __init__(self, img, x, y, tile_size):
-			pygame.sprite.Sprite.__init__(self)
-			self.image =  pygame.image.load(img)
-			self.rect = self.image.get_rect()
-			screen = pygame.display.get_surface()
-			self.area = screen.get_rect()
-			self. tile_size = tile_size
-			set_coord(x, y)
-
-		def get_coord():
-			return (self.x,self.y)
-
-		def get_normalized_coord():
-			return (floor(self.x), floor(self.y))
-
-		def set_coord(x,y)
-			self.x = x
-			self.y = y
-			self.coord = (floor(x) * tile_size, floor(y) * tile_size)
-    
-    
 В играх время течет дискретно, и измеряется в тиках (tick). Если обьект перемещается с некоторой скоростью, то координата будет выражатся по формуле x = x0 + v * n, где n = 0, 1, 2,… Для того чтобы обьект переместился на 1 клетку за 10 тиков, его скорость должна равняться 1/10, а координата будет принимать дробные значения. Номер позиции тайла на игровом поле будет равен floor(x). Иначе говоря, координаты обьекта на игровом поле могут принимать вещественные значения, в которых целая часть определяет столбец/строку в которой должен быть отрисован тайл.
      
 Обьеденим вышесказанное воедино, и получим игровой персонаж и элемент стены на фоне.
 
 .. code-block:: python	
 
-	TBD
+	import sys
+	import pygame
+	from pygame.locals import *
+	from math import floor
+	import random
 
-Для описания игрового поля можно использовать двумерный массив, каждый элемент которого описывает обьект, находящийся в данной клетке. Данный подход хорош ровно до того момента, пока не появится два персонажа, которые могут одновременно находится в одном месте игрового поля. Например – два приведения, движущиеся навстречу друг другу. Поэтому для описания игрового мира проще всего использовать двухмерный массив например списков. 
+
+	def init_window():
+		pygame.init()
+		pygame.display.set_mode((512, 512))
+		pygame.display.set_caption('Packman')
+
+
+	def draw_background(scr, img=None):
+		if img:
+			scr.blit(img, (0, 0))
+		else:
+			bg = pygame.Surface(scr.get_size())
+			bg.fill((0, 0, 0))
+			scr.blit(bg, (0, 0))
+
+
+	class GameObject(pygame.sprite.Sprite):
+ 		def __init__(self, img, x, y, tile_size, map_size):
+			pygame.sprite.Sprite.__init__(self)
+			self.image = pygame.image.load(img)
+			self.screen_rect = None
+			self.x = 0
+			self.y = 0
+			self.tick = 0
+			self.tile_size = tile_size
+			self.map_size = map_size
+			self.set_coord(x, y)
+
+		def set_coord(self, x, y):
+			self.x = x
+			self.y = y
+			self.screen_rect = Rect(floor(x) * self.tile_size, floor(y) * self.tile_size, self.tile_size, self.tile_size )
+
+		def game_tick(self):
+			self.tick += 1
+
+		def draw(self, scr):
+			scr.blit(self.image, (self.screen_rect.x, self.screen_rect.y))
+
+		
+	class Ghost(GameObject):
+		def __init__(self, x, y, tile_size, map_size):
+			GameObject.__init__(self, './resources/ghost.png', x, y, tile_size, map_size)
+
+
+	def process_events(events):
+		for event in events:
+			if (event.type == QUIT) or (event.type == KEYDOWN and event.key == K_ESCAPE):
+				sys.exit(0)
+
+
+	if __name__ == '__main__':
+		init_window()
+		tile_size = 32
+		map_size = 16
+		ghost = Ghost(5, 5, tile_size, map_size)
+		background = pygame.image.load("./resources/background.png")
+		screen = pygame.display.get_surface()
+
+		while 1:
+			process_events(pygame.event.get())
+			pygame.time.delay(100)
+			ghost.game_tick()
+			draw_background(screen, background)
+			ghost.draw(screen)
+			pygame.display.update()
+
+
+Для описания игрового поля можно использовать двумерный массив, каждый элемент которого описывает обьект, находящийся в данной клетке. Данный подход хорош ровно до того момента, пока не появится два персонажа, которые могут одновременно находится в одном месте игрового поля. Например – два привидения, движущиеся навстречу друг другу. Поэтому для описания игрового мира проще всего использовать двухмерный массив например списков. 
 В начальный момент в массиве содержится карта, загруженная из файла. Опишем карту в виде класса Map:
 
 .. code-block:: python	
@@ -196,35 +273,111 @@ import pygame
 
 		#Метод, осущеставляющий отрисовку всего игрового поля, реализуется следующим образом:
 		def drawAll(self):
-			# TODO
+			
 
-
-Пакман перемещается по игровому полю только когда игрок нажимает соотвуствующую клавишу. Приведения же двигаются сами все время. 
-Это достигается модификацией бесконечного цикла, обрабатывающего сообщения:
+Привидения двигаются все время сами. Это достигается модификацией класса Ghost:
 
 .. code-block:: python	
 
-	while 1:
-		process_events(pygame.event.get()) # Обрабатываем игровые события
-		move_ghosts()   # функция которая перемещает приведения по карте
-		pygame.time.delay(100) #задержка в 100 мс
+	class Ghost(GameObject):
+		def __init__(self, x, y, tile_size, map_size):
+			GameObject.__init__(self, './resources/ghost.png', x, y, tile_size, map_size)
+			self.direction = 0                # 0 - неподвижно, 1 - вправо, 2 = вниз, 3 - влево, 4 - вверх
+			self.velocity = 4.0 / 10.0        # Скорость в клетках / игровой тик 
 
+		def game_tick(self):
+			super(Ghost, self).game_tick()
+			if self.tick % 20 == 0 or self.direction == 0: # Каждые 20 тиков случайно выбираем направление движения. Вариант self.direction == 0 соотвествует моменту первого вызова метода game_tick() у обьекта                                                                           
+				self.direction = random.randint(1, 4)
+
+			if self.direction == 1:                        # Для каждого направления движения увеличиваем координату до тех пор пока не достгнем стены. Далее случайно меняем напрвление движения      
+				self.x += self.velocity
+				if self.x >= self.map_size-1:
+					self.x = self.map_size-1
+					self.direction = random.randint(1, 4)
+			elif self.direction == 2:
+				self.y += self.velocity
+				if self.y >= self.map_size-1:
+					self.y = self.map_size-1
+					self.direction = random.randint(1, 4)
+			elif self.direction == 3:
+				self.x -= self.velocity
+				if self.x <= 0:
+					self.x = 0
+					self.direction = random.randint(1, 4)
+			elif self.direction == 4:
+				self.y -= self.velocity
+				if self.y <= 0:
+					self.y = 0
+					self.direction = random.randint(1, 4)
+			self.set_coord(self.x, self.y)
+
+
+Пакман перемещается по игровому полю только когда игрок нажимает соответствующую клавишу:
+
+.. code-block:: python	
+
+	class Pacman(GameObject):
+		def __init__(self, x, y, tile_size, map_size):
+			GameObject.__init__(self, './resources/pacman.png', x, y, tile_size, map_size)
+			self.direction = 0                # 0 - неподвижно, 1 - вправо, 2 = вниз, 3 - влево, 4 - вверх
+			self.velocity = 4.0 / 10.0        # Скорость в клетках / игровой тик 
+
+		def game_tick(self):                      # Реализация метода аналогична реализации в классе Ghost
+                                                          # с небольшой разницей - направление движения меняется извне
+			super(Pacman, self).game_tick()
+			if self.direction == 1:
+				self.x += self.velocity
+				if self.x >= self.map_size-1:
+					self.x = self.map_size-1
+			elif self.direction == 2:
+				self.y += self.velocity
+				if self.y >= self.map_size-1:
+					self.y = self.map_size-1
+			elif self.direction == 3:
+				self.x -= self.velocity
+				if self.x <= 0:
+					self.x = 0
+			elif self.direction == 4:
+				self.y -= self.velocity
+				if self.y <= 0:
+					self.y = 0
+
+			self.set_coord(self.x, self.y)
+
+
+	def process_events(events, packman):
+		for event in events:
+			if (event.type == QUIT) or (event.type == KEYDOWN and event.key == K_ESCAPE):
+				sys.exit(0)
+			elif event.type == KEYDOWN:               
+				if event.key == K_LEFT:            # Выставляем значения поля direction у Packman в зависимости от нажатой клавиши
+					packman.direction = 3
+				elif event.key == K_RIGHT:
+					packman.direction = 1
+				elif event.key == K_UP:
+					packman.direction = 4
+				elif event.key == K_DOWN:
+					packman.direction = 2
+				elif event.key == K_SPACE:
+					packman.direction = 0
+	
 Задание:
 
-1) Склонируйте в свой репозиторий классы, описанные выше
+1) Склонируйте в свой репозиторий классы (Pacman_), описанные выше
 
 2) Добавьте неразрушаемые стены на карту, убедитесь что пакман сквозь них не проходит и не разрушает
 
-3) Добавьте приведение, реализуйте случайную модель поведения.
+3) Добавьте привидение, реализуйте случайную модель поведения.
 
-4) Добавьте добавьте второе приведение, убедитесь что они корректно могут проходить друг сквозь друга.
+4) Добавьте добавьте второе привидение, убедитесь что они корректно могут проходить друг сквозь друга.
 
 5) Реализуйте загрузку карты из файла
 
 6) Добавите на карту точки, которые пакман должен сьесть, и завершение игры когда точек более не осталось.
 
 
-
+.. _Pacman: https://github.com/mipt-cs-on-python3/pacman
 
 
 
