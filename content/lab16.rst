@@ -1,7 +1,8 @@
 Консольные утилиты
 ##################
 
-:date: 2016-01-21
+:date: 2016-02-08
+:lecture_link: https://youtu.be/dHzRaseQPjE
 
 .. default-role:: code
 .. contents:: Содержание
