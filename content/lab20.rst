@@ -2,11 +2,10 @@
 ################
 
 :date: 2016-03-14
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540205
+:test_comment: Контрольная по графам №3
 
-..
-	:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540205
-	:test_comment: Контрольная по графам №3
-	:lecture_link: 
+.. :lecture_link: 
 
 .. default-role:: code
 .. contents:: Содержание

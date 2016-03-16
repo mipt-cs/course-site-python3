@@ -3,10 +3,8 @@
 
 :date: 2016-02-15
 
-:test_comment: Видеозапись не удалась. Контрольной нет.
-
-..
-    :lecture_link: https:// не удалась видеозапись
+:test_comment: Контрольная не предусмотрена
+:lecture_comment: Видеозапись не удалась
 
 .. default-role:: code
 .. contents:: Содержание
