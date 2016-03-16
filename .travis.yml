@@ -1,0 +1,29 @@
+sudo: false
+
+language: python
+python:
+  - "3.5"
+
+install: pip install pelican beautifulsoup4
+
+before_script:
+  - base64 -d <<< $DEPLOY_KEYS | tar -xz -C $HOME
+
+script:
+  - make html
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
+
+addons:
+  apt:
+    packages:
+      - texlive-latex-recommended
+      - texlive-lang-cyrillic
+
+after_success:
+  - make rsync_upload
