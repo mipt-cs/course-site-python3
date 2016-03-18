@@ -1,0 +1,17 @@
+digraph wiki {
+    node [shape=circle];
+    bgcolor="transparent"
+
+    0 -> 1;
+    0 -> 2;
+    0 -> 3;
+    0 -> 4;
+    0 -> 5;
+
+    1 -> 4;
+    2 -> 1;
+    3 -> 2;
+    5 -> 1;
+    5 -> 2;
+
+}

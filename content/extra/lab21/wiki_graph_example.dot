@@ -1,0 +1,23 @@
+digraph wiki {
+    node [shape=box];
+    bgcolor="transparent"
+
+    a [label="Питон", style=filled, fillcolor="#C74350"];
+    b [label="Питоны"];
+    c [label="Питон_(значения)"];
+    d [label="Snake_(игра)"];
+    e [label="Охраняемый_природный_район_Питон"];
+    f [label="Питон_(Эна)"];
+    g [label="Монти_Пайтон"];
+    h [label="Python"];
+    i [label="Жаргон"]
+
+    a -> b;
+    c -> b;
+    c -> d;
+    c -> e;
+    c -> f;
+    c -> g;
+    c -> h;
+    c -> i;
+}

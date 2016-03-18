@@ -518,3 +518,8 @@ sup {
 	vertical-align: sup;
 	font-size: smaller;
 }
+
+img.align-center {
+    display: block;
+    margin: 0 auto;
+}
