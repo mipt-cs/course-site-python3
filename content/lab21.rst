@@ -3,6 +3,7 @@
 
 :date: 2016-03-14
 :lecture_link:  https://youtu.be/aB6B2wU3c0I
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540206
 
 .. default-role:: code
 .. contents:: Содержание
