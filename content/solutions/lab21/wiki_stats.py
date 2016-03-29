@@ -114,26 +114,24 @@ if __name__ == '__main__':
     for i in range(wg.get_number_of_pages()):
         if not wg.is_redirect(i):
             for l in wg.get_links_from(i):
-                if not wg.is_redirect(l):
-                    links_to[l] += 1
+                links_to[l] += 1
 
-    filtered_links_to = [x for (idx,x) in enumerate(links_to) if not wg.is_redirect(idx)]
-    
-    _min = min(filtered_links_to)
-    _max = max(filtered_links_to)
+
+    _min = min(links_to)
+    _max = max(links_to)
     print("Минимальное количество ссылок на статью: %d" % _min)
-    print("Количество статей с минимальным количеством внешних ссылок: %d" % sum(n == _min for n in filtered_links_to))
+    print("Количество статей с минимальным количеством внешних ссылок: %d" % sum(n == _min for n in links_to))
     print("Максимальное количество ссылок на статью: %d" % _max)
-    print("Количество статей с максимальным количеством внешних ссылок: %d" % sum(n == _max for n in filtered_links_to))
+    print("Количество статей с максимальным количеством внешних ссылок: %d" % sum(n == _max for n in links_to))
     for i in range(len(links_to)):
         if links_to[i] == _max and not wg.is_redirect(i):
             print("Статья с наибольшим количеством внешних ссылок: " + wg.get_title(i))
             break
-    print("Среднее количество внешних ссылок на статью: %0.2f (ср. откл. %0.2f)" % (statistics.mean(filtered_links_to), statistics.stdev(filtered_links_to)))
+    print("Среднее количество внешних ссылок на статью: %0.2f (ср. откл. %0.2f)" % (statistics.mean(links_to), statistics.stdev(links_to)))
     
-    hist('links_to.png', filtered_links_to, 100, "Количество статей", "Количество ссылок", "Распределение количества ссылок на статью", range=(0, 200))
+    hist('links_to.png', links_to, 100, "Количество статей", "Количество ссылок", "Распределение количества ссылок на статью", range=(0, 200))
     links_to = None
-    filtered_links_to = None
+    finks_to = None
     
     redirects_to = array.array('I', [0]*wg.get_number_of_pages())
     for i in range(wg.get_number_of_pages()):
