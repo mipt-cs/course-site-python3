@@ -149,6 +149,8 @@
 
 Щгры, вьхфдойрп зрвгм брсягл шрищебятрюр абщ аяэяйщ вьхфдойхъ абяубрээл:
 
+.. code-block:: python
+
 	import random
 	__author__ = 'Timofey Khirianov'
 	# -*- coding: utf8 -*-
