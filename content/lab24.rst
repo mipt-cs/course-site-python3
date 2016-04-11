@@ -2,7 +2,6 @@
 #######
 
 :date: 2016-04-11
-:status: draft
 
 
 .. default-role:: code
@@ -91,7 +90,7 @@
 	        uppercase_code = {self.alphabet[i].upper():self.alphabet[(i+key)%len(self.alphabet)].upper() for i in range(len(self.alphabet))}
 	        self._encode = dict(lowercase_code)
 	        self._encode.update(uppercase_code)
-	        self._decode = {y: x for x, y in self._encode.items()}
+	        self._decode = {}  # FIXME
 
 	    def encode(self, line):
 	        if len(line) == 1:
@@ -157,14 +156,14 @@
 
 
 	class Monoalphabet:
-	    alphabet = "рстуфхцчшщъыьэюяабвгдеёжзийклмноп"
+	    alphabet = ""  # FIXME
 
 	    def __init__(self, keytable):
 	        lowercase_code = {self.alphabet[i]:keytable[i] for i in range(len(self.alphabet))}
 	        uppercase_code = {self.alphabet[i].upper():keytable[i].upper() for i in range(len(self.alphabet))}
 	        self._encode = dict(lowercase_code)
 	        self._encode.update(uppercase_code)
-	        self._decode = {y: x for x, y in self._encode.items()}
+	        self._decode = {}  # FIXME
 
 	    def encode(self, line):
 	        if len(line) == 1:
@@ -173,10 +172,7 @@
 	            return ''.join([self.encode(char) for char in line])
 
 	    def decode(self, line):
-	        if len(line) == 1:
-	            return self._decode[line] if line in self._decode else line
-	        else:
-	            return ''.join([self.decode(char) for char in line])
+	        pass  # FIXME
 
 
 	key = Monoalphabet.alphabet[:]
