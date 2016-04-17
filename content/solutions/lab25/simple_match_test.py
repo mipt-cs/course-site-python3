@@ -37,6 +37,16 @@ class SimpleMatchTest(unittest.TestCase):
             MATCH,
             ['OkOkOk', 'ababab'],
             ['Ok', 'OkOk', 'OkOkOkOk', 'ab', 'abab', 'abababab']
+        ),
+        'REGEXP_7': (
+            MATCH,
+            ['aaa Aaa aaa', 'aaa aaa Aaa', 'Aaa aaa aaa'],
+            ['aaa', 'aaa aaa', 'A', 'aaa A aaa']
+        ),
+        'REGEXP_8': (
+            MATCH,
+            ['abc', 'abc03', 'a-b-c-3', 'a.b.c.0'],
+            ['Aabc', 'abc1', '#abc']
         )
     }
 

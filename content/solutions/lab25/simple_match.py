@@ -38,7 +38,8 @@ REGEXP_4 = '.*ver.+$'
 # - bb
 # + bbb
 # - bbbb
-REGEXP_5 = '.{5}$'
+# - ccc
+REGEXP_5 = '[ab]{3}$'
 
 # - Ok
 # - OkOk
@@ -48,6 +49,22 @@ REGEXP_5 = '.{5}$'
 # - abab
 # + ababab
 # - abababab
-REGEXP_6 = '(.*){5}$'
+REGEXP_6 = '.{6}$'
 
+# - aaa
+# - aaa aaa
+# + aaa Aaa aaa
+# + aaa aaa Aaa
+# + Aaa aaa aaa
+# - A
+# - aaa A aaa
+REGEXP_7 = r'.*\bA\w+.*'
 
+# + abc
+# + abc03
+# + a-b-c-3
+# + a.b.c.0
+# - Aabc
+# - abc1
+# - #abc
+REGEXP_8 = r'[-a-c03\.]+$'
