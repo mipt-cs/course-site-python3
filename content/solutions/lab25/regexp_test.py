@@ -11,14 +11,25 @@ def regexp_test(module):
     def decorator(clazz):
         def gen_test(regexp, method, matches, not_matches=None):
             def test(self):
+                _regexp = re.compile(getattr(module, regexp))
+                if method == SUB:
+                    _repl = getattr(module, regexp + '_REPL')
                 if method == MATCH:
                     for t in matches:
-                        self.assertTrue(not not re.match(getattr(module, regexp), t))
+                        self.assertTrue(not not _regexp.match(t))
                     for t in not_matches:
-                        self.assertFalse(not not re.match(getattr(module, regexp), t))
+                        self.assertFalse(not not _regexp.match(t))
                 elif method == SEARCH:
                     for (k, v) in matches.items():
-                        self.assertEqual(re.search(getattr(module, regexp), k).group(), v)
+                        self.assertEqual(_regexp.search(k).group(), v)
+                elif method == FINDALL:
+                    for (k, v) in matches.items():
+                        self.assertEqual(_regexp.findall(k), v)
+                elif method == SUB:
+                    for (k, v) in matches.items():
+                        self.assertEqual(_regexp.sub(_repl, k), v)
+                else:
+                    raise Exception("Unknown re method")
             return test
 
 
