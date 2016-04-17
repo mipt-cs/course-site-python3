@@ -8,10 +8,10 @@ import unittest
 @regexp_test(simple_match)
 class SimpleMatchTest(unittest.TestCase):
     TEST_DATA = {
-        'REGEXP_1': (
-            MATCH,
-            ['a', 'ab'],
-            ['b', 'ba']
+        'REGEXP_1': (    # название тестируемого регулярного выражения
+            MATCH,       # тип тестируемого метода — MATCH для этого файла
+            ['a', 'ab'], # список строк, соответствующих шаблону
+            ['b', 'ba']  # список строк, не соответствующих шаблону
         ),
         'REGEXP_2': (
             MATCH,
