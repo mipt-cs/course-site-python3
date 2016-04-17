@@ -16,3 +16,38 @@ REGEXP_1 = '^a'
 # - ab
 # - aabc
 REGEXP_2 = '^a.b$'
+
+# + sofia.mp3
+# + sofia.mp4
+# - sofia.mp7
+# - sofia.mp34
+REGEXP_3 = r'sofia\.mp[3-4]$'
+
+# + taverna
+# + versus
+# + vera
+# + zveri
+# - zver
+REGEXP_4 = '.*ver.+$'
+
+# - a
+# - aa
+# + aaa
+# - aaaa
+# - b
+# - bb
+# + bbb
+# - bbbb
+REGEXP_5 = '.{5}$'
+
+# - Ok
+# - OkOk
+# + OkOkOk
+# - OkOkOkOk
+# - ab
+# - abab
+# + ababab
+# - abababab
+REGEXP_6 = '(.*){5}$'
+
+

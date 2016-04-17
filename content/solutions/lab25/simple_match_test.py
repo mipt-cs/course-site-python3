@@ -17,8 +17,28 @@ class SimpleMatchTest(unittest.TestCase):
             MATCH,
             ['aab', 'abb', 'acb'],
             ['ab', 'aabc']
+        ),
+        'REGEXP_3': (
+            MATCH,
+            ['sofia.mp3', 'sofia.mp4'],
+            ['sofia.mp7', 'sofia.mp34']
+        ),
+        'REGEXP_4': (
+            MATCH,
+            ['taverna', 'versus', 'vera', 'zveri'],
+            ['zver']
+        ),
+        'REGEXP_5': (
+            MATCH,
+            ['aaa', 'bbb'],
+            ['a', 'aa', 'aaaa', 'b', 'bb', 'bbbb']
+        ),
+        'REGEXP_6': (
+            MATCH,
+            ['OkOkOk', 'ababab'],
+            ['Ok', 'OkOk', 'OkOkOkOk', 'ab', 'abab', 'abababab']
         )
-    }    
-  
+    }
+
 if __name__ == '__main__':
     unittest.main()
