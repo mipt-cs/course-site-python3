@@ -21,13 +21,13 @@ def regexp_test(module):
                         self.assertFalse(not not _regexp.match(t))
                 elif method == SEARCH:
                     for (k, v) in matches.items():
-                        self.assertEqual(_regexp.search(k).group(), v)
+                        self.assertEqual(v, _regexp.search(k).group())
                 elif method == FINDALL:
                     for (k, v) in matches.items():
-                        self.assertEqual(_regexp.findall(k), v)
+                        self.assertEqual(v, _regexp.findall(k))
                 elif method == SUB:
                     for (k, v) in matches.items():
-                        self.assertEqual(_regexp.sub(_repl, k), v)
+                        self.assertEqual(v, _regexp.sub(_repl, k))
                 else:
                     raise Exception("Unknown re method")
             return test
