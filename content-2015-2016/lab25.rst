@@ -3,6 +3,7 @@
 
 :date: 2016-04-15
 :lecture_comment: Видеозапись не удалась
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

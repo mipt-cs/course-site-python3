@@ -6,3 +6,4 @@
 :test_comment: Контрольная по графам №1
 :lecture_link: https://youtu.be/HlZMhDAcIIQ
 :part_of: labs/lab17.html
+:status: draft

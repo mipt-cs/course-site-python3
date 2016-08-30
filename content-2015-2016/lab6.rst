@@ -6,6 +6,7 @@
 :test_comment: Контрольная №6
 :lecture_pdf: true
 :lecture_link: https://youtu.be/wQvdbA2d5to
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

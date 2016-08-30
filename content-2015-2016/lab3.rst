@@ -7,6 +7,7 @@
 :test_comment: Контрольная №3
 :lecture_link: https://www.youtube.com/watch?v=M4FVjsNxNMY
 :show_solutions: yes
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

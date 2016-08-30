@@ -6,6 +6,7 @@
 :test_comment: Контрольная №9
 :lecture_link: https://youtu.be/0Rck4TJnH9Q
 :lecture_pdf: true
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

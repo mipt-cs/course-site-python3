@@ -4,6 +4,7 @@
 :date: 2016-03-14
 :test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540205
 :lecture_link:  https://youtu.be/Hva9BJ_aEsY
+:status: draft
 
 .. :test_comment: Контрольная по графам №3
 

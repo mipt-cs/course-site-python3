@@ -7,6 +7,7 @@
 :test_comment: Контрольная №5
 :lecture_pdf: true
 :lecture_link: https://youtu.be/8CGK4JNqb4U
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

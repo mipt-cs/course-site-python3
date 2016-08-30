@@ -5,6 +5,7 @@
 :lecture_link: https://youtu.be/R2hW3YkpHCk
 :lecture_pdf: true
 :lecture_link: https://youtu.be/R2hW3YkpHCk
+:status: draft
 
 
 .. default-role:: code

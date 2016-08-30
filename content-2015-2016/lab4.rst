@@ -8,6 +8,7 @@
 :test_comment: Контрольная №4
 :lecture_link: https://youtu.be/31o8Dqg1byI
 :show_solutions: yes
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

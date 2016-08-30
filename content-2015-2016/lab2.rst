@@ -7,6 +7,7 @@
 :test_comment: Регистрация на контрольную №2
 :test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=540102
 :show_solutions: yes
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание

@@ -3,6 +3,7 @@
 
 :date: 2016-05-03
 :lecture_link: https://youtu.be/jFe2Pbkve70
+:status: draft
 
 
 Лабораторная работа 2 мая
