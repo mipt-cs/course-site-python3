@@ -2,6 +2,8 @@
 ###################
 
 :date: 2016-08-31 09:00
+:lecture_link:  https://youtu.be/KQhnz_EWXrQ
+:lecture_pdf: false
 
 .. default-role:: code
 .. contents:: Содержание
