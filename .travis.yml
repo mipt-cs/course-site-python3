@@ -14,7 +14,7 @@ script:
 
 branches:
   only:
-    - master
+    - 2015-2016-fixes
 
 notifications:
   email: false
