@@ -2,7 +2,8 @@
 ####################
 
 :date: 2016-04-15
-:lecture_comment: Видеозапись не удалась
+:lecture_comment: ————&nbsp;/&nbsp;
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание

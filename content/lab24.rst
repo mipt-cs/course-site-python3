@@ -3,6 +3,7 @@
 
 :date: 2016-04-11
 :lecture_link: https://youtu.be/ZNwPoRRc2Sk
+:lecture_pdf: true
 
 
 .. default-role:: code

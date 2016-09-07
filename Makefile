@@ -16,7 +16,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=judge.mipt.ru
 SSH_PORT=2326
 SSH_USER=ejudge
-SSH_TARGET_DIR=/var/www/html/mipt_cs_on_python3
+SSH_TARGET_DIR=/var/www/html/mipt_cs_on_python3_2015
 
 S3_BUCKET=my_s3_bucket
 

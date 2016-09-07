@@ -4,6 +4,7 @@
 :date: 2015-12-01 0:30
 
 :lecture_link: https://youtu.be/aQjB_nwMyGQ
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание

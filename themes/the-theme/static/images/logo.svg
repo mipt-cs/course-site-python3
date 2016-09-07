@@ -70,7 +70,7 @@
         <dc:source />
         <cc:license
            rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/" />
-        <dc:identifier>http://judge.mipt.ru/mipt_cs_on_python3/</dc:identifier>
+        <dc:identifier>http://judge.mipt.ru/mipt_cs_on_python3_2015/</dc:identifier>
         <dc:language>ru-RU</dc:language>
         <dc:subject>
           <rdf:Bag>
