@@ -23,6 +23,7 @@ addons:
   apt:
     packages:
       - texlive-latex-recommended
+      - pgf
       - texlive-lang-cyrillic
 
 after_success:
