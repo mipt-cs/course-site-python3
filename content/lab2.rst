@@ -1,10 +1,9 @@
 Пострение графиков
 ##################
 
-:date: 2015-10-10 21:30
+:date: 2016-09-08 21:30
 :lecture_link: https://youtu.be/R2hW3YkpHCk
 :lecture_pdf: false
-:status: draft
 
 
 .. default-role:: code
