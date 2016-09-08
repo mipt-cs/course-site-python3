@@ -77,8 +77,8 @@ matplotlib - набор дополнительных модулей (библи�
 
   	import numpy as np
 	import matplotlib.pyplot as plt
-	x=np.arange(-10,10.01,0.01)
-	plt.plot(x,x**2)
+	x = np.arange(-10, 10.01, 0.01)
+	plt.plot(x, x**2)
 	plt.show()
 
 .. image:: {filename}/images/lab7/figure_1.png
@@ -91,8 +91,8 @@ matplotlib - набор дополнительных модулей (библи�
 
 	import numpy as np
 	import matplotlib.pyplot as plt
-	x=np.arange(-10,10.01,0.01)
-	plt.plot(x,np.sin(x),x,np.cos(x),x,-x)
+	x = np.arange(-10, 10.01, 0.01)
+	plt.plot(x, np.sin(x), x, np.cos(x), x, -x)
 	plt.show()
 
 .. image:: {filename}/images/lab7/figure_2.png
@@ -105,8 +105,8 @@ matplotlib - набор дополнительных модулей (библи�
 
 	import numpy as np
 	import matplotlib.pyplot as plt
-	x=np.arange(-10,10.01,0.01)
-	plt.plot(x,np.sin(x),x,np.cos(x),x,-x)
+	x = np.arange(-10, 10.01, 0.01)
+	plt.plot(x, np.sin(x), x, np.cos(x), x, -x)
 	plt.xlabel(r'$x$')
 	plt.ylabel(r'$f(x)$')
 	plt.title(r'$f_1(x)=\sin(x),\ f_2(x)=\cos(x),\ f_3(x)=-x$')
@@ -128,29 +128,30 @@ subplot позволяет разбить графическое окно на �
 
 	import numpy as np
 	import matplotlib.pyplot as plt
-	x=np.arange(-10,10.01,0.01); t=np.arange(-10,11,1)
+	x = np.arange(-10, 10.01, 0.01)
+   t = np.arange(-10, 11, 1)
 
 	#subplot 1
 	plt.subplot(221)
-	plt.plot(x,np.sin(x))
+	plt.plot(x, np.sin(x))
 	plt.title(r'$\sin(x)$')
 	plt.grid(True)
 
 	#subplot 2
 	plt.subplot(222)
-	plt.plot(x,np.cos(x),'g')
+	plt.plot(x, np.cos(x), 'g')
 	plt.axis('equal')
 	plt.grid(True)
 	plt.title(r'$\cos(x)$')
 
 	#subplot 3
 	plt.subplot(223)
-	plt.plot(x,x**2,t,t**2,'ro')
+	plt.plot(x, x**2, t, t**2, 'ro')
 	plt.title(r'$x^2$')
 
 	#subplot 4
 	plt.subplot(224)
-	plt.plot(x,x)
+	plt.plot(x, x)
 	plt.subplot(224).spines['left'].set_position('center')
 	plt.subplot(224).spines['bottom'].set_position('center')
 	plt.title(r'$x$')
@@ -167,7 +168,7 @@ subplot позволяет разбить графическое окно на �
 	import numpy as np
 	import matplotlib.pyplot as plt
 	plt.subplot(111, polar=True)
-	phi = np.arange(0,2*np.pi,0.01)
+	phi = np.arange(0, 2*np.pi, 0.01)
 	rho = 2*phi
 	plt.plot(phi, rho, lw=2)
 	plt.show()
@@ -182,9 +183,9 @@ subplot позволяет разбить графическое окно на �
 
 	import numpy as np
 	import matplotlib.pyplot as plt
-	t = np.arange(0,2*np.pi,0.01)
-	r=4
-	plt.plot(r*np.sin(t),r*np.cos(t),lw=3)
+	t = np.arange(0, 2*np.pi, 0.01)
+	r = 4
+	plt.plot(r*np.sin(t), r*np.cos(t), lw=3)
 	plt.axis('equal')
 	plt.show()
 
@@ -202,7 +203,7 @@ subplot позволяет разбить графическое окно на �
 	ax = axes3d.Axes3D(plt.figure())
 	i = np.arange(-1, 1, 0.01)
 	X, Y = np.meshgrid(i, i)
-	Z = X**2-Y**2
+	Z = X**2 - Y**2
 	ax.plot_wireframe(X, Y, Z, rstride=10, cstride=10)
 	plt.show()
 
@@ -245,7 +246,7 @@ subplot позволяет разбить графическое окно на �
 .. code-block:: python
 
 	import matplotlib.pyplot as plt
-	plt.plot([1,2,3,4], [1,4,9,16])
+	plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
 	plt.show()
 
 .. image:: {filename}/images/lab7/figure_9.png
@@ -293,10 +294,10 @@ subplot позволяет разбить графическое окно на �
 
 	for n in range (50):
 		ylist = [math.sin (x + n / 2.0) for x in xlist]
-    		pylab.clf()
-    		pylab.plot (xlist, ylist)
-    		pylab.draw()
-            pylab.pause(0.3)
+    	pylab.clf()
+    	pylab.plot (xlist, ylist)
+    	pylab.draw()
+      pylab.pause(0.3)
 
 
 	pylab.close()
@@ -353,18 +354,18 @@ subplot позволяет разбить графическое окно на �
 	from matplotlib import cm
 	import numpy
 
-	def makeData ():
-		x = numpy.arange (-10, 10, 0.1)
-		y = numpy.arange (-10, 10, 0.1)
+	def makeData():
+		x = numpy.arange(-10, 10, 0.1)
+		y = numpy.arange(-10, 10, 0.1)
 		xgrid, ygrid = numpy.meshgrid(x, y)
-		zgrid = numpy.sin (xgrid) * numpy.sin (ygrid) / (xgrid * ygrid)
+		zgrid = numpy.sin(xgrid)*numpy.sin(ygrid)/(xgrid*ygrid)
 		return xgrid, ygrid, zgrid
 
 	x, y, z = makeData()
 
 	fig = pylab.figure()
 	axes = Axes3D(fig)
-	axes.plot_surface(x, y, z, rstride=4, cstride=4, cmap = cm.jet)
+	axes.plot_surface(x, y, z, rstride=4, cstride=4, cmap=cm.jet)
 	pylab.show()
 
 .. image:: {filename}/images/lab7/figure_13.png
@@ -377,11 +378,11 @@ subplot позволяет разбить графическое окно на �
 
 .. code-block:: python
 
-	>>> eval("2 + 3 * len('hello')")
+	>>> eval("2 + 3*len('hello')")
 	17
 	>>>
 
-Это очень мощная, но в то же время и очень опасная инструкция, особенно если строки, которые вы передаёте в `eval`,
+Это очень мощная, но и очень опасная инструкция, особенно если строки, которые вы передаёте в `eval`,
 получены не из доверенного источника. Если строкой, которую мы решим скормить `eval()`, окажется `"os.system('rm -rf /')"`,
 то интерпретатор честно запустит процесс удаления всех данных с компьютера.
 
@@ -391,9 +392,9 @@ subplot позволяет разбить графическое окно на �
 
 Постройте график функции
 
-y(x) = x*x-6-x
+y(x) = x*x - x - 6
 
-и по графику найдите найдите корни уравнения y(x) = 0.
+и по графику найдите найдите корни уравнения y(x) = 0. (Не нужно применять численных методов — просто приблизьте график к корням функции настолько, чтобы было удобно их найти.)
 
 
 Упражнение №3
@@ -407,7 +408,7 @@ y(x) = x*x-6-x
 Упражнение №4
 -------------
 
-Фигура Лиссажу задаётся выражением: `x(t,a) = sin(t+a)`, `y(t) = cos(2*t)`
+Фигура Лиссажу задаётся выражением: `x(t, a) = sin(t + a)`, `y(t) = cos(2*t)`
 
 Используя matplotlib анимируйте фигуру Лиссажу, меняя в каждом кадре значение параметра `a`.
 
@@ -431,9 +432,9 @@ y(x) = x*x-6-x
 .. code-block:: python
 
 	import matplotlib.pyplot as plt
-	x=[1,2,3,4,5]
-	y=[0.99,0.49,0.35,0.253,0.18]
-	plt.errorbar(x,y,xerr=0.05,yerr=0.1)
+	x = [1, 2, 3, 4, 5]
+	y = [0.99, 0.49, 0.35, 0.253, 0.18]
+	plt.errorbar(x, y, xerr=0.05, yerr=0.1)
 	plt.grid()
 	plt.show()
 
@@ -445,15 +446,15 @@ y(x) = x*x-6-x
 
 .. code-block:: python
 
-	x=[1,2,3,4,5,6]
-	y=[1,1.42,1.76,2,2.24,2.5]
-	p1,v1=np.polyfit(x,y,deg=1,cov=True)
+	x = [1, 2, 3, 4, 5, 6]
+	y = [1, 1.42, 1.76, 2, 2.24, 2.5]
+	p1, v1 = np.polyfit(x, y, deg=1, cov=True)
 	
 	>>> p1
-	array([ 0.28517032,  0.80720757])
+	array([0.28517032, 0.80720757])
 	>>> v1
-	array([[ 0.00063242, -0.00221348],
-       [-0.00221348,  0.00959173]])
+	array([[0.00063242, -0.00221348],
+       [-0.00221348, 0.00959173]])
 
 	
 
