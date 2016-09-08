@@ -29,38 +29,75 @@
 
 и найдите его значения в точках 1, 10, 1000.
 
-Для вычисления математических функций воспользуйтесь модулем `math`__. Вот несколько функций из этого модуля:
+Для вычисления математических функций мы не будем использовать стандартную библиотеку `math`__.
+Т.к. она не работает с векторами. В нашем случае разумней обратить внимание на библиотеку `numpy`__.
+Данная библиотека обеспечивает удобную работу с векторам.
 
+Т.е., если у нас есть вектор x=[1, 2, 3, 4] и мы вызовим
+numpy.log(x), то логарифм будет взят от каждого элемента списка и возвращен будет список значений.
+
+Аналогичная функция в модуля math ожидает число, т.е. нельзя сделать math.log(x), нужно делать math.log(x[0]) и т.д.
+
+.. __: http://www.numpy.org/
 .. __: https://docs.python.org/3/library/math.html#power-and-logarithmic-functions
+
+Традиционно библиотека numpy подключается командой:
+
+.. code-block:: python
+
+	import numpy as np
+
+
+Данный вызов сообщает, что подключить numpy под псевдонимом np. Это делается, чтобы не писать каждый раз:
+
+.. code-block:: python
+
+   import numpy
+   numpy.cos(x)
+
+А писать:
+
+.. code-block:: python
+
+   import numpy as np
+   np.cos(x)
+
+Такой код, с более коротким именем библиотеки, элементарно, проще читать.
+
+Основные математические функции и константы функии, которые нам понадобятся из numpy:
 
 +-------------------------+------------------------+
 | Функция библиотеки math | Математическая функция |
 +=========================+========================+
-| `math.cos`__            | Косинус                |
+| `np.pi`                 | Число pi               |
 +-------------------------+------------------------+
-| `math.sin`__            | Синус                  |
+| `np.e`                  | Число e                |
 +-------------------------+------------------------+
-| `math.tan`__            | Тангенс                |
+| `np.cos`__              | Косинус                |
 +-------------------------+------------------------+
-| `math.acos`__           | Арккосинус             |
+| `np.sin`__              | Синус                  |
 +-------------------------+------------------------+
-| `math.asin`__           | Арксинус               |
+| `np.tan`__              | Тангенс                |
 +-------------------------+------------------------+
-| `math.atan`__           | Арктангенс             |
+| `np.acos`__             | Арккосинус             |
 +-------------------------+------------------------+
-| `math.exp`__            | Экспонента             |
+| `np.asin`__             | Арксинус               |
 +-------------------------+------------------------+
-| `math.log`__            | Логарифм               |
+| `np.atan`__             | Арктангенс             |
++-------------------------+------------------------+
+| `np.exp`__              | Экспонента             |
++-------------------------+------------------------+
+| `np.log`__              | Логарифм               |
 +-------------------------+------------------------+
 
-.. __ : https://docs.python.org/3/library/math.html#math.cos
-.. __ : https://docs.python.org/3/library/math.html#math.sin
-.. __ : https://docs.python.org/3/library/math.html#math.tan
-.. __ : https://docs.python.org/3/library/math.html#math.acos
-.. __ : https://docs.python.org/3/library/math.html#math.asin
-.. __ : https://docs.python.org/3/library/math.html#math.atan
-.. __ : https://docs.python.org/3/library/math.html#math.exp
-.. __ : https://docs.python.org/3/library/math.html#math.log
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.cos.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.sin.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.tan.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.arccos.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.arcsin.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.arctan.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.exp.html
+.. __ : http://docs.scipy.org/doc/numpy/reference/generated/numpy.log.html#numpy.log
 
 
 Построение графиков
