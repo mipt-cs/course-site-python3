@@ -4,6 +4,8 @@
 :date: 2016-09-08 21:30
 :lecture_link: https://youtu.be/R2hW3YkpHCk
 :lecture_pdf: false
+:test_comment: Регистрация на контест к лекции №2
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=640102
 
 
 .. default-role:: code
