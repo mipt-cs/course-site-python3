@@ -318,27 +318,27 @@ subplot позволяет разбить графическое окно на �
 
 .. code-block:: python
 
-	import math
-	import pylab
-	from matplotlib import mlab
+    import math
+    import pylab
+    from matplotlib import mlab
 
-	xmin = -20.0
-	xmax = 20.0
+    xmin = -20.0
+    xmax = 20.0
 
-	dx = 0.01
-	xlist = mlab.frange (xmin, xmax, dx)
+    dx = 0.01
+    xlist = mlab.frange (xmin, xmax, dx)
 
-	pylab.ion()
+    pylab.ion()
 
-	for n in range (50):
-		ylist = [math.sin (x + n / 2.0) for x in xlist]
-    	pylab.clf()
-    	pylab.plot (xlist, ylist)
-    	pylab.draw()
-      pylab.pause(0.3)
+    for n in range (50):
+        ylist = [math.sin (x + n / 2.0) for x in xlist]
+        pylab.clf()
+        pylab.plot (xlist, ylist)
+        pylab.draw()
+        pylab.pause(0.3)
 
 
-	pylab.close()
+    pylab.close()
 
 
 Также в matplotlib существует возможность строить круговые диаграммы:
