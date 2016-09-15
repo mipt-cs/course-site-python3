@@ -1,11 +1,7 @@
 Черепашка
 #########
 
-:date: 2016-09-11 11:00
-:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540103
-:lecture_pdf: false
-:test_comment: Контрольная №3
-:lecture_link: https://www.youtube.com/watch?v=M4FVjsNxNMY
+:date: 2016-09-15 11:00
 :status: draft
 
 .. default-role:: code
