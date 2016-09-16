@@ -2,6 +2,9 @@
 #########
 
 :date: 2016-09-15 11:00
+:lecture_link: https://youtu.be/FXgTFnjPXp0
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=511103
+
 
 .. default-role:: code
 .. contents:: Содержание
