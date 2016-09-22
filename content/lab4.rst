@@ -386,11 +386,15 @@ install pelican`), но в данном случае нужного пакета
 Задача №20: task_4_3
 ++++++++++++++++++++
 
+Закрасить отмеченные клетки.
+
 .. image:: {filename}/images/lab4/task_4_3.png
    :width: 502px
 
 Задача №21: task_4_11
 +++++++++++++++++++++
+
+Закрасить отмеченные клетки.
 
 .. image:: {filename}/images/lab4/task_4_11.png
    :width: 400px
