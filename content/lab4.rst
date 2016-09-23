@@ -2,6 +2,10 @@
 #####
 
 :date: 2016-09-20 21:30
+:lecture_link: https://youtu.be/aaTHabMcrL4
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=511104
+:test_comment: контест к лекции №4 (до 02.10.2016)
+
 
 .. default-role:: code
 .. contents:: Содержание
