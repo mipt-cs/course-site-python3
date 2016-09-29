@@ -3,11 +3,8 @@
 
 :date: 2016-09-29 09:00
 
-:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=540105
 :test_comment: Контрольная №5
 :lecture_pdf: true
-:lecture_link: https://youtu.be/8CGK4JNqb4U
-:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
