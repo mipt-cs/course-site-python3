@@ -3,7 +3,12 @@
 
 :date: 2016-09-29 09:00
 
-:test_comment: Контрольная №5
+
+
+
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=511105
+:test_comment: контест к лекции №5 (до 09.10.2016)
+
 :lecture_pdf: true
 
 .. default-role:: code
