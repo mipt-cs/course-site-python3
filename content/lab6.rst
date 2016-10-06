@@ -196,7 +196,9 @@
 
           >>> values = [3, 4, 1, 2, 5, 6, 7, 8, 9, 10]
           >>> get_percentile(values, 4)
-          [3.25, 5.5, 7.75, 10.0]
+          [0.0, 3.25, 5.5, 7.75, 10.0]
+
+   Обратите внимание, что возвращается bunket_number + 1 персентиль, потому что первый всегда 0. Это нужно для удобства, если мы встречаем число, которое меньше первого вычисленного персентиля.
 
 2. Написать функцию, get_quantile_number(value, percentiles), которая вернет по значению value, номер последнего перцентиля <= value. Если value меньше всех имеющихся, отнести его к 0-му перцентилю, если больше всех имеющихся, то к последнему.
 
@@ -207,7 +209,7 @@
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
           >>> percentiles
-          [3.25, 5.5, 7.75, 10.0]
+          [0.0, 3.25, 5.5, 7.75, 10.0]
           >>> get_quantile_number(2.5, percentiles)
           0
           >>> get_quantile_number(5.5, percentiles)
@@ -229,15 +231,35 @@
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
           >>> percentiles
-          [3.25, 5.5, 7.75, 10.0]
+          [0.0, 3.25, 5.5, 7.75, 10.0]
           >>> value_equalization(5.5, percentiles)
-          0.333793760507
+          0.4
           >>> value_equalization(5.5, percentiles)
-          0.314039308645
+          0.4
           >>> value_equalization(5.5, percentiles)
-          0.450166294053
+          0.4
 
-4. Написать функцию, values_equalization(values, percentiles), которая эквализирует каждое значение из values.
+5. А теперь добавьте в value_equalization флаг add_random. Если add_random=True, то new_value вычисляется немного по-другому алгоритму:
+
+   new_value = idx*step + random_noise, где random_noise - это некоторая случайная добавка, которая тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
+
+   этот прием используется, чтобы добавить "естественности" изображению, чтобы не все пикселы, попавшие в один интервал были совершенно одинаковые.
+
+   .. code-block:: python
+
+          >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+          >>> percentiles = get_percentile(values, 4)
+          >>> percentiles
+          [0.0, 3.25, 5.5, 7.75, 10.0]
+          >>> value_equalization(5.5, percentiles, add_random=True)
+          0.490164985127
+          >>> value_equalization(5.5, percentiles, add_random=True)
+          0.473224582373
+
+   По-умолчанию функция должна считать add_noise=False.
+
+
+6. Написать функцию, values_equalization(values, percentiles, add_noise=False), которая эквализирует каждое значение из values.
 
    Пример:
 
@@ -246,28 +268,30 @@
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
           >>> percentiles
-          [3.25, 5.5, 7.75, 10.0]
-          >>> values_equalization(values, percentiles)
-          [0.15, 0.24, 0.06, 0.11, 0.22, 0.36, 0.28, 0.57, 0.56, 0.78]
-          >>> values_equalization(values, percentiles)
-          [0.17, 0.12, 0.11, 0.15, 0.10, 0.30, 0.40, 0.70, 0.72, 0.94]
-          >>> values_equalization(values, percentiles)
-          [0.06, 0.20, 0.17, 0.01, 0.10, 0.35, 0.33, 0.52, 0.65, 0.76]
+          [0.0, 3.25, 5.5, 7.75, 10.0]
+          >>> values_equalization(values, percentiles, add_noise=False)
+          [0.0, 0.2, 0.0, 0.0, 0.2, 0.4, 0.4, 0.6, 0.6, 0.8]
+          >>> values_equalization(values, percentiles, add_noise=True)
+          [0.09, 0.3, 0.04, 0.19, 0.32, 0.57, 0.5, 0.79, 0.77, 0.81]
+          >>> values_equalization(values, percentiles, add_noise=True)
+          [0.01, 0.38, 0.02, 0.13, 0.38, 0.51, 0.45, 0.71, 0.78, 0.82]
 
-5. Прочесть файл `img.txt`__ в переменную data - двумерный numpy массив 200х227. В файле через проблем построчно лежат числа.
-6. Используя команду plt.imshow(data, cmap = plt.get_cmap('gray')) нарисуйте содержание массива.
-7. Нарисовать гистограмму data.
+7. Прочесть файл `img.txt`__ в переменную data - двумерный numpy массив 200х227. В файле через проблем построчно лежат числа.
+8. Используя команду `plt.imshow(data, cmap = plt.get_cmap('gray'))` нарисуйте содержание массива.
+9. Нарисовать гистограмму data.
 
-    Для превращения data в одномерный массив используйте метод flatten(): data.flatten().
+    Для превращения data в одномерный массив используйте метод flatten(): `data.flatten()`.
 
-    Для превращения в двумерный массив используйте reshape(): new_data vector.reshape((height, weight))
-8. Эквализировать содержание data написанными ранее функциями.
-9. Составить финальную картинку, которая должна выглядеть вот так:
+    Для превращения в двумерный массив используйте reshape(): `new_data = vector.reshape((height, weight))`
+10. Эквализировать содержание data написанными ранее функциями.
+11. Составить финальную картинку, которая должна выглядеть вот так:
 
 .. image:: {filename}/images/lab6/result.png
    :width: 100%
 
 .. __ : {filename}/extra/lab6/img.txt
+
+12. Нарисуйте картинку, аналогичную 11, но с другим `bucket_number`.
 
 
 Упражнение 3. Метод Монте-Карло.
