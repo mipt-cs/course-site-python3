@@ -243,7 +243,7 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
 
    Эквализировать предлагается следующим образом:
     1. idx = get_percentile_number(value, percentiles)
-    2. step = 1/len(percentiles)
+    2. step = 100/len(percentiles)
     3. new_value = idx*step
 
    Пример:
@@ -251,9 +251,9 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
    .. code-block:: python
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-          >>> percentiles = get_percentile(values, 4)
+          >>> percentiles = get_percentile(values, 5)
           >>> percentiles
-          [0.0, 3.25, 5.5, 7.75]
+          [0.0, 2.8, 4.6, 6.4, 8.2]
           >>> value_equalization(5.5, percentiles)
           0.4
           >>> value_equalization(5.5, percentiles)
@@ -270,9 +270,9 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
    .. code-block:: python
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-          >>> percentiles = get_percentile(values, 4)
+          >>> percentiles = get_percentile(values, 5)
           >>> percentiles
-          [0.0, 3.25, 5.5, 7.75]
+          [0.0, 2.8, 4.6, 6.4, 8.2]
           >>> value_equalization(5.5, percentiles, add_random=True)
           0.490164985127
           >>> value_equalization(5.5, percentiles, add_random=True)
@@ -288,9 +288,9 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
    .. code-block:: python
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-          >>> percentiles = get_percentile(values, 4)
+          >>> percentiles = get_percentile(values, 5)
           >>> percentiles
-          [0.0, 3.25, 5.5, 7.75]
+          [0.0, 2.8, 4.6, 6.4, 8.2]
           >>> values_equalization(values, percentiles, add_random=False)
           [0.0, 0.25, 0.0, 0.0, 0.25, 0.5, 0.5, 0.75, 0.75, 0.75]
           >>> values_equalization(values, percentiles, add_random=True)
