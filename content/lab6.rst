@@ -213,9 +213,9 @@
           >>> get_quantile_number(2.5, percentiles)
           0
           >>> get_quantile_number(5.5, percentiles)
-          1
+          2
           >>> get_quantile_number(100, percentiles)
-          3
+          4
 
 3. Написать функцию value_equalization(value, percentiles), которая по переданному значению и списку перцентилей, вернет эквалицированное значение.
 
