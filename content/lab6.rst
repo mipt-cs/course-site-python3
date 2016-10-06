@@ -243,7 +243,7 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
 
    Эквализировать предлагается следующим образом:
     1. idx = get_percentile_number(value, percentiles)
-    2. step = 100/len(percentiles)
+    2. step = 1/len(percentiles)
     3. new_value = idx*step
 
    Пример:
