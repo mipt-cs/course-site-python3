@@ -239,7 +239,7 @@
 
 5. А теперь добавьте в value_equalization флаг add_random. Если add_random=True, то new_value вычисляется немного по-другому алгоритму:
 
-   new_value = idx*step + random_noise, где random_noise - это некоторая случайная добавка, которая тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
+   new_value = idx*step + random_noise, где random_noise - это некоторая случайная добавка, которая, тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
 
    этот прием используется, чтобы добавить "естественности" изображению, чтобы не все пикселы, попавшие в один интервал были совершенно одинаковые.
 
@@ -254,10 +254,10 @@
           >>> value_equalization(5.5, percentiles, add_random=True)
           0.473224582373
 
-   По-умолчанию функция должна считать add_noise=False.
+   По-умолчанию функция должна считать add_random=False.
 
 
-6. Написать функцию, values_equalization(values, percentiles, add_noise=False), которая эквализирует каждое значение из values.
+6. Написать функцию, values_equalization(values, percentiles, add_random=False), которая эквализирует каждое значение из values.
 
    Пример:
 
@@ -267,11 +267,11 @@
           >>> percentiles = get_percentile(values, 4)
           >>> percentiles
           [0.0, 3.25, 5.5, 7.75, 10.0]
-          >>> values_equalization(values, percentiles, add_noise=False)
+          >>> values_equalization(values, percentiles, add_random=False)
           [0.0, 0.2, 0.0, 0.0, 0.2, 0.4, 0.4, 0.6, 0.6, 0.8]
-          >>> values_equalization(values, percentiles, add_noise=True)
+          >>> values_equalization(values, percentiles, add_random=True)
           [0.09, 0.3, 0.04, 0.19, 0.32, 0.57, 0.5, 0.79, 0.77, 0.81]
-          >>> values_equalization(values, percentiles, add_noise=True)
+          >>> values_equalization(values, percentiles, add_random=True)
           [0.01, 0.38, 0.02, 0.13, 0.38, 0.51, 0.45, 0.71, 0.78, 0.82]
 
 7. Прочесть файл `img.txt`__ в переменную data - двумерный numpy массив 200х227. В файле через проблем построчно лежат числа.
