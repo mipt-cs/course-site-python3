@@ -243,6 +243,7 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
    Эквализировать предлагается следующим образом:
     1. idx = get_quantile_number(value, percentiles)
     2. new_value = idx*step
+
    Пример:
 
    .. code-block:: python
