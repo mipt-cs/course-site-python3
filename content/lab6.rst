@@ -221,9 +221,7 @@
 
    Эквализировать предлагается следующим образом:
     1. idx = get_quantile_number(value, percentiles)
-    2. new_value = idx*step + random_noise
-    3. random_noise - это некоторая случайная добавка, которая тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
-
+    2. new_value = idx*step
    Пример:
 
    .. code-block:: python
