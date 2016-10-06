@@ -10,7 +10,9 @@ before_script:
   - base64 -d <<< $DEPLOY_KEYS | tar -xz -C $HOME
 
 script:
-  - make html
+  - make html &> build.log
+  - cat build.log
+  - test 0 -eq $( egrep -c '^ERROR:' build.log )
 
 branches:
   only:
