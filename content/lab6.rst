@@ -243,7 +243,7 @@ len(A[x <= a])/len(A) = p/100
 .. image:: {filename}/images/lab6/result.png
    :width: 100%
 
-.. __ : ./extra/lab6/img.txt
+.. __ : {filename}/extra/lab6/img.txt
 
 
 Упражнение 3. Метод Монте-Карло.
