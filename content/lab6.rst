@@ -240,8 +240,8 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
 3. Написать функцию value_equalization(value, percentiles), которая по переданному значению и списку перцентилей, вернет эквалицированное значение.
 
    Эквализировать предлагается следующим образом:
-    1. idx = get_quantile_number(value, percentiles)
-    2. new_value = idx*step
+    1. idx = get_percentile_number(value, percentiles)
+    2. new_value = percentiles[idx]
 
    Пример:
 
@@ -260,7 +260,7 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
 
 5. А теперь добавьте в value_equalization флаг add_random. Если add_random=True, то new_value вычисляется немного по-другому алгоритму:
 
-   new_value = idx*step + random_noise, где random_noise - это некоторая случайная добавка, которая, тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
+   new_value = percentiles[idx] + random_noise, где random_noise - это некоторая случайная добавка, которая, тем не менее, сохраняет new_value в пределах: [idx*step, (idx+1)*step]
 
    этот прием используется, чтобы добавить "естественности" изображению, чтобы не все пикселы, попавшие в один интервал были совершенно одинаковые.
 
