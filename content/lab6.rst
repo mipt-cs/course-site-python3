@@ -288,9 +288,9 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
    .. code-block:: python
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
-          >>> percentiles = get_percentile(values, 5)
+          >>> percentiles = get_percentile(values, 4)
           >>> percentiles
-          [0.0, 2.8, 4.6, 6.4, 8.2]
+          [0.0, 3.25, 5.5, 7.75]
           >>> values_equalization(values, percentiles, add_random=False)
           [0.0, 0.25, 0.0, 0.0, 0.25, 0.5, 0.5, 0.75, 0.75, 0.75]
           >>> values_equalization(values, percentiles, add_random=True)
