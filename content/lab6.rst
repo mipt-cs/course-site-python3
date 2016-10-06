@@ -164,10 +164,10 @@
 Перцентили
 ++++++++++
 
-Перцентиль p - это число a, выбранное из последовательности чисел A. Такое, что:
-len(A[x <= a])/len(A) = p/100
+Перцентиль p - это число a, такое, что, если взять из интересующей последовательности A все числа, меньше a,
+то количество этих чисел будет составлять p% от общей длинны последовательности A.
 
-Для вычисления перцентилей в numpy встроенна функция `numpy.percentile(pos_class_distribution, percentile)'`
+Для вычисления перцентилей в numpy встроенна функция `numpy.percentile(values, percentile)'`
 
 Рассмотрим пример ее работы:
 
@@ -206,7 +206,7 @@ len(A[x <= a])/len(A) = p/100
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
-          >>> print percentiles
+          >>> percentiles
           [3.25, 5.5, 7.75, 10.0]
           >>> get_quantile_number(2.5, percentiles)
           0
@@ -228,13 +228,13 @@ len(A[x <= a])/len(A) = p/100
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
-          >>> print percentiles
+          >>> percentiles
           [3.25, 5.5, 7.75, 10.0]
-          >>> print value_equalization(5.5, percentiles)
+          >>> value_equalization(5.5, percentiles)
           0.333793760507
-          >>> print value_equalization(5.5, percentiles)
+          >>> value_equalization(5.5, percentiles)
           0.314039308645
-          >>> print value_equalization(5.5, percentiles)
+          >>> value_equalization(5.5, percentiles)
           0.450166294053
 
 4. Написать функцию, values_equalization(values, percentiles), которая эквализирует каждое значение из values.
@@ -245,13 +245,13 @@ len(A[x <= a])/len(A) = p/100
 
           >>> values = [3.0, 4.0, 1.0, 2.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
           >>> percentiles = get_percentile(values, 4)
-          >>> print percentiles
+          >>> percentiles
           [3.25, 5.5, 7.75, 10.0]
-          >>> print values_equalization(values, percentiles)
+          >>> values_equalization(values, percentiles)
           [0.15, 0.24, 0.06, 0.11, 0.22, 0.36, 0.28, 0.57, 0.56, 0.78]
-          >>> print values_equalization(values, percentiles)
+          >>> values_equalization(values, percentiles)
           [0.17, 0.12, 0.11, 0.15, 0.10, 0.30, 0.40, 0.70, 0.72, 0.94]
-          >>> print values_equalization(values, percentiles)
+          >>> values_equalization(values, percentiles)
           [0.06, 0.20, 0.17, 0.01, 0.10, 0.35, 0.33, 0.52, 0.65, 0.76]
 
 5. Прочесть файл `img.txt`__ в переменную data - двумерный numpy массив 200х227. В файле через проблем построчно лежат числа.
@@ -280,7 +280,7 @@ f(x) = -x**2 + 4, при -2<=x<=2, 0 во всех остальных случа
 Интервал: [-3, 3]
 
 Метод Монте-Карло заключается в следующем:
-1. Мы берем N случайных точек из области интегрирования и вычисляем значение интегрируемой функции в этих точках.
+1. Мы берем N случайных точек из области интегрирования, распределенных по равномерному закону и вычисляем значение интегрируемой функции в этих точках.
 2. Утверждается, что:
 
 .. image:: {filename}/images/lab6/int.png
