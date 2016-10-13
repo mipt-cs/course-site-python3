@@ -1,8 +1,8 @@
 ВОПРОСЫ К ПОЛУЗАЧЁТУ
 ####################
 
-:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=515107
-:test_comment: Контрольная для 5112 и 5115 групп
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=513107
+:test_comment: Контрольная для 5111 группы
 :date: 2016-10-09 07:00
 
 .. default-role:: code
