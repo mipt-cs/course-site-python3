@@ -346,6 +346,27 @@
 	>>> k, v
 	(dict_keys(['d', 'c', 'b', 'a']), dict_values(['a', 'c', 'b', 'a']))
 
+Учтите что итерироваться по представлениям изменяя словарь нельзя
+
+.. code-block:: python
+
+	>>> for key in A.keys():
+	...     del A[key]
+	...
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	RuntimeError: dictionary changed size during iteration
+
+Можно, если в начале скопировать представление в список
+
+.. code-block:: python
+
+        >>> for key in list(A.keys()):
+        ...     del A[key]
+        ...
+        >>> A
+        {}
+
 Пример использования словаря
 ----------------------------
 
