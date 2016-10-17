@@ -246,7 +246,7 @@ alert	-	on
 =	-	aluminium
 =	-	amazingly
 =	-	ammunition
-am	-	well,
+am	-	well
 =	-	an
 =	-	an
 =	-	an

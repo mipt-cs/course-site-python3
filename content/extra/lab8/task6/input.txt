@@ -45860,7 +45860,7 @@ well	-	what
 well	-	=
 well	-	=
 well	-	=
-well,	-	am
+well	-	am
 well-being	-	благополучие
 well-bred	-	благовоспитанный
 well-nigh	-	почти
