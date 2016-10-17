@@ -574,4 +574,4 @@ ru-en.txt:
 | китайский       | Китай Сингапур  |
 +-----------------+-----------------+
 
-.. _`ru-en.txt`: {filename}/extra/lab8/task9/input-9.txt
+.. _`input-9.txt`: {filename}/extra/lab8/task9/input-9.txt
