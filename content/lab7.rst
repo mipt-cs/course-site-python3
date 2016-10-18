@@ -4,6 +4,9 @@
 
 :date: 2016-10-09 07:00
 
+:test_comment: контольная групп №641-643 (18.10.2016)
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=614107
+
 .. default-role:: code
 .. contents:: Содержание
 
