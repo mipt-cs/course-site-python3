@@ -523,3 +523,7 @@ img.align-center {
     display: block;
     margin: 0 auto;
 }
+
+.docutils .line-block .line-block .line code {
+    margin-left: 15px;
+}
