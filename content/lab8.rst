@@ -1,10 +1,7 @@
 Словари и множества в Python
 ############################
 
-:date: 2015-10-31 15:00
-:lecture_link: https://youtu.be/CcHP-AgHU0c
-:lecture_pdf: true
-:status: draft
+:date: 2016-10-20 15:00
 
 .. default-role:: code
 .. contents:: Содержание
