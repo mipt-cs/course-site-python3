@@ -4,7 +4,7 @@
 :date: 2016-09-29 09:00
 
 :lecture_link: https://youtu.be/wv12NFz82bE
-
+:lecture_link2: https://youtu.be/VcsZbEKhS_4
 :test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=511105
 :test_comment: контест к лекции №5 (до 09.10.2016)
 

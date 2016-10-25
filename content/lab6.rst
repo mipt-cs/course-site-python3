@@ -3,6 +3,7 @@
 
 :date: 2016-10-05 17:56
 :lecture_link: https://youtu.be/v3KHVy_rfL8
+:lecture_link2: https://youtu.be/OEkHTF8I2VM
 :test_comment: контест к лекциям №6-7 (до 23.10.2016)
 :test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=511106
 

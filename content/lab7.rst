@@ -1,7 +1,8 @@
 ВОПРОСЫ К ПОЛУЗАЧЁТУ
 ####################
 
-
+:lecture_link: https://youtu.be/pgFT8J3gbYQ
+:lecture_link2: https://youtu.be/Wmit_qdAGIU
 :date: 2016-10-09 07:00
 
 

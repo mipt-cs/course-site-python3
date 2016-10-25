@@ -3,6 +3,7 @@
 
 :date: 2016-09-15 11:00
 :lecture_link: https://youtu.be/FXgTFnjPXp0
+:lecture_link2: https://youtu.be/EKJW2OF8Og8
 :test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=511103
 :test_comment: контест к лекции №3 (до 23.09.2016)
 
