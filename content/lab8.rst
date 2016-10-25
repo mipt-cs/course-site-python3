@@ -3,6 +3,9 @@
 
 :date: 2016-10-20 15:00
 
+:test_comment: контест к лекции №8 (до 30.10.2016)
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=511107
+
 .. default-role:: code
 .. contents:: Содержание
 
