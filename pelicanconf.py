@@ -4,9 +4,9 @@ from __future__ import unicode_literals
 
 import os
 
-AUTHOR = 'Alexey Ermakov'
+AUTHOR = 'Alexey Ermakov & Timofey Khirianov'
 SITENAME = 'Курс информатики на Python 3'
-SITEURL = ''
+SITEURL = 'http://judge.mipt.ru/mipt_cs_on_python3'
 
 PATH = 'content'
 
