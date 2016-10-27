@@ -3,7 +3,6 @@
 
 :date: 2016-10-27 09:00
 :lecture_link: https://youtu.be/dHzRaseQPjE
-:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
@@ -311,7 +310,7 @@ Python включён модуль `argparse`__, предназначенный 
    Среднеквадратическое отклонение: 0.8164965809277263
 
 
-   ❯ python3 ./stat.py --mean --stdev -g 2 1 2 3
+   > python3 ./stat.py --mean --stdev -g 2 1 2 3
    Среднее значение: 3.0
    Среднеквадратическое отклонение: 0.0
 
@@ -541,10 +540,9 @@ Python включён модуль `argparse`__, предназначенный 
 	    # выводим просто текст
 	    print(" Красный текст  Синий текст  Обычный текст")
 
-.. __: http://linux.die.net/man/1/find
-.. __: https://ru.wikipedia.org/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B5_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_ANSI
 
 .. __: https://ru.wikipedia.org/wiki/%D0%9F%D1%81%D0%B5%D0%B2%D0%B4%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0
+.. __: https://ru.wikipedia.org/wiki/%D0%A3%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B8%D0%B5_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8_ANSI
 
 Упражнение №6\*
 ---------------
@@ -562,6 +560,6 @@ Python включён модуль `argparse`__, предназначенный 
 * `--name=X` — шаблон имени файла с учётом регистра;
 * `--iname=Y` — шаблон имени файла без учёта регистра;
 
-Выделяйте найденные вхождение красным цветом при помощи.
+Выделяйте найденные вхождение красным цветом.
 
 .. __: http://linux.die.net/man/1/find
