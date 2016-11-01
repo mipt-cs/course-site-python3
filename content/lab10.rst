@@ -1,9 +1,7 @@
 Объектно-ориентированное программирование
 #########################################
 
-:date: 2015-11-04 15:46
-:lecture_pdf: true
-:lecture_link: https://youtu.be/EdUoSo9Dhzk
+:date: 2016-11-02
 :status: draft
 
 .. default-role:: code
