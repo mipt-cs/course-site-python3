@@ -64,9 +64,10 @@
 .. code-block:: python
 
         >>> class MySecondClass:
-                msg = 'Hello' # Все экземпляры этого класса будут иметь атрибут msg,
-                              # равный "Hello"
-                              # Но впоследствии мы его можем изменить
+                def __init__(self):
+                    self.msg = 'Hello' # Все экземпляры этого класса будут иметь атрибут msg,
+                                       # равный "Hello"
+                                       # Но впоследствии мы его можем изменить
                 def doSmth(self):
                     return self.msg
 
