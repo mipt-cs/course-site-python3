@@ -32,125 +32,143 @@ Git - одна из самых популярных систем контрол�
 
 Пройдите туториал и продемонстрируйте преподавателю тестовый репозиторий на гитхабе.
 
-1) Регистрируемся на github.com
-2) Создаем новый репозиторий https://github.com/new (или значек плюс в правом верхнем углу):
+1. Регистрируемся на github.com
+2. Создаем новый репозиторий https://github.com/new (или значек плюс в правом верхнем углу):
    * В качестве имени репозитория задаем Test
    * Доступ оставляем Public
    * Не забываем поставить галочку "Initialize this repository with a README"
-3) Теперь склонируем получившийся репозиторий к себе (тут и далее вместо Mikari нужно подставлять имя вашего пользователя) и зайдем в папку с репозиторием:
+
+3. Теперь склонируем получившийся репозиторий к себе (тут и далее вместо Mikari нужно подставлять имя вашего пользователя) и зайдем в папку с репозиторием:
+
 .. code-block:: bash
 
     -> git clone https://github.com/Mikari/Test
-	Cloning into 'Test'...
-	remote: Counting objects: 3, done.
-	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-	Unpacking objects: 100% (3/3), done.
-	-> ls
-	Test
-	-> cd Test
-	-> ls
-	README.md
-
+    Cloning into 'Test'...
+    remote: Counting objects: 3, done.
+    remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+    Unpacking objects: 100% (3/3), done.
+    -> ls
+    Test
+    -> cd Test
+    -> ls
+    README.md
 
 Не забудем сконфигурить гит, представившись ему (это обязательно нужно сделать находясь в папке Test):
+
 .. code-block:: bash
-	git config user.name "Your Name"
+
+    git config user.name "Your Name"
     git config user.email you@example.com
 
 Почту указываем как при регистрации.
 
-4) Теперь у нас локально есть полная и независимая версия нашего репозитория Test. Она никак явным образом не связана с версией на серверах github'а, однако в гите существуют инструменты для обмена данными между разными репозиториями. Иными словами, git - это распределенная система управлениями версиями.
-5)
+4. Теперь у нас локально есть полная и независимая версия нашего репозитория Test. Она никак явным образом не связана с версией на серверах github'а, однако в гите существуют инструменты для обмена данными между разными репозиториями. Иными словами, git - это распределенная система управлениями версиями.
+
+5. Команда log возвращает историю нашего репозитория. В данный момент в нашей истории ровно один коммит (коммит - это некоторый набор изменений).
+
 .. code-block:: bash
-	-> git log
-	commit eec733a01ceb6896973998a9327aab735fa40ba4
-	Author: Mikari <mikari.san@gmail.com>
-	Date:   Wed Nov 9 13:36:38 2016 +0300
 
-	    Initial commit
+    -> git log
+    commit eec733a01ceb6896973998a9327aab735fa40ba4
+    Author: Mikari <mikari.san@gmail.com>
+    Date:   Wed Nov 9 13:36:38 2016 +0300
 
-Команда log возвращает историю нашего репозитория. В данный момент в нашей истории ровно один коммит (коммит - это некоторый набор изменений).
-6) Давайте отредактируем файл README.md и добавим в него что-нибудь. Откроем файл README.md и напишем в нем что-нибудь. После с помощью git diff посмотрим на текущие изменения:
+        Initial commit
+
+6. Давайте отредактируем файл README.md и добавим в него что-нибудь. Откроем файл README.md и напишем в нем что-нибудь. После с помощью git diff посмотрим на текущие изменения. В диффе видно, что была добавлена строчка "it's test project".
+
 .. code-block:: bash
-	-> git diff
-	diff --git a/README.md b/README.md
-	index 21e60f8..285eafa 100644
-	--- a/README.md
-	+++ b/README.md
-	@@ -1 +1,3 @@
-	-# Test
-	\ No newline at end of file
-	+# Test
-	+
-	+it's test project
 
+    -> git diff
+    diff --git a/README.md b/README.md
+    index 21e60f8..285eafa 100644
+    --- a/README.md
+    +++ b/README.md
+    @@ -1 +1,3 @@
+    -# Test
+    \ No newline at end of file
+    +# Test
+    +
+    +it's test project
 
-В диффе видно, что была добавлена строчка "it's test project".
-7)
-.. code-block:: bash
-	-> git status
-	# On branch master
-	# Changes not staged for commit:
-	#   (use "git add <file>..." to update what will be committed)
-	#   (use "git checkout -- <file>..." to discard changes in working directory)
-	#
-	#	modified:   README.md
-	#
-	no changes added to commit (use "git add" and/or "git commit -a")
-
-
-Команда status показывает текущий статус репозитория. Мы видим, что сейчас мы находимся в ветке master (основная ветка нашего репозитория).
+7. Команда status показывает текущий статус репозитория. Мы видим, что сейчас мы находимся в ветке master (основная ветка нашего репозитория).
 Ниже написано, что файл README.md был изменен. Однако он ещё не готов для коммита.
-8) Сделаем git add, как рекомендует нам команда status.
+
 .. code-block:: bash
-	-> git add README.md
-	-> git status
-	# On branch master
-	# Changes to be committed:
-	#   (use "git reset HEAD <file>..." to unstage)
-	#
-	#	modified:   README.md
-	#
+
+    -> git status
+    # On branch master
+    # Changes not staged for commit:
+    #   (use "git add <file>..." to update what will be committed)
+    #   (use "git checkout -- <file>..." to discard changes in working directory)
+    #
+    #    modified:   README.md
+    #
+    no changes added to commit (use "git add" and/or "git commit -a")
+
+8. Сделаем git add, как рекомендует нам команда status.
+
+.. code-block:: bash
+
+    -> git add README.md
+    -> git status
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #    modified:   README.md
+    #
 
 Теперь status показывает, что изменения в файле README.md готовы для коммита. Нужно отметить, что если сейчас снова измененить README.md, то нужно снова обязательно выполнить git add.
-9) Закоммитим наши изменения:
+
+9. Закоммитим наши изменения:
+
 .. code-block:: bash
-	-> git commit -m "Added something to README"
-	[master 274f6d5] Added something to README
-	 Committer: Khairullin Egor <mikari@bsnewbt01i.yandex.net>
 
-	 1 file changed, 3 insertions(+), 1 deletion(-)
+    -> git commit -m "Added something to README"
+    [master 274f6d5] Added something to README
+     Committer: Khairullin Egor <mikari@bsnewbt01i.yandex.net>
 
-10) Посмотрим на историю нашего репозитория:
+     1 file changed, 3 insertions(+), 1 deletion(-)
+
+10. Посмотрим на историю нашего репозитория:
+
 .. code-block:: bash
-	-> git log
-	commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
-	Author: Egor Khairullin <mikari.san@gmail.com>
-	Date:   Wed Nov 9 14:47:40 2016 +0300
 
-	    Added something to README
+    -> git log
+    commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
+    Author: Egor Khairullin <mikari.san@gmail.com>
+    Date:   Wed Nov 9 14:47:40 2016 +0300
 
-	commit eec733a01ceb6896973998a9327aab735fa40ba4
-	Author: Mikari <mikari.san@gmail.com>
-	Date:   Wed Nov 9 13:36:38 2016 +0300
+        Added something to README
 
-	    Initial commit
+    commit eec733a01ceb6896973998a9327aab735fa40ba4
+    Author: Mikari <mikari.san@gmail.com>
+    Date:   Wed Nov 9 13:36:38 2016 +0300
+
+        Initial commit
 
 Теперь в нашем репозитории два коммита.
-11) Однако наши изменения пока что сохранены только у нас на компьютере. Давайте отправим (запушим) их на github.com.
+
+11. Однако наши изменения пока что сохранены только у нас на компьютере. Давайте отправим (запушим) их на github.com.
+
 .. code-block:: bash
-	-> git push
-	Username for 'https://github.com': <username>
-	Password for 'https://mikari@github.com': <password>
-	To https://github.com/Mikari/Test
-	   eec733a..8e2642d  master -> master
+
+    -> git push
+    Username for 'https://github.com': <username>
+    Password for 'https://mikari@github.com': <password>
+    To https://github.com/Mikari/Test
+       eec733a..8e2642d  master -> master
 
 При git push необходимо будет ввести логин и пароль от гитхаба (если, конечно, вы не настроили ssh-аутентификацию :-)).
 Теперь изменения будут доступны для всех.
-12) Для push'а существует парная команда pull - которая наоборот забирает изменения с удаленного сервера.
+
+12. Для push'а существует парная команда pull - которая наоборот забирает изменения с удаленного сервера.
+
 .. code-block:: bash
-	-> git pull
-	Already up-to-date.
+
+    -> git pull
+    Already up-to-date.
 
 Упражнение 2*
 -------------
@@ -159,155 +177,182 @@ Git - одна из самых популярных систем контрол�
 Данное упражнение можно пропустить.
 Необходимо создать pull request на гитхабе и вмерджить его. Результат нужно продемонстрировать преподавателю.
 
-1) Создадим новую ветку feature:
+1. Создадим новую ветку feature:
+
 .. code-block:: bash
-	-> git branch Feature
+
+    -> git branch Feature
 
 Теперь у нас есть две ветки (без аргументов branch просто выводит все существующие ветки):
-.. code-block:: bash
-	-> git branch
-	Feature
-	* master
-
-2) Давайте переключимся в эту ветку:
-.. code-block:: bash
-	-> git checkout Feature
 
 .. code-block:: bash
-	-> git branch
-	* Feature
-	master
 
-3) История в данной ветке совпадает с историей в master, а вот status пишет, что мы находимся в ветке Feature:
-.. code-block:: bash
-	-> git log
-	commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
-	Author: Egor Khairullin <mikari.san@gmail.com>
-	Date:   Wed Nov 9 14:47:40 2016 +0300
+    -> git branch
+    Feature
+    * master
 
-	    Added something to README
-
-	commit eec733a01ceb6896973998a9327aab735fa40ba4
-	Author: Mikari <mikari.san@gmail.com>
-	Date:   Wed Nov 9 13:36:38 2016 +0300
-
-	    Initial commit
-	[15:06:15 Wed Nov 09] mikari@bsnewbt01i:~/tttt/Test(Feature)
+2. Давайте переключимся в эту ветку:
 
 .. code-block:: bash
-	-> git status
-	# On branch Feature
-	nothing to commit (working directory clean)
 
-4) Давайте добавим новый файл feature и закоммитим его:
+    -> git checkout Feature
+    -> git branch
+    * Feature
+    master
+
+3. История в данной ветке совпадает с историей в master, а вот status пишет, что мы находимся в ветке Feature:
+
 .. code-block:: bash
-	-> ls
-	feature  README.md
-	-> git status
-	# On branch Feature
-	# Untracked files:
-	#   (use "git add <file>..." to include in what will be committed)
-	#
-	#	feature
-	nothing added to commit but untracked files present (use "git add" to track)
-	-> git add feature
-	-> git commit -m "Added new feature"
-	[Feature 446d9f6] Added new feature
-	 1 file changed, 1 insertion(+)
-	 create mode 100644 feature
-	-> git log
-	commit 446d9f6343d0406692fc6012160bed2e19f2fd83
-	Author: Egor Khairullin <mikari.san@gmail.com>
-	Date:   Wed Nov 9 15:09:26 2016 +0300
 
-	    Added new feature
+    -> git log
+    commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
+    Author: Egor Khairullin <mikari.san@gmail.com>
+    Date:   Wed Nov 9 14:47:40 2016 +0300
 
-	commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
-	Author: Egor Khairullin <mikari.san@gmail.com>
-	Date:   Wed Nov 9 14:47:40 2016 +0300
+        Added something to README
 
-	    Added something to README
+    commit eec733a01ceb6896973998a9327aab735fa40ba4
+    Author: Mikari <mikari.san@gmail.com>
+    Date:   Wed Nov 9 13:36:38 2016 +0300
 
-	commit eec733a01ceb6896973998a9327aab735fa40ba4
-	Author: Mikari <mikari.san@gmail.com>
-	Date:   Wed Nov 9 13:36:38 2016 +0300
+        Initial commit
+    [15:06:15 Wed Nov 09] mikari@bsnewbt01i:~/tttt/Test(Feature)
 
-	    Initial commit
+    -> git status
+    # On branch Feature
+    nothing to commit (working directory clean)
+
+4. Давайте добавим новый файл feature и закоммитим его:
+
+.. code-block:: bash
+
+    -> ls
+    feature  README.md
+    -> git status
+    # On branch Feature
+    # Untracked files:
+    #   (use "git add <file>..." to include in what will be committed)
+    #
+    #    feature
+    nothing added to commit but untracked files present (use "git add" to track)
+    -> git add feature
+    -> git commit -m "Added new feature"
+    [Feature 446d9f6] Added new feature
+     1 file changed, 1 insertion(+)
+     create mode 100644 feature
+    -> git log
+    commit 446d9f6343d0406692fc6012160bed2e19f2fd83
+    Author: Egor Khairullin <mikari.san@gmail.com>
+    Date:   Wed Nov 9 15:09:26 2016 +0300
+
+        Added new feature
+
+    commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
+    Author: Egor Khairullin <mikari.san@gmail.com>
+    Date:   Wed Nov 9 14:47:40 2016 +0300
+
+        Added something to README
+
+    commit eec733a01ceb6896973998a9327aab735fa40ba4
+    Author: Mikari <mikari.san@gmail.com>
+    Date:   Wed Nov 9 13:36:38 2016 +0300
+
+        Initial commit
 
 Как видим, в git log появился новый коммит. Однако в ветке master этих изменений нет:
+
 .. code-block:: bash
-	-> git log master
-	commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
-	Author: Egor Khairullin <mikari.san@gmail.com>
-	Date:   Wed Nov 9 14:47:40 2016 +0300
 
-	    Added something to README
+    -> git log master
+    commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
+    Author: Egor Khairullin <mikari.san@gmail.com>
+    Date:   Wed Nov 9 14:47:40 2016 +0300
 
-	commit eec733a01ceb6896973998a9327aab735fa40ba4
-	Author: Mikari <mikari.san@gmail.com>
-	Date:   Wed Nov 9 13:36:38 2016 +0300
+        Added something to README
 
-	    Initial commit
+    commit eec733a01ceb6896973998a9327aab735fa40ba4
+    Author: Mikari <mikari.san@gmail.com>
+    Date:   Wed Nov 9 13:36:38 2016 +0300
 
-5) Запушим нашу ветку на github.com:
+        Initial commit
+
+5. Запушим нашу ветку на github.com:
+
 .. code-block:: bash
-	-> git push -u origin Feature
-	Username for 'https://github.com': <username>
-	Password for 'https://<username>@github.com': <password>
-	To https://github.com/Mikari/Test
-	 * [new branch]      Feature -> Feature
-	Branch Feature set up to track remote branch Feature from origin.
+
+    -> git push -u origin Feature
+    Username for 'https://github.com': <username>
+    Password for 'https://<username>@github.com': <password>
+    To https://github.com/Mikari/Test
+     * [new branch]      Feature -> Feature
+    Branch Feature set up to track remote branch Feature from origin.
 
 Тут нужно обязательно добавить -u origin <branch> для того, чтобы новая ветка создалась и на гитхабе.
-6) Создадим pull request на гитхабе: https://github.com/Mikari/Test/pulls . Нажимаем на New pull request, выбираем base: master, compare: Feature. Там мы можем увидить текущую разницу между нашей новой веткой и мастером. Если все хорошо - нажимаем на Create pull request.
+
+6. Создадим pull request на гитхабе: https://github.com/Mikari/Test/pulls . Нажимаем на New pull request, выбираем base: master, compare: Feature. Там мы можем увидить текущую разницу между нашей новой веткой и мастером. Если все хорошо - нажимаем на Create pull request.
 Создастся новый pull request, который можно будет вмерджить в наш мастер.
-7) Нажмем на Merge pull request. Тут можно увидеть граф коммитов нашего репозитория: https://github.com/Mikari/Test/network . Видно, что наша ветка как бы отпочковалась, а потом вернулась в мастер.
-8) Переключимся в нашем локальном репозитории в ветку master и привезем новые изменения:
-.. code-block:: bash
-	-> git checkout master
-	Switched to branch 'master'
-	[15:24:04 Wed Nov 09] mikari@bsnewbt01i:~/tttt/Test(master)
-	-> git pull
-	remote: Counting objects: 1, done.
-	remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
-	Unpacking objects: 100% (1/1), done.
-	From https://github.com/Mikari/Test
-	   8e2642d..d269329  master     -> origin/master
-	Updating 8e2642d..d269329
-	Fast-forward
-	 feature |    1 +
-	 1 file changed, 1 insertion(+)
-	 create mode 100644 feature
 
-9) Можно увидеть граф нашей истории и в консоли:
-.. code-block:: bash
-	-> git log --graph --color --all
-	*   commit d2693293c55d1325d8adef3a68876d700858b3fd
-	|\  Merge: 8e2642d 446d9f6
-	| | Author: Mikari <mikari.san@gmail.com>
-	| | Date:   Wed Nov 9 15:21:51 2016 +0300
-	| |
-	| |     Merge pull request #1 from Mikari/Feature
-	| |
-	| |     Added new feature
-	| |
-	| * commit 446d9f6343d0406692fc6012160bed2e19f2fd83
-	|/  Author: Egor Khairullin <mikari.san@gmail.com>
-	|   Date:   Wed Nov 9 15:09:26 2016 +0300
-	|
-	|       Added new feature
-	|
-	* commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
-	| Author: Egor Khairullin <mikari.san@gmail.com>
-	| Date:   Wed Nov 9 14:47:40 2016 +0300
-	|
-	|     Added something to README
-	|
-	* commit eec733a01ceb6896973998a9327aab735fa40ba4
-	  Author: Mikari <mikari.san@gmail.com>
-	  Date:   Wed Nov 9 13:36:38 2016 +0300
+7. Нажмем на Merge pull request. Тут можно увидеть граф коммитов нашего репозитория: https://github.com/Mikari/Test/network . Видно, что наша ветка как бы отпочковалась, а потом вернулась в мастер.
 
-	      Initial commit
+8. Переключимся в нашем локальном репозитории в ветку master и привезем новые изменения:
+
+.. code-block:: bash
+
+    -> git checkout master
+    Switched to branch 'master'
+    [15:24:04 Wed Nov 09] mikari@bsnewbt01i:~/tttt/Test(master)
+    -> git pull
+    remote: Counting objects: 1, done.
+    remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+    Unpacking objects: 100% (1/1), done.
+    From https://github.com/Mikari/Test
+       8e2642d..d269329  master     -> origin/master
+    Updating 8e2642d..d269329
+    Fast-forward
+     feature |    1 +
+     1 file changed, 1 insertion(+)
+     create mode 100644 feature
+
+9. Можно увидеть граф нашей истории и в консоли:
+
+.. code-block:: bash
+
+    -> git log --graph --color --all
+    *   commit d2693293c55d1325d8adef3a68876d700858b3fd
+    |\  Merge: 8e2642d 446d9f6
+    | | Author: Mikari <mikari.san@gmail.com>
+    | | Date:   Wed Nov 9 15:21:51 2016 +0300
+    | |
+    | |     Merge pull request #1 from Mikari/Feature
+    | |
+    | |     Added new feature
+    | |
+    | * commit 446d9f6343d0406692fc6012160bed2e19f2fd83
+    |/  Author: Egor Khairullin <mikari.san@gmail.com>
+    |   Date:   Wed Nov 9 15:09:26 2016 +0300
+    |
+    |       Added new feature
+    |
+    * commit 8e2642d512b11ae43a97b0b4ac68e802d2626f14
+    | Author: Egor Khairullin <mikari.san@gmail.com>
+    | Date:   Wed Nov 9 14:47:40 2016 +0300
+    |
+    |     Added something to README
+    |
+    * commit eec733a01ceb6896973998a9327aab735fa40ba4
+      Author: Mikari <mikari.san@gmail.com>
+      Date:   Wed Nov 9 13:36:38 2016 +0300
+
+          Initial commit
+
+Продемонстрируйте преподавателю красивый git log в консоли и созданный и закрытый мердж реквест.
+10. Вместо создания pull request'а и мерджа через интерфейс можно было бы вмерджить через консоль вот так:
+
+.. code-block::bash
+
+    -> git checkout master
+    -> git merge feature
+
 
 Легенда
 -------
