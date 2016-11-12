@@ -1,7 +1,7 @@
 ООП и диаграммы классов UML
 ####################################
 
-:date: 2015-11-12 13:40
+:date: 2016-11-12 13:40
 :lecture_pdf: true
 :status: draft
 .. default-role:: code
