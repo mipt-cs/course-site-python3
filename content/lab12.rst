@@ -11,7 +11,7 @@
 Краткое напоминание о том, что такое ООП
 =========================================
 
-.. image:: {filename}/images/lab12/example.jpg
+.. image:: {filename}/images/lab12/classes.png
 
 Объектно-ориентированное программирование - это методология программирования,
 основанная на представлении программы в виде совокупности объектов,
@@ -39,8 +39,10 @@
 
             # coding=UTF-8
             class TestClass:
-                public_variable = "I'm public!"
-                __private_variable = "I'm too shy to be public!"
+
+                def __init__(self):
+                    self.public_variable = "I'm public!"
+                    self.__private_variable = "I'm too shy to be public!"
 
                 def get_public_variable(self):
                     return self.public_variable
