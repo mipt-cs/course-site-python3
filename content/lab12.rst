@@ -2,7 +2,6 @@
 ####################################
 
 :date: 2016-11-12 13:40
-:lecture_pdf: false
 
 .. default-role:: code
 .. contents:: Содержание
