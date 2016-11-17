@@ -488,10 +488,10 @@
             self.__text = text
 
         @abstractmethod
-        def get_repr(self):
+        def get_str(self):
             pass
 
-        def __repr__(self):
+        def __str__(self):
             return self.get_repr()
 
 
@@ -520,7 +520,7 @@
         def get_sources(self):
             return self.__sources
 
-        def get_repr(self):
+        def get_str(self):
             return " ".join(["News:", self.get_title(), "\n",
                             "Text:", self.get_text(), "\n",
                             "Publication date:", self.get_publication_date(), "\n",
@@ -541,7 +541,7 @@
         def set_out_date(self, out_date):
             self.__out_date = out_date
 
-        def get_repr(self):
+        def get_str(self):
             return " ".join(["Announcement:", self.get_title(), "\n",
                             "Text:", self.get_text(), "\n",
                             "Out date:", self.get_out_date(), "\n",
@@ -563,7 +563,7 @@
         def get_authors(self):
             return self.__authors
 
-        def get_repr(self):
+        def get_str(self):
             return " ".join(["Article:", self.get_title(), "\n",
                             "Text:", self.get_text(), "\n",
                             "Authors:", ", ".join(self.get_authors()), "\n",
@@ -581,7 +581,7 @@
             if isinstance(element, Publication):
                 print(element)
 
-Метод `__repr__(self)` есть у всех объектов в `Python` и вызывается когда мы пишем в коде `print(some_object)`, т.е. на самом деле, `print(some_object)` интерпретатором `Python` превращается в `some_object.__repr__()`.
+Метод `__str__(self)` есть у всех объектов в `Python` и вызывается когда мы пишем в коде `print(some_object)`, т.е. на самом деле, `print(some_object)` интерпретатором `Python` превращается в `some_object.__str__()`.
 У каждого объекта в `Python` есть два очень похожих метода `__repr__(self)` и `__str__(self)`. Оба этих метода возвращают строку.
 
 1. `__str__(self)` возвращает строку, которая кратко в неформальном стиле описывает объект.
@@ -589,10 +589,10 @@
 
 Вернемся к программе выше:
 
-Собстенно, в `Publication` есть метод `__repr__(self)` внутри которого вызывается `get_repr(self)`.
+Собстенно, в `Publication` есть метод `__str__(self)` внутри которого вызывается `get_repr(self)`.
 `get_repr(self)` в `Publication` не реализован.
 
-`get_repr(self)` реализован в потомках `Publication`. Поэтому, когда мы делаем `print(element)`, то `__repr__(self)` будет вызван из родителя `Publication`, потому что в детях он не переопределен.
+`get_repr(self)` реализован в потомках `Publication`. Поэтому, когда мы делаем `print(element)`, то `__str__(self)` будет вызван из родителя `Publication`, потому что в детях он не переопределен.
 
 А вот `get_repr(self)` будет вызван уже из потомков, т.к. в `Publication` он не реализован.
 Т.е. `Publication` использует метод, который будет определен только в потомке.
