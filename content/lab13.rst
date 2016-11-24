@@ -1,4 +1,4 @@
-Рекурсия: фракталы и обход в глубину
+Рекурсия: фракталы
 ####################################
 
 :date: 2016-11-24 13:40
@@ -65,17 +65,6 @@
 | 7    | 13    |
 +------+-------+
 
-.. code-block:: python
-
-   def fib(n):
-       if n < 2:
-           return n
-       else:
-           return fib(n-2)+fib(n-1)
-
-   print(fib(7))
-
-
 
 Фракталы
 ========
@@ -126,7 +115,8 @@
 Упражнение №2: кривая Коха
 --------------------------
 
-Нарисуйте `кривую Коха`_. Пример работы алгоритма при разной глубине рекурсии:
+Нарисуйте `кривую Коха`_.
+Пример работы алгоритма при разной глубине рекурсии:
 
 .. _`кривую Коха`: https://wikipedia.org/ru/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%9A%D0%BE%D1%85%D0%B0
 
@@ -139,31 +129,12 @@
 .. image:: {filename}/images/lab13/koch_curve4.gif
    :width: 350 px
 
+Для ускорения рисования используйте:
+
 .. code-block:: python
 
-   import turtle
+   turtle.speed('fastest')
 
-   def curve(l, n):
-       if n == 0:
-           turtle.forward(l)
-       else:
-           curve(l/3, n-1)
-           turtle.left(60)
-           curve(l/3, n-1)
-           turtle.right(120)
-           curve(l/3, n-1)
-           turtle.left(60)
-           curve(l/3, n-1)
-
-   L = 800
-   H = L/6*3**0.5
-   N = 4
-
-   turtle.penup()
-   turtle.goto(-L/2, -H/2)
-   turtle.pendown()
-
-   curve(L, N)
 
 Упражнение №3: снежинка Коха
 ----------------------------
@@ -181,37 +152,6 @@
 .. image:: {filename}/images/lab13/koch_snowflake4.gif
    :width: 350 px
 
-.. code-block:: python
-
-   import turtle
-
-   def curve(l, n):
-       if n == 0:
-           turtle.forward(l)
-       else:
-           curve(l/3, n-1)
-           turtle.left(60)
-           curve(l/3, n-1)
-           turtle.right(120)
-           curve(l/3, n-1)
-           turtle.left(60)
-           curve(l/3, n-1)
-
-   def snowflake(L, N):
-       for i in range(3):
-           curve(L, N)
-           turtle.right(120)
-
-   L = 300
-   H = L/6*3**0.5
-   N = 4
-
-   turtle.penup()
-   turtle.goto(-L/2, H)
-   turtle.pendown()
-
-   turtle.speed('fastest')
-   snowflake(L, N)
 
 Упражнение №4 кривая Минковского
 --------------------------------
@@ -226,40 +166,6 @@
    :width: 250 px
 .. image:: {filename}/images/lab13/minkowski_curve3.gif
    :width: 250 px
-
-.. code-block:: python
-
-   import turtle
-
-   def curve(l, n):
-       if n == 0:
-           turtle.forward(l)
-           return
-       curve(l/4, n-1)
-       turtle.left(90)
-       curve(l/4, n-1)
-       turtle.right(90)
-       curve(l/4, n-1)
-       turtle.right(90)
-       curve(l/4, n-1)
-       curve(l/4, n-1)
-       turtle.left(90)
-       curve(l/4, n-1)
-       turtle.left(90)
-       curve(l/4, n-1)
-       turtle.right(90)
-       curve(l/4, n-1)
-
-   L = 800
-   N = 3
-
-   turtle.speed('fastest')
-
-   turtle.penup()
-   turtle.goto(-L/2, 0)
-   turtle.pendown()
-
-   curve(L, N)
 
 
 Упражнение №5: кривая Леви
@@ -278,27 +184,10 @@
 .. image:: {filename}/images/lab13/levi_curve9.gif
    :width: 350 px
 
-.. code-block:: python
 
-   import turtle
+Упражнение №6: кривая дракона
+-----------------------------
 
-   def curve(l, n):
-       if n == 0:
-           turtle.forward(l)
-           return
-       turtle.left(45)
-       curve(l/2**0.5, n-1)
-       turtle.right(90)
-       curve(l/2**0.5, n-1)
-       turtle.left(45)
+Нарисуйте `кривую дракона`_.
 
-   L = 400
-   N = 9
-
-   turtle.speed('fastest')
-
-   turtle.penup()
-   turtle.goto(-L/2, -L/3)
-   turtle.pendown()
-
-   curve(L, N)
+.. _`кривую дракона`: https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B8%D0%B2%D0%B0%D1%8F_%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%B0
