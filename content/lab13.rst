@@ -2,7 +2,6 @@
 ####################################
 
 :date: 2016-11-24 13:40
-:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
