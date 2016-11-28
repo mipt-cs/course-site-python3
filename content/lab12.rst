@@ -3,6 +3,7 @@
 
 :date: 2016-11-12 13:40
 :lecture_link: https://youtu.be/fvtdh-krOK0
+:lecture_link2: https://youtu.be/u9HsU_x_mBE
 
 .. default-role:: code
 .. contents:: Содержание
