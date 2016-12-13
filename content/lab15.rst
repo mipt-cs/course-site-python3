@@ -3,7 +3,8 @@
 
 :date: 2016-12-08 13:40
 
-
+:test_comment: КР Физхим
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-register?contest_id=614116
 
 
 .. default-role:: code
