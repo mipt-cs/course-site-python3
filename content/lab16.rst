@@ -2,7 +2,6 @@
 #######
 
 :date: 2017-02-07
-:status: draft
 
 
 .. default-role:: code
