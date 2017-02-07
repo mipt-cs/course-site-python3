@@ -218,7 +218,7 @@
 	    def encode(self, line):
 	        ciphertext = []
 	        for i, letter in enumerate(line):
-	            shift = self.key[i % len(key)]
+	            shift = self.key[i % len(self.key)]
 	            cipherletter = self.caesar(letter, shift)
 	            ciphertext.append(cipherletter)
 
