@@ -47,8 +47,8 @@
 	    alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 
 	    def __init__(self):
-	        lowercase_code = {self.alphabet[i]:self.alphabet[-i-1] for i in range(len(self.alphabet))}
-	        uppercase_code = {self.alphabet[i].upper():self.alphabet[-i-1].upper() for i in range(len(self.alphabet))}
+	        lowercase_code = {x: y for x, y in zip(self.alphabet, self.alphabet[::-1])}
+	        uppercase_code = {x.upper(): y.upper() for x, y in zip(self.alphabet, self.alphabet[::-1])}
 	        self._encode = dict(lowercase_code)
 	        self._encode.update(uppercase_code)
 
@@ -83,10 +83,12 @@
 	    alphabet = "яюэьыъщшчцхфутсрпонмлкйизжёедгвба"
 
 	    def __init__(self, key):
-	        lowercase_code = {self.alphabet[i]:self.alphabet[(i+key)%len(self.alphabet)] for i in range(len(self.alphabet))}
-	        uppercase_code = {self.alphabet[i].upper():self.alphabet[(i+key)%len(self.alphabet)].upper() for i in range(len(self.alphabet))}
-	        self._encode = dict(lowercase_code)
-	        self._encode.update(uppercase_code)
+	        self._encode = dict()
+	        for i in range(len(self.alphabet)):
+	            letter = self.alphabet[i]
+	            encoded = self.alphabet[(i + key) % len(self.alphabet)]
+	            self._encode[letter] = encoded
+	            self._encode[letter.upper()] = encoded.upper()
 	        self._decode = {}  # FIXME
 
 	    def encode(self, text):
@@ -153,8 +155,8 @@
 	    alphabet = ""  # FIXME
 
 	    def __init__(self, keytable):
-	        lowercase_code = {self.alphabet[i]:keytable[i] for i in range(len(self.alphabet))}
-	        uppercase_code = {self.alphabet[i].upper():keytable[i].upper() for i in range(len(self.alphabet))}
+	        lowercase_code = {x: y for x, y in zip(self.alphabet, keytable)}
+	        uppercase_code = {x.upper(): y.upper() for x, y in zip(self.alphabet, keytable)}
 	        self._encode = dict(lowercase_code)
 	        self._encode.update(uppercase_code)
 	        self._decode = {}  # FIXME
@@ -200,7 +202,7 @@
 	    alphabet = ""  # FIXME
 
 	    def __init__(self, keyword):
-	        self.alphaindex = {self.alphabet[index]: index for index in range(len(self.alphabet))}
+	        self.alphaindex = {ch: index for index, ch in enumerate(self.alphabet)}
 	        self.key = [self.alphaindex[letter] for letter in keyword.lower()]
 
 	    def caesar(self, letter, shift):
@@ -213,16 +215,12 @@
 	            cipherletter = letter
 	        return cipherletter
 
-	    def encode(self, line, key = None):
-	        if not key:
-	            key = self.key
+	    def encode(self, line):
 	        ciphertext = []
-	        i = 0
-	        for letter in line:
-	            shift = key[i]
+	        for i, letter in enumerate(line):
+	            shift = key[i % len(key)]
 	            cipherletter = self.caesar(letter, shift)
 	            ciphertext.append(cipherletter)
-	            i = (i + 1)%len(key)
 
 	        return ''.join(ciphertext)
 
