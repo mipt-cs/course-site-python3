@@ -52,11 +52,8 @@
 	        self._encode = dict(lowercase_code)
 	        self._encode.update(uppercase_code)
 
-	    def encode(self, line):
-	        if len(line) == 1:
-	            return self._encode.get(line, line)
-	        else:
-	            return ''.join([self.encode(char) for char in line])
+	    def encode(self, text):
+	        return ''.join([self._encode.get(char, char) for char in text])
 
 
 	cipher = Atbash()
@@ -92,11 +89,8 @@
 	        self._encode.update(uppercase_code)
 	        self._decode = {}  # FIXME
 
-	    def encode(self, line):
-	        if len(line) == 1:
-	            return self._encode.get(line, line)
-	        else:
-	            return ''.join([self.encode(char) for char in line])
+	    def encode(self, text):
+	        return ''.join([self._encode.get(char, char) for char in text])
 
 	    def decode(self, line):
 	    	pass  # FIXME
@@ -165,11 +159,8 @@
 	        self._encode.update(uppercase_code)
 	        self._decode = {}  # FIXME
 
-	    def encode(self, line):
-	        if len(line) == 1:
-	            return self._encode.get(line, line)
-	        else:
-	            return ''.join([self.encode(char) for char in line])
+	    def encode(self, text):
+	        return ''.join([self._encode.get(char, char) for char in text])
 
 	    def decode(self, line):
 	        pass  # FIXME
@@ -207,7 +198,7 @@
 
 	class Vigenere:
 	    alphabet = ""  # FIXME
-	    
+
 	    def __init__(self, keyword):
 	        self.alphaindex = {self.alphabet[index]: index for index in range(len(self.alphabet))}
 	        self.key = [self.alphaindex[letter] for letter in keyword.lower()]
@@ -232,7 +223,7 @@
 	            cipherletter = self.caesar(letter, shift)
 	            ciphertext.append(cipherletter)
 	            i = (i + 1)%len(key)
-	            
+
 	        return ''.join(ciphertext)
 
 	    def decode(self, line):
