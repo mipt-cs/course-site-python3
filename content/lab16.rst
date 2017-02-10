@@ -49,7 +49,7 @@
 	    def __init__(self):
 	        lowercase_code = {x: y for x, y in zip(self.alphabet, self.alphabet[::-1])}
 	        uppercase_code = {x.upper(): y.upper() for x, y in zip(self.alphabet, self.alphabet[::-1])}
-	        self._encode = dict(lowercase_code)
+	        self._encode = lowercase_code
 	        self._encode.update(uppercase_code)
 
 	    def encode(self, text):
@@ -157,7 +157,7 @@
 	    def __init__(self, keytable):
 	        lowercase_code = {x: y for x, y in zip(self.alphabet, keytable)}
 	        uppercase_code = {x.upper(): y.upper() for x, y in zip(self.alphabet, keytable)}
-	        self._encode = dict(lowercase_code)
+	        self._encode = lowercase_code
 	        self._encode.update(uppercase_code)
 	        self._decode = {}  # FIXME
 
