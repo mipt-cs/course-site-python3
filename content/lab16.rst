@@ -2,6 +2,7 @@
 #######
 
 :date: 2017-02-07
+:lecture_link: https://youtu.be/r02UyT-myFg
 
 
 .. default-role:: code
