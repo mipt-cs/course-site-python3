@@ -2,6 +2,7 @@
 #####################
 
 :date: 2017-02-28
+:lecture_link: https://youtu.be/zH1phrsdSfo
 
 
 
