@@ -4,7 +4,6 @@
 :date: 2017-03-01
 :test_link: 
 :lecture_link:  
-:status: draft
 
 .. :test_comment: Контрольная по графам №3
 
