@@ -242,7 +242,7 @@ NetworkX содержит четыре класса графов:
 	nx.draw_networkx_edges(G, pos, edgelist=elarge,
 	                width=6)                                   # "тяжёлые"
 	nx.draw_networkx_edges(G, pos, edgelist=esmall,
-	       width=6, alpha=0.5, edge_color='b',s tyle='dashed') # "лёгкие"
+	       width=6, alpha=0.5, edge_color='b', style='dashed') # "лёгкие"
 
 	# метки
 	nx.draw_networkx_labels(G,pos,font_size=20,font_family='sans-serif')
