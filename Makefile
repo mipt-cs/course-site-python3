@@ -69,15 +69,14 @@ lab3_solutions:
 	cd solutions/lab3 && ./create_gifs.sh
 
 lections:
-	true
-#	$(MAKE) -C content/lections
+	$(MAKE) -C content/lections
 
 html: lections
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
-#	$(MAKE) -C content/lections clean
+	$(MAKE) -C content/lections clean
 
 regenerate:
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)

@@ -26,6 +26,8 @@ addons:
     packages:
       - texlive-latex-recommended
       - texlive-lang-cyrillic
+      - texlive-fonts-recommended
+      - texlive-latex-extra
 
 after_success:
   - make rsync_upload
