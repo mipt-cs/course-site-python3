@@ -1,3 +1,4 @@
+dist: trusty
 sudo: false
 
 language: python
@@ -10,9 +11,9 @@ before_script:
   - base64 -d <<< $DEPLOY_KEYS | tar -xz -C $HOME
 
 script:
-  - make html &> build.log
-  - cat build.log
-  - test 0 -eq $( egrep -c '^ERROR:' build.log )
+  - make html
+#  - cat build.log
+#  - test 0 -eq $( egrep -c '^ERROR:' build.log )
 
 branches:
   only:
@@ -28,6 +29,8 @@ addons:
       - texlive-lang-cyrillic
       - texlive-fonts-recommended
       - texlive-latex-extra
+      - pgf
+      - latex-beamer
 
 after_success:
   - make rsync_upload
