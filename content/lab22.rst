@@ -2,8 +2,8 @@
 ###################
 
 :date: 2017-03-21
-:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=510207
-:test_comment: Контрольная работа для 5111 группы (12:20 - 15:20 23.03.2017)
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=512207
+:test_comment: Контрольная работа для 5112 группы (15:30 - 18:30 23.03.2017)
 
 .. default-role:: code
 .. contents:: Содержание
