@@ -3,8 +3,8 @@
 
 :date: 2017-03-21
 :lecture_link: https://youtu.be/-15pRsKRx58
-:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=512207
-:test_comment: Контрольная работа для 5112 группы (15:30 - 18:30 23.03.2017)
+:test_link: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=630207
+:test_comment: Контрольная работа для 637 и 638 групп (9:00 - 12:10 24.03.2017)
 
 .. default-role:: code
 .. contents:: Содержание
