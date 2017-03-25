@@ -1,0 +1,15 @@
+digraph wiki {
+    bgcolor="transparent";
+    node [shape=circle];
+
+
+    q0 -> q1[label="a → b", minlen=2.0];
+    q1 -> q2[label="b → a", minlen=2.0];
+    q2 -> q1[label="a → b", minlen=2.0];
+    q2 -> q5[label="c → X", minlen=2.0];
+    q0 -> q3[label="b → a", minlen=2.0];
+    q3 -> q4[label="a → b", minlen=2.0];
+    q4 -> q3[label="b → a", minlen=2.0];
+    q4 -> q5[label="c → X", minlen=2.0];
+
+}
