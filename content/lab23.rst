@@ -3,7 +3,6 @@
 
 :date: 2017-03-26
 :lecture_link:
-:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
