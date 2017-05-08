@@ -25,7 +25,6 @@
 
 .. code-block:: text
 
-
 	1
 	1
 	1
@@ -36,14 +35,12 @@
 
 .. code-block:: text
 
-
 	YES
 
 Ввод
 ++++
 
 .. code-block:: text
-
 
 	3
 	4
@@ -54,7 +51,6 @@
 +++++
 
 .. code-block:: text
-
 
 	NO
 
@@ -76,7 +72,6 @@
 +++++
 
 .. code-block:: text
-
 
 	1 2 6 24
 
@@ -101,7 +96,6 @@
 
 .. code-block:: text
 
-
 	9
 	1 2 3 4 5 4 3 2 1
 
@@ -110,14 +104,12 @@
 
 .. code-block:: text
 
-
 	0
 
 Ввод
 ++++
 
 .. code-block:: text
-
 
 	5
 	1 2 1 2 2
@@ -127,7 +119,6 @@
 
 .. code-block:: text
 
-
 	3
 	1 2 1
 
@@ -136,7 +127,6 @@
 
 .. code-block:: text
 
-
 	5
 	1 2 3 4 5
 
@@ -144,7 +134,6 @@
 +++++
 
 .. code-block:: text
-
 
 	4
 	4 3 2 1
@@ -164,7 +153,6 @@
 
 .. code-block:: text
 
-
 	3
 	3 2 1
 
@@ -172,7 +160,6 @@
 +++++
 
 .. code-block:: text
-
 
 	2 1 3
 
@@ -195,10 +182,6 @@
 
 .. code-block:: text
 
-
-.. code-block:: text
-
-
 	3
 	10 5 100
 
@@ -207,14 +190,12 @@
 
 .. code-block:: text
 
-
 	19
 
 Ввод
 ++++
 
 .. code-block:: text
-
 
 	3
 	5 5 10
@@ -224,14 +205,12 @@
 
 .. code-block:: text
 
-
 	0
 
 Ввод
 ++++
 
 .. code-block:: text
-
 
 	4
 	50 5 5 5
@@ -240,7 +219,6 @@
 +++++
 
 .. code-block:: text
-
 
 	9
 
@@ -264,7 +242,6 @@
 ++++
 
 .. code-block:: text
-
 
 	5 18
 	1 2
@@ -291,7 +268,6 @@
 
 .. code-block:: text
 
-
 	YES
 
 
@@ -315,7 +291,6 @@
 
 .. code-block:: text
 
-
 	3 2
 	1 2
 	1 3
@@ -324,7 +299,6 @@
 +++++
 
 .. code-block:: text
-
 
 	YES
 	1 
@@ -342,7 +316,6 @@
 
 .. code-block:: text
 
-
 	7
 	A B
 	B C
@@ -356,7 +329,6 @@
 +++++
 
 .. code-block:: text
-
 
 	A B F E A
 
@@ -383,14 +355,12 @@
 
 .. code-block:: text
 
-
 	5 15 18 3
 
 Вывод
 +++++
 
 .. code-block:: text
-
 
 	3
 
@@ -415,14 +385,12 @@ N чисел, разделенные пробелами.
 
 .. code-block:: text
 
-
 	abcd
 
 Вывод
 +++++
 
 .. code-block:: text
-
 
 	1 1 1 1 
 
@@ -431,13 +399,11 @@ N чисел, разделенные пробелами.
 
 .. code-block:: text
 
-
 	aaaaa
 
 Вывод
 +++++
 
 .. code-block:: text
-
 
 	1 3 5 3 1 
