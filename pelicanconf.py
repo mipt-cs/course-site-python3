@@ -6,7 +6,7 @@ import os
 
 AUTHOR = 'Alexey Ermakov & Timofey Khirianov'
 SITENAME = 'Курс информатики на Python 3'
-SITEURL = 'http://judge.mipt.ru/mipt_cs_on_python3'
+SITEURL = ''
 
 PATH = 'content'
 
