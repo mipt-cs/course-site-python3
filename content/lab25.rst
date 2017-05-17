@@ -2,6 +2,7 @@
 ####################
 
 :date: 2017-04-10
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание
