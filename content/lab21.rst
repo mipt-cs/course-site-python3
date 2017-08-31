@@ -3,7 +3,7 @@
 
 :date: 2017-03-14
 :lecture_link: https://youtu.be/4rEEPrUk-pA
-:lecture_pdf: 
+:lecture_pdf: true
 
 Контест для выполнения на лабораторной работе
 =============================================

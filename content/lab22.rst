@@ -3,6 +3,7 @@
 
 :date: 2017-03-21
 :lecture_link: https://youtu.be/-15pRsKRx58
+:lecture_pdf: true
 
 .. default-role:: code
 .. contents:: Содержание

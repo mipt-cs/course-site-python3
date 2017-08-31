@@ -4,6 +4,7 @@
 :date: 2017-03-01
 :test_link: 
 :lecture_link: https://youtu.be/h70kNhG3p5g
+:lecture_pdf: true
 
 .. :test_comment: Контрольная по графам №3
 
