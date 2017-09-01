@@ -71,7 +71,7 @@ lab3_solutions:
 lections:
 	$(MAKE) -C content/lections
 
-html: lections
+html: 
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
