@@ -66,7 +66,7 @@
 
 .. code-block:: text
 
-	python task_1.py
+	python3 task_1.py
 
 Решение пишется прямо в файл `task_1.py`, который можно открыть любым текстовым редактором (например, gedit или PyCharm).
 	
