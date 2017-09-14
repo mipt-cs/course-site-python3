@@ -17,14 +17,6 @@ notifications:
     on_failure: always
   slack:
     secure: eSy8xbGhSNsGSgXJ1QZVWcQIw3cupaP94aEqH/g/G9nTbQh7OE3RMvShXWp9susNtFzqUjpZC1N1mpngHDPytRBe3GFsnxkXVM6Di5RyKYApuFsee9pw09LF3gQ4C4wblsuKRr+XB8gjLsqWn9s25tH0z3Es9I8a1meMtpYUwpj7iG+iytcj/FdY7XxmX+I7GIZOh9qwbjuWM9GmspH2DoZBpUv9gqSwGYiQ9Km3f8fdERraAycsypI8hfrS53PM3c+vo3r1k+dtg7WbJ+d+r6DFAUHVGFq7E24JtIcPiAnP7527Gbi3TxbEf6wvbZucsaHKob26j21n+OoLrglxL2CndVk6JXaWDryjmjVPRlZR+Zzc/YC/7VgO8WmnXdjTMwL7lqt048soWd+VDureywU4cPyvRs3Nan5/NGcxhg00AwqpZ6U0+/szoJfHvORgBJZtSCbR1i+ZUmDoqyX3habK21gAqzonZfACFGx1d+9j84OTzdKcteAWc0bYIR+yrqSoMV360A6s1v19s6wQx/Uwl4vszYhLkHrcttb/ZeBO2Z+CTSLkwveb4N5eEtIvQSW81zNs3rGcVar4wj9VsvtCs5QuOxSQhBGXRzuhoVojtZIsGHEfSujFZ3GgTdgufQmHRrMWWBIjuZK3lkLaRKULJk061HJAcHZfxTSBYCc=
-addons:
-  apt:
-    packages:
-    - texlive-latex-recommended
-    - texlive-lang-cyrillic
-    - texlive-fonts-recommended
-    - texlive-latex-extra
-    - pgf
-    - latex-beamer
+
 after_success:
 - make rsync_upload
