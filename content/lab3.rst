@@ -22,3 +22,8 @@
 `Контест для 741, 742 и 743 групп.`__
 
 .. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=740103
+
+
+`Контест для 6111, 6112, 6113, 6114, 6115 групп.`__
+
+.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=610103
