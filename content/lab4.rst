@@ -11,135 +11,137 @@
 Введение
 ========
 
-На этом занятии мы хотим познакомиться с тем, как используя Python можно рисовать и анимировать персонажей.
-Давайте представим, что мы захотели сделать игру для своих одногруппников, чтобы они занимались хоть чем-то,
-помимо химии.
+На этом занятии вы будете рисовать и анимировать персонажей на языке Python.
 
-Первое с чего мы начнем, это — работа с графикой.
-
-Благодаря Джону Зелле у нас есть вспомогательная библиотека графики (`graphics.py`__), с помощью которой
+Благодаря `Джону Зелле`__ у нас есть вспомогательная библиотека графики (`graphics.py`), с помощью которой
 мы будем отображать примитивные объекты на экране.
 
-.. __: http://mcsp.wartburg.edu/zelle/python/graphics.py
+.. __: http://mcsp.wartburg.edu/zelle/
 
-Благодаря этой библиотеке мы можем расширить скудный набор команд в Python и говорить, что мы хотим рисовать,
-напрямую в коде.
+Установка библиотеки
+--------------------
 
-Перед началом использования библиотеки, ее необходимо установить. Делается это следующим образом:
-Откройте консоль и введите следующие команды:
+На личном компьютере её можно установить менеджером пакетов:
 
 .. code-block:: text
 
-	pip install graphics.py
-	pip install tkinter.py
+    pip install graphics.py
 
-Приведем краткий обзор наиболее используемых команд.
+Или `просто скачать файл`__ и положить в директорию, где вы собираетесь далее писать свои программы.
 
-Первое с чем нам предстоит познакомиться это окно, место где происходит отрисовка.
+.. __: http://mcsp.wartburg.edu/zelle/python/graphics.py
 
+Обзор команд модуля `graphics`
+------------------------------
 
-.. code-block:: python
-	
-	#Инициализация окна с названием "Ganzz game" и размером 100х100 пикселей
-	window = GraphWin("Ganzz game", 100, 100)
-
-	#Закрытие окна после завершения работы с графикой
-	window.close()
-
-Следующим этапом будет создание геометрических примитивов.
-
-.. code-block:: python
-	
-	#Создание круга с радиусом 10 и координатами центра (50, 50)
-	myCircle = Circle(Point(50, 50), 10)
-
-	#Создание отрезка с концами в точках (2, 4) и (4, 8)
-	myLine = Line(Point(2, 4), Point(4, 8))
-
-	#Создание прямоугольника у которого диагональ — отрезок с концами в точках (2, 4) и (4, 8)
-	myRectangle = Rectangle(Point(2, 4), Point(4, 8))
-	 
-Теперь только и остается отрисовать уже созданные примитивы в уже созданном окне.
-
-.. code-block:: python
-
-	#Отрисовка примитивов в окне window
-	myCircle.draw(window)
-	myLine.draw(window)
-	myRectangle.draw(window)
-
-В настоящих играх отрисовывается более миллиона примитивов за один кадр, а в нашем случае мы рисуем их крайне мало, поэтому скрипт выполнится крайне быстро и мы не успеем увидеть результаты нашего труда. Чтобы это исправить, стоит ввести какой-то способ поставить выполнение скрипта на паузу.
-
-.. code-block:: python
-
-	#Возможность поставить паузу предоставляет эта команда, которая ожидает нажатие кнопки мыши.
-	window.getMouse()
-
-	#После того как мы выполнили все нужные операции, окно следует закрыть.
-	window.close()
-
-Предоставим пример, который рисует low-poly изображение лица Тимофея Федоровича, если вы не ходите на лекции.
+Графическое окно — это место, где будут размещаться графические примитивы:
 
 
 .. code-block:: python
+    
+    # Инициализация окна с названием "Russian game" и размером 100х100 пикселей
+    window = GraphWin("Russian game", 100, 100)
 
-	from graphics import *
+    # Закрытие окна после завершения работы с графикой
+    window.close()
 
-	window = GraphWin("Jenkslex and Ganzz project", 400, 400)
+Создание графических примитивов:
 
-	face = Circle(Point(200, 200), 100)
-	face.setFill('yellow')
+.. code-block:: python
+    
+    # Создание круга с радиусом 10 и координатами центра (50, 50)
+    myCircle = Circle(Point(50, 50), 10)
 
-	eyebrow1 = Line(Point(100, 120), Point(180, 170))
-	eyebrow2 = Line(Point(220, 170), Point(300, 120))
+    # Создание отрезка с концами в точках (2, 4) и (4, 8)
+    myLine = Line(Point(2, 4), Point(4, 8))
 
-	eyebrow1.setWidth(10)
-	eyebrow2.setWidth(10)
+    # Создание прямоугольника у которого диагональ — отрезок с концами в точках (2, 4) и (4, 8)
+    myRectangle = Rectangle(Point(2, 4), Point(4, 8))
+     
+Отрисовка примитива в графическом окне производится отдельной командой:
 
-	eyebrow1.setOutline('black')
-	eyebrow2.setOutline('black')
+.. code-block:: python
 
-	eye1 = Circle(Point(150, 180), 20)
-	eye2 = Circle(Point(250, 180), 15)
+    # Отрисовка примитивов в окне window
+    myCircle.draw(window)
+    myLine.draw(window)
+    myRectangle.draw(window)
 
-	eye1.setFill('red')
-	eye2.setFill('red')
+Скрипт выполнится крайне быстро и мы не успеем увидеть результаты нашего труда. Чтобы это исправить, стоит поставить выполнение скрипта на паузу:
 
-	mouth = Line(Point(150, 260), Point(250, 260))
+.. code-block:: python
 
-	mouth.setWidth(20)
+    #  Ожидание нажатия кнопки мыши по окну.
+    window.getMouse()
 
-	mouth.setOutline('black')
+    #  После того как мы выполнили все нужные операции, окно следует закрыть.
+    window.close()
 
-	face.draw(window)
+    
+Пример программы
+----------------
+    
+Законченный пример, который рисует low-poly изображение человеческого лица:
 
-	eyebrow1.draw(window)
-	eyebrow2.draw(window)
+.. code-block:: python
 
-	eye1.draw(window)
-	eye2.draw(window)
+    from graphics import *
 
-	mouth.draw(window)
+    window = GraphWin("Jenkslex and Ganzz project", 400, 400)
 
-	window.getMouse()
+    face = Circle(Point(200, 200), 100)
+    face.setFill('yellow')
 
-	window.close()
+    eye1 = Circle(Point(150, 180), 20)
+    eye2 = Circle(Point(250, 180), 15)
+    eye1_center = Circle(Point(150, 180), 8)
+    eye2_center = Circle(Point(250, 180), 7)
+    eye1.setFill('red')
+    eye2.setFill('red')
+    eye1_center.setFill('black')
+    eye2_center.setFill('black')
 
-Попробуйте скопировать данный код к себе в среду разработки и посмотреть, что получается.
+    eyebrow1 = Line(Point(100, 120), Point(180, 170))
+    eyebrow2 = Line(Point(220, 170), Point(300, 140))
+    eyebrow1.setWidth(10)
+    eyebrow2.setWidth(10)
+    eyebrow1.setOutline('black')
+    eyebrow2.setOutline('black')
 
-Если вы хотите узнать еще больше команд, то вам `сюда`__. Как правило, каждая библиотека содержит документацию по тому, как ее использовать. Знайте это, когда будете разрабатывать свое собственное ПО. В большинстве случаев библиотеки содержат готовые решения, уже написанные до вас, не стоит изобретать велосипед, порой иногда эффективнее использовать то, что есть, ведь это надежнее и дешевле. 
+    mouth = Line(Point(150, 260), Point(250, 260))
+    mouth.setWidth(20)
+    mouth.setOutline('black')
+
+    face.draw(window)
+    eye1.draw(window)
+    eye2.draw(window)
+    eye1_center.draw(window)
+    eye2_center.draw(window)
+    eyebrow1.draw(window)
+    eyebrow2.draw(window)
+    mouth.draw(window)
+
+    window.getMouse()
+
+    window.close()
+
+
+Скопируйте код в среду разработки, запустите и посмотрите на результат.
+
+Документация
+------------
+
+Для выполнения данной работы линий, прямоугольников и кругов вполне достаточно. Но если вы хотите узнать еще больше команд, то `загляните в документацию библиотеки graphics`__.
 
 .. __: http://mcsp.wartburg.edu/zelle/python/graphics/graphics/index.html
 
-Функции без параметров
-======================
+Бесструктурное программирование
+===============================
 
-Ознакомившись с библиотекой, можно ответственно подойти к созданию первой анимированной сцены. Но все по порядку. Давайте сначала нарисуем какую-нибудь статичную сцену.
+Самостоятельное задание №1. Пейзаж
+----------------------------------
 
-Самостоятельное задание №1
---------------------------
-
-Используя полученные знания, нарисуйте любую статическую сцену, которая содержит не менее 5 различных объектов, состоящих из не менее 4-5 примитивов. Проявите свою творческую натуру, но не занимайтесь этим более 30 минут, ведь вашу сцену можно улучшать вечно, а наша задача немного в другом. Примером сцены может являться следующая картинка:
+Используя полученные знания, нарисуйте любую статическую сцену, которая содержит не менее 5 различных объектов, состоящих из пяти и более примитивов. Проявите свою творческую натуру, но не занимайтесь этим более 30 минут, ведь вашу сцену можно улучшать вечно, а наша задача немного в другом. Примером сцены может являться следующая картинка:
 
 .. image:: {filename}/images/lab4/export.png
     :align: center
@@ -149,6 +151,8 @@
 .. image:: {filename}/images/lab4/zhdun.png
     :align: center
 
+Cтруктурное программирование
+============================
 
 Давайте изменим нашу программу так, чтобы она была разделена на логические независимые куски кода — функции. 
 
@@ -156,17 +160,17 @@
 
 .. code-block:: python
 
-	#Определение функции
-	def sayHello():
-		#Тело функции
-		print('Say hello to my little friend!')
+    # Определение функции
+    def say_hello():
+        # Тело функции
+        print('Say hello to my little friend!')
 
-	#Вызов функции
-	sayHello()
+    # Вызов функции
+    say_hello()
 
-Обратите внимание, что все операции, которые выполняет функция, должны быть оттабулированы, также как это происходит в операторах if и while. А также на тот факт, что без вызова функции все операции, которые прописаны в теле функции, выполнены не будут.
+Обратите внимание, что все входящие в тело функции операции должны быть с отступом в четыре пробела. А также на тот факт, что без вызова функции все операции, которые прописаны в теле функции, выполнены не будут.
 
-Функции — мощный инструмент! Идея в том, чтобы разделить наш код на независимые друг от друга по смыслу куски.
+Функции — мощный инструмент. Идея в том, чтобы разделить наш код на независимые друг от друга по смыслу куски.
 
 Дейкстра пишет, что ни один человек не обладает интеллектом, способным вместить все детали современной компьютерной программы, поэтому нам не стоит пытаться охватывать всю программу сразу. Вместо этого мы должны попытаться организовать программы так, чтобы можно было безопасно работать с их отдельными фрагментами по очереди.
 
@@ -178,71 +182,71 @@
 
 .. code-block:: python
 
-	from graphics import *
+    from graphics import *
 
-	window = GraphWin("Jenkslex and Ganzz project", 400, 400)
+    window = GraphWin("Jenkslex and Ganzz project", 400, 400)
 
-	def drawLeftEye():
-		eye 	= Circle(Point(150, 180), 20)
-		pupil 	= Circle(Point(150, 180), 10)
+    def drawLeftEye():
+        eye     = Circle(Point(150, 180), 20)
+        pupil     = Circle(Point(150, 180), 10)
 
-		eye.setFill('red')
-		pupil.setFill('black')
+        eye.setFill('red')
+        pupil.setFill('black')
 
-		eye.draw(window)
-		pupil.draw(window)
+        eye.draw(window)
+        pupil.draw(window)
 
-	def drawRightEye():
-		eye 	= Circle(Point(250, 180), 14)
-		pupil 	= Circle(Point(250, 180),  7)
+    def drawRightEye():
+        eye     = Circle(Point(250, 180), 14)
+        pupil     = Circle(Point(250, 180),  7)
 
-		eye.setFill('red')
-		pupil.setFill('black')
+        eye.setFill('red')
+        pupil.setFill('black')
 
-		eye.draw(window)
-		pupil.draw(window)
+        eye.draw(window)
+        pupil.draw(window)
 
-	def drawEyebrows():
-		eyebrow1 = Line(Point(100, 120), Point(180, 170))
-		eyebrow2 = Line(Point(220, 170), Point(300, 120))
+    def drawEyebrows():
+        eyebrow1 = Line(Point(100, 120), Point(180, 170))
+        eyebrow2 = Line(Point(220, 170), Point(300, 120))
 
-		eyebrow1.setWidth(10)
-		eyebrow2.setWidth(10)
+        eyebrow1.setWidth(10)
+        eyebrow2.setWidth(10)
 
-		eyebrow1.setOutline('black')
-		eyebrow2.setOutline('black')
+        eyebrow1.setOutline('black')
+        eyebrow2.setOutline('black')
 
-		eyebrow1.draw(window)
-		eyebrow2.draw(window)
+        eyebrow1.draw(window)
+        eyebrow2.draw(window)
 
-	def drawFace():
-		face = Circle(Point(200, 200), 100)
-		face.setFill('yellow')
+    def drawFace():
+        face = Circle(Point(200, 200), 100)
+        face.setFill('yellow')
 
-		face.draw(window)
+        face.draw(window)
 
-	def drawMouth():
-		mouth = Line(Point(150, 260), Point(250, 260))
-		mouth.setWidth(20)
-		mouth.setOutline('black')
+    def drawMouth():
+        mouth = Line(Point(150, 260), Point(250, 260))
+        mouth.setWidth(20)
+        mouth.setOutline('black')
 
-		mouth.draw(window)
+        mouth.draw(window)
 
-	def drawTimofeyFedorovich():
-		drawFace()
-		drawLeftEye()
-		drawRightEye()
-		drawEyebrows()
-		drawMouth()
+    def drawTimofeyFedorovich():
+        drawFace()
+        drawLeftEye()
+        drawRightEye()
+        drawEyebrows()
+        drawMouth()
 
 
-	drawTimofeyFedorovich()
+    drawTimofeyFedorovich()
 
-	window.getMouse()
+    window.getMouse()
 
-	window.close()
+    window.close()
 
-	
+    
 Как видите, функциональность программы не изменилась, но если вы увидете ее в первый раз, вы разберетесь с ней гораздо быстрее, чем если бы вы разбирались с первоначальным примером, написанным без использования функций.
 
 
@@ -270,22 +274,22 @@
 
 .. code-block:: python
 
-	def drawEye(x, y, size):
-		eye 	= Circle(Point(x, y), size)
-		pupil 	= Circle(Point(x, y), size/2)
+    def drawEye(x, y, size):
+        eye     = Circle(Point(x, y), size)
+        pupil     = Circle(Point(x, y), size/2)
 
-		eye.setFill('red')
-		pupil.setFill('black')
+        eye.setFill('red')
+        pupil.setFill('black')
 
-		eye.draw(window)
-		pupil.draw(window)
+        eye.draw(window)
+        pupil.draw(window)
 
-	def drawTimofeyFedorovich():
-		drawFace()
-		drawEye(150, 180, 20)
-		drawEye(250, 180, 14)
-		drawEyebrows()
-		drawMouth()
+    def drawTimofeyFedorovich():
+        drawFace()
+        drawEye(150, 180, 20)
+        drawEye(250, 180, 14)
+        drawEyebrows()
+        drawMouth()
 
 Как видите теперь, если мы хотим изменить конструкцию обоих глаз одновременно, нам достаточно изменить код в одном месте, и это изменение распространиться на все обьекты, которые отрисовываются данной функцией.
 
