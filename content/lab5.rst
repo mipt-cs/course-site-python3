@@ -142,6 +142,31 @@ X_{k+1} = X_k + V*t
 Равномерная сила тяжести (Равноускоренное движение)
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Давайте ещё немного разнообразим модель, добавив в наш 2D мирок силу гравитации. Для этого достаточно написать всего лишь ещё одно физическое правило. Только на этот раз мы будем пересчитывать скорость, а не координаты.
+
+.. code-block:: python
+    #   Это переделанная функция пересчёта координат
+    def update_coord s(coords, velocity):
+        return add(coords, velocity)
+
+
+    def update_velocity(velocity, acceleration):
+        return add(velocity, acceleration)
+
+
+    while True:
+        clear_window()
+        draw_ball(coords)
+
+        coords = update_coords(coords, velocity)
+        velocity = update_velocity(velocity, acceleration)
+        check_coords(coords, velocity)
+
+        gr.time.sleep(0.02)
+
+Весь код {здесь}.
+.. __: {filename}/code/lab5/3.py
+
 Центральная сила тяжести (спутник возле солнца)
 +++++++++++++++++++++++++++++++++++++++++++++++
 
