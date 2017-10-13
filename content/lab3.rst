@@ -18,7 +18,7 @@
 
 `Контест для 737 и 738 групп.`__
 
-.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=730303 (статистика заморожена, оставлен в режиме "дорешивания").
+.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=730303
 
 `Контест для 741, 742 и 743 групп.`__
 
