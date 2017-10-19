@@ -17,10 +17,10 @@
 .. code-block:: pycon
 
    >>> def fac(n):
-   ...        if n == 0:
-   ...            return 1
-   ...        else:
-   ...            return n*fac(n-1)
+   ...     if n == 0:
+   ...         return 1
+   ...     else:
+   ...         return n * fac(n - 1)
    ...
    >>> fac(5)
    120
@@ -139,13 +139,13 @@
            turtle.left(180)
            return
 
-       x = l/(n+1)
+       x = l / (n + 1)
        for i in range(n):
            turtle.forward(x)
            turtle.left(45)
-           draw(0.5*x*(n-i-1), n-i-1)
+           draw(0.5 * x * (n - i - 1), n - i - 1)
            turtle.left(90)
-           draw(0.5*x*(n-i-1), n-i-1)
+           draw(0.5 * x * (n - i - 1), n - i - 1)
            turtle.right(135)
 
        turtle.forward(x)
