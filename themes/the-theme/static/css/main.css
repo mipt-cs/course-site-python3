@@ -527,3 +527,8 @@ img.align-center {
 .docutils .line-block .line-block .line code {
     margin-left: 15px;
 }
+
+/* prevent line breaking inside inline math */
+span.formula {
+    white-space: nowrap;
+}
