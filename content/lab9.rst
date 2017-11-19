@@ -18,7 +18,7 @@
 
 `Контест для 737 и 738 групп.`__
 
-.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=730309
+.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=731109
 
 
 `Контест для 741, 742 и 743 групп.`__
