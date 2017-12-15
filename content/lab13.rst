@@ -2,6 +2,7 @@
 #######################################
 
 :date: 2017-11-24 12:20
+:lecture_link: https://youtu.be/L4IU1bPKvHM
 
 .. default-role:: math
 .. contents:: Содержание
