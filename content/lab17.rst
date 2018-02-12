@@ -3,6 +3,7 @@
 
 :date: 2018-02-12 15:00
 :lecture_link: https://youtu.be/28RQZGl68IM
+:status: draft
 
 .. default-role:: code
 .. contents:: Содержание
