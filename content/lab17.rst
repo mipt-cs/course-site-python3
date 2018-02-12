@@ -103,6 +103,7 @@ Pop, Shift, Delete
 Сделается чтобы если pop_position == None то брался pop() без указания индекса. Допишите код получения массивов values1, values2, values3. Покажите преподавателю получившиеся графики.
 
 .. code-block:: python
+
     import matplotlib.pyplot as plt
     import time
 
