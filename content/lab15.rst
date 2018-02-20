@@ -24,4 +24,4 @@
 
 `Контест для 611* групп.`__
 
-.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-master?contest_id=610201
+.. __: http://judge2.vdi.mipt.ru/cgi-bin/new-client?contest_id=610201
