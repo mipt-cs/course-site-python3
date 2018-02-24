@@ -537,6 +537,6 @@ img.align-center {
 }
 
 /* prevent line breaking inside inline math and code */
-span.formula,span.code {
+span.formula,code {
     white-space: nowrap;
 }
