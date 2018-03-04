@@ -50,9 +50,13 @@ DISPLAY_CATEGORIES_ON_MENU = False
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['extract_toc', 'code_include', 'render_math']
 
+# settings for render_math plugin
+MATH_JAX = {'source': "'http://judge.mipt.ru/mipt_cs_on_python3/jslib/MathJax.js'"}
+
 STATIC_PATHS = [
     'images',
     'code',
+    'jslib'
 ]
 
 EXTRA_PATH_METADATA = {
