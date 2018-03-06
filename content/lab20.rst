@@ -2,7 +2,6 @@
 ##############################
 
 :date: 2018-03-06 09:00
-:status: draft
 
 .. default-role:: code
 
