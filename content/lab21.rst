@@ -480,3 +480,52 @@ static/client2.html
     <div id="chat"></div>
     <input id="msg">
     <button id="send">send</button>
+
+Pubnub
+======
+
+Сервер это здорово. Но иногда нет большой нужды писать его. Допустим, хотим написать чат на Python. Можно написать простенький сервер на Flask, но что дальше? Можно запустить его в локальной сети, тогда будет чат по локальной сети. А как на счет чата через интернет? Тут уже нужна машина с белым ip, т.е. доступная из интернета. Придется искать хостинг для вашего сервера, грузить его туда.. Вместо этого, можно использовать BAAS. BAAS - Backend As A Service. Это значит, что кто предоставляет нам бэк-энд (т.е. серверную часть приложения) как сервис, как услугу. Сервер уже есть и работает, можно испльзовать! Один из примеров таких BAAS - Pubnub.com. Этот бэкенд позволяет создавать каналы передачи сообщений. Простое api позволяет писать в канал и получать данные из канала. Все, сервер писать уже не придется. Рассмотрим пример.
+
+a.py
+
+.. code:: python
+
+    from pubnub import Pubnub
+
+    PUB_KEY = 'pub-c-bab40884-15d8-42a3-8675-21d381efc60e'
+    SUB_KEY = 'sub-c-d3ff6da6-faa9-11e5-8180-0619f8945a4f'
+
+    pubnub = Pubnub(publish_key=keys.PUB_KEY, subscribe_key=keys.SUB_KEY)
+
+    def _callback(message, channel):
+        print(message)
+
+    def _error(message):
+        print(message)
+
+    pubnub.subscribe(channels="my_channel_sf23", callback=_callback, error=_error)
+
+    while True:
+        pass
+
+Это приложение подписывается на канал `"my_channel_sf23"` в рамках аккаунта, заданного ключами PUB_KEY и SUB_KEY, и печатает все ошибки и сообщения, которые через него получает. Чтобы получить свои ключи, необходимо зарегистрироваться на pubnub.com.
+
+.. code:: python
+
+    import keys
+    from pubnub import Pubnub
+
+    PUB_KEY = 'pub-c-bab40884-15d8-42a3-8675-21d381efc60e'
+    SUB_KEY = 'sub-c-d3ff6da6-faa9-11e5-8180-0619f8945a4f'
+
+    pubnub = Pubnub(publish_key=keys.PUB_KEY, subscribe_key=keys.SUB_KEY)
+
+    def callback(message):
+        print(message)
+
+    pubnub.publish('my_channel_sf23', 'Hello from PubNub Python SDK!', callback=callback, error=callback)
+
+    while True:
+        pubnub.publish('my_channel_sf23', input(), callback=callback, error=callback)
+
+Это приложение отправляет в канал `"my_channel_sf23"` различные сообщения, в основном те, которые пользователь вводит с клавиатуры. По pubnub каналам можно передавать не только строки но и другие json-сериализуемые объекты.
