@@ -77,22 +77,22 @@ HTML - HyperText Markup Language - язык разметки гипертекс�
       <input type="password">
       </fieldset>
 
-- `<a href="http://ya.ru">яндекс</a>` - тег `<a>`, ссылка. Аттрибут `href` задает адрес ссылки.
+- `<a href="http://acm.mipt.ru">acm</a>` - тег `<a>`, ссылка. Аттрибут `href` задает адрес ссылки.
 
   .. raw:: html
 
       <fieldset>
       <legend>html</legend>
-      <a href="http://ya.ru">яндекс</a>
+      <a href="http://acm.mipt.ru">acm</a>
       </fieldset>
 
-Теги можно вкладывать друг в друга: `<a href="http://ya.ru"><b>яндекс</b> поиск</a>`.
+Теги можно вкладывать друг в друга: `<a href="http://acm.mipt.ru"><b>acm</b> поиск</a>`.
 
 .. raw:: html
 
     <fieldset>
     <legend>html</legend>
-    <a href="http://ya.ru"><b>яндекс</b> поиск</a>
+    <a href="http://acm.mipt.ru"><b>acm</b> поиск</a>
     </fieldset>
 
 
@@ -301,7 +301,7 @@ Javascript
     <script>
 
     function click() {
-        document.getElementById('my-div').innerHTML += '<br><a href="http://ya.ru">ya.ru</a>';
+        document.getElementById('my-div').innerHTML += '<br><a href="http://acm.mipt.ru">acm.mipt.ru</a>';
     }
 
     </script>
@@ -314,7 +314,7 @@ Javascript
     <script>
 
     function click1() {
-        document.getElementById('my-div').innerHTML += '<div><a href="http://ya.ru">ya.ru</a></div>';
+        document.getElementById('my-div').innerHTML += '<div><a href="http://acm.mipt.ru">acm.mipt.ru</a></div>';
     }
 
     </script>
@@ -349,7 +349,7 @@ Javascript
         $('#one').click(function() {
             $('#one').toggleClass('one');
             $('#one').toggleClass('two');
-            $('#another').append('<br><a href="http://ya.ru">ya.ru</a>');
+            $('#another').append('<br><a href="http://acm.mipt.ru">acm.mipt.ru</a>');
       })
     })
     </script>
@@ -379,7 +379,7 @@ Javascript
         $('#one').click(function() {
             $('#one').toggleClass('one');
             $('#one').toggleClass('two');
-            $('#another').append('<a href="http://ya.ru">ya.ru</a>');
+            $('#another').append('<a href="http://acm.mipt.ru">acm.mipt.ru</a>');
       })
     })
     </script>
