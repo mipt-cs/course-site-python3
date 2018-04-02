@@ -31,6 +31,17 @@
 
 "Веб-программирование" включает в себя огромное множество различных понятий, языков и инструментов. Цель данной лабораторной - знакомство с основными из них.
 
+Библиотеки
+==========
+
+В данной работе нам потребуются библиотеки Falsk и Pubnub, начнем с их установки. Необходимо выполнить в консоли следующее:
+
+.. code:: bash
+
+    pip3 install --user http://judge.mipt.ru/mipt_cs_on_python3/pip/{pycryptodomex-3.5.1-cp35-cp35m-manylinux1_i686.whl,pubnub-4.0.13.tar.gz,Flask-0.12.2-py2.py3-none-any.whl}
+
+(заметка для преподавателя: при нехватке зависимостей, обратится к @senya, я долью)
+
 HTML
 ====
 .. default-role:: code
@@ -421,7 +432,7 @@ Flask
 
 Еще пример.
 
-.. code:: python 
+.. code:: python
 
     from flask import Flask
     from flask import request
