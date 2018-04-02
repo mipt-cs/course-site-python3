@@ -318,7 +318,7 @@ Javascript
 
 .. code:: html
 
-    <script src="/jslib/jquery.min.js"></script>
+    <script src="http://judge.mipt.ru/mipt_cs_on_python3/jslib/jquery-3.3.1.min.js"></script>
 
     <style>
     .one {
@@ -348,7 +348,7 @@ Javascript
 
 .. raw:: html
 
-    <script src="/jslib/jquery-3.3.1.min.js"></script>
+    <script src="http://judge.mipt.ru/mipt_cs_on_python3/jslib/jquery-3.3.1.min.js"></script>
 
     <style>
     .one {
@@ -474,7 +474,7 @@ static/client2.html
 
     <!DOCTYPE html>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="http://judge.mipt.ru/mipt_cs_on_python3/jslib/jquery-3.3.1.min.js"></script>
     <script src="static/script2.js"></script>
 
     <div id="chat"></div>
