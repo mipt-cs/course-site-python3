@@ -53,7 +53,8 @@ PLUGINS = ['extract_toc', 'code_include', 'render_math']
 STATIC_PATHS = [
     'images',
     'code',
-    'jslib'
+    'jslib',
+    'pip'
 ]
 
 EXTRA_PATH_METADATA = {
