@@ -2,6 +2,7 @@
 #########################
 
 :date: 2018-02-27 09:00
+:lecture_link: https://youtu.be/Y4ithGiEO08
 
 .. raw:: html
 
