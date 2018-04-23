@@ -2,9 +2,9 @@
 #######################################
 
 :date: 2018-04-24 09:00
+:status: draft
 
 .. default-role:: code
-.. status:: draft
 
 .. contents:: Содержание
 
