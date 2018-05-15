@@ -2,6 +2,7 @@
 #######################
 
 :date: 2018-04-17 09:00
+:lecture_link: https://youtu.be/S-hjsamsK8U
 
 .. default-role:: code
 .. contents:: Содержание
