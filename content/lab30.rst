@@ -2,6 +2,7 @@
 ################
 
 :date: 2018-05-21
+:lecture_link: https://youtu.be/U2AG36_0Btw
 
 .. default-role:: code
 .. contents:: Содержание
